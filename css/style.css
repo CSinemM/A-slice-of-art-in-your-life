@@ -28,6 +28,10 @@ nav a.active {
     color: #D63484;
 }
 
+nav a:hover {
+    color: #FF9BD2;
+}
+
 .hero {
     text-align: center;
     padding: 50px 20px;
@@ -59,6 +63,10 @@ nav a.active {
 .featured .artwork img {
     width: 100%;
     border-radius: 5px;
+}
+
+.featured .artwork h3 {
+    color: #D63484;
 }
 
 .gallery {
@@ -98,6 +106,12 @@ form input, form select, form textarea, form button {
     border-radius: 5px;
 }
 
+#order-form {
+    border: 2px solid #FF9BD2;
+    padding: 15px;
+    border-radius: 5px;
+}
+
 form button {
     background-color: #D63484;
     color: #F8F4EC;
@@ -115,6 +129,15 @@ footer {
     padding: 20px;
     font-size: 14px;
     color: #402B3A;
+}
+
+p::first-letter {
+    font-size: 2rem;
+    color: #D63484;
+}
+
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
 }
 
 @media (max-width: 768px) {
