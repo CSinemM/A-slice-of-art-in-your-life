@@ -2,6 +2,7 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поръчка - Asliceofartinyourlife</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -10,7 +11,6 @@
 
 <header>
     <h1>Asliceofartinyourlife</h1>
-
     <nav>
         <a href="index.html">Начало</a>
         <a href="gallery.html">Картини</a>
@@ -23,55 +23,51 @@
 </header>
 
 <section class="page-title">
-    <h2>Поръчайте своя картина</h2>
-    <p>персонализирана картина</p>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="page-title-inner">
+        <h2>Поръчка</h2>
+        <p>персонализирана картина</p>
+    </div>
 </section>
 
-<section class="order-info">
-    <h3>Как работи?</h3>
-    <ol>
-        <li>Попълвате формата</li>
-        <li>Получавате цена и потвърждение</li>
-        <li>Изработка до 2–4 седмици</li>
-    </ol>
-</section>
+<section class="order-section">
+    <div class="order-info">
+        <h3>Как работи?</h3>
+        <ol>
+            <li>Попълвате формата</li>
+            <li>Получавате цена и потвърждение</li>
+            <li>Изработка до 2–4 седмици</li>
+        </ol>
+    </div>
 
-<section class="order-form">
-
-    <form action="https://formspree.io/f/xpqwvlez" method="POST">
-
-        <input type="hidden" name="_subject" value="Нова поръчка">
-
-        <input type="text" name="name" placeholder="Вашето име" required>
-
-        <input type="email" name="email" placeholder="Вашият имейл" required>
-
-        <select name="size" required>
-            <option value="">Изберете размер</option>
-            <option>A4</option>
-            <option>A3</option>
-            <option>40x50 cm</option>
-        </select>
-
-        <select name="style" required>
-            <option value="">Изберете стил</option>
-            <option>Микс медия</option>
-            <option>Поп арт</option>
-            <option>Абстракт</option>
-        </select>
-
-        <input type="text" name="theme" placeholder="Тема / мотив" required>
-
-        <textarea name="description" rows="5" placeholder="Опишете вашата идея" required></textarea>
-
-        <button type="submit" class="btn">Изпрати поръчка</button>
-
-    </form>
-
+    <div class="order-form">
+        <form action="https://formspree.io/f/xpqwvlez" method="POST">
+            <input type="hidden" name="_subject" value="Нова поръчка">
+            <input type="text" name="name" placeholder="Вашето име" required>
+            <input type="email" name="email" placeholder="Вашият имейл" required>
+            <select name="size" required>
+                <option value="">Изберете размер</option>
+                <option>A4</option>
+                <option>A3</option>
+                <option>40x50 cm</option>
+            </select>
+            <select name="style" required>
+                <option value="">Изберете стил</option>
+                <option>Микс медия</option>
+                <option>Поп арт</option>
+                <option>Абстракт</option>
+            </select>
+            <input type="text" name="theme" placeholder="Тема / мотив" required>
+            <textarea name="description" rows="5" placeholder="Опишете вашата идея" required></textarea>
+            <button type="submit" class="btn-submit">Изпрати поръчка</button>
+        </form>
+    </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>        
+    <span class="footer-logo">Asliceofartinyourlife</span>
+    <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
 </footer>
 
 </body>
