@@ -667,3 +667,46 @@ form textarea::placeholder {
     font-family: var(--font-body);
 }
 
+footer {
+    background: var(--dark);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: rgba(245, 240, 232, 0.5);
+    font-family: var(--font-body);
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: var(--cream);
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+    header { padding: 16px 20px; }
+    nav a { padding: 5px 10px; font-size: 0.72rem; }
+    .artworks-grid { padding: 60px 20px; grid-template-columns: 1fr 1fr; }
+    .prints-grid { padding: 60px 20px; grid-template-columns: 1fr 1fr; }
+    .artwork-card:nth-child(2) { margin-top: 0; }
+    .about-strip { grid-template-columns: 1fr; padding: 40px; margin: 0 20px 60px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+    .about, .style, .contact, .order-form { padding: 40px 20px; }
+}
+
+@media (max-width: 600px) {
+    nav { gap: 4px; flex-wrap: wrap; justify-content: center; }
+    nav a { padding: 4px 8px; font-size: 0.65rem; }
+    .artworks-grid { grid-template-columns: 1fr; }
+    .prints-grid { grid-template-columns: 1fr; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero { padding: 100px 20px 60px; }
+    .hero h2 { font-size: 3rem; }
+    .page-title { padding: 100px 20px 40px; }
+}
