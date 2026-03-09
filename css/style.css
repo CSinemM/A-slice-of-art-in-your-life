@@ -88,21 +88,114 @@ nav a.active{
     color:var(--cream);
 }
 
-.hero {
-    display: flex;
+.hero{
+    min-height: 100vh;
+    display; flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px 20px;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h2 {
-    color: #D63484;
+.blob{
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
 }
 
-.hero p {
-    color: #402B3A;
+.blob-1{
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #F97316, #D63484);
+    top: -100px;
+    right: -100px;
+    animation:float1 8s ease-in-out infinite;
+}
+
+.blob2{
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #8B5CF6, #D63484);
+    bottom:0;
+    left: 10%;
+    animation: float2 10s ease-in-out infinite;
+}
+
+.blob3{
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #FF9BD2, #F97316);
+    top: 30%;
+    left: 40%;
+    animation: float1 12s ease-in-out infinite reverse;
+    opacity: 0.35;
+}
+
+@keyframes float1{
+    0%,
+    100%{
+        transform: translate(0,0) scale(1);
+    }
+    50%{
+        transform: translate(30px, -40px) scale(1.05);
+    }
+}
+
+@keyframes float2{
+    0%,
+    100%{
+        transform:translater(0,0) scale(1);
+    }
+    50%{
+        transform: translate(-20-x, 30px) scale(0.95);
+    }
+}
+
+.hero-content{
+    position: relative;
+    z-index:2;
+    max-width: 700px;
+}
+
+.hero-label{
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color:var(--pink);
+    font-weight: 500;
+    margin-bottom: 24px;
+    border: 1px solid var(--pink);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-family: var(--font-body);
+}
+
+.hero h2{
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 1.0;
+    font-weight: normal;
+    color: var(--dark);
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+}
+
+.hero h2 em{
+    font-style: italic;
+    color: var(--pink);
+}
+
+.hero p{
+    font-size: 1.1rem;
+    color:#5A3D50;
+    max-width: 420px;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 40px;
+    font-family: var(--font-body);
 }
 
 main {
