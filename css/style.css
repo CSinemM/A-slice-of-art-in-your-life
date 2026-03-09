@@ -7,18 +7,19 @@ body {
     min-height: 100vh;
 }
 
+/* Header с нов градиент */
 header {
-    background-color: #F8F4EC;
+    background: linear-gradient(90deg, #D63484, #FF9BD2);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #D63484;
+    border-bottom: 2px solid #402B3A; /* контрастна линия */
 }
 
 header h1 {
     font-size: 24px;
-    color: #402B3A;
+    color: #F8F4EC; /* светъл текст за контраст */
 }
 
 nav {
@@ -28,11 +29,11 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #402B3A;
+    color: #F8F4EC; /* светли линкове */
 }
 
 nav a.active {
-    color: #D63484;
+    color: #402B3A; /* активен линк се откроява */
 }
 
 nav a:hover {
@@ -141,12 +142,13 @@ form button:hover {
     background-color: #FF9BD2;
 }
 
+/* Footer с тъмен фон за контраст */
 footer {
-    background-color: #F8F4EC;
+    background-color: #402B3A;
     text-align: center;
     padding: 20px;
     font-size: 14px;
-    color: #402B3A;
+    color: #F8F4EC; /* светъл текст */
 }
 
 p::first-letter {
