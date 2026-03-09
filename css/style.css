@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F4EC;
+    color: #402B3A;
+}
+
+header {
+    background-color: #F8F4EC;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #D63484;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #402B3A;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #402B3A;
+}
+
+nav a.active {
+    color: #D63484;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h2 {
+    color: #D63484;
+}
+
+.hero p {
+    color: #402B3A;
+}
+
+.featured {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.featured .artwork {
+    display: inline-block;
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #FF9BD2;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.featured .artwork img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.art, .art-card {
+    width: 250px;
+    text-align: center;
+    border: 1px solid #FF9BD2;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn {
+    background-color: #D63484;
+    color: #F8F4EC;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #FF9BD2;
+}
+
+form input, form select, form textarea, form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #FF9BD2;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #D63484;
+    color: #F8F4EC;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #FF9BD2;
+}
+
+footer {
+    background-color: #F8F4EC;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #402B3A;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .featured .artwork, .art, .art-card {
+        width: 90%;
+    }
+}
