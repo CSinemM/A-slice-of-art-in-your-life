@@ -37,37 +37,55 @@ body::before{
     opacity: 0.5;
 }
 
-/* Header с нов градиент */
-header {
-    background: linear-gradient(90deg, #D63484, #FF9BD2);
-    padding: 20px;
+header{
+    position:fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #402B3A;
+    align-items; center;
+    padding: 20px 40px;
+    background: rgba(245, 240, 232, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(214, 52, 132, 0.15);
 }
 
-header h1 {
-    font-size: 24px;
-    color: #F8F4EC;
+header h1{
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    font-weight:normal;
+    letter-spacing: 0.02em;
+    color:var(--dark);
 }
 
-nav {
+nav{
     display: flex;
-    gap: 15px;
+    gap: 8px;
+    align-items: center;
 }
 
-nav a {
+nav a{
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text);
     text-decoration: none;
-    color: #F8F4EC;
+    padding: 6px 14px;
+    border-radius: 100px;
+    transition; all 0.2s;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+}
+nav a:hover{
+    background: rgba(214, 52, 132, 0.1);
+    color:var(--pink);
 }
 
-nav a.active {
-    color: #402B3A;
-}
-
-nav a:hover {
-    color: #FF9BD2;
+nav a.active{
+    background:var(--dark);
+    color:var(--cream);
 }
 
 .hero {
