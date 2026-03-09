@@ -1,0 +1,52 @@
+/* нулиране на разстоянията */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* основни настройки за страницата */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* премахване на стиловете на списъците */
+ul,
+ol {
+    list-style: none;
+}
+
+/* стил на линковете */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* изображенията се намаляват при нужда */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* формите да използват същия шрифт */
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* по-добро пренасяне на текста */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
