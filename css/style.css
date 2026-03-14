@@ -184,7 +184,6 @@ nav a.active {
     font-family: var(--font-body);
 }
 
-/* ── ANIMATED BORDER BUTTONS ── */
 .box {
     width: 180px;
     height: auto;
@@ -324,7 +323,6 @@ nav a.active {
     transition: .3s transform linear, .3s height linear .5s;
 }
 
-/* ── SECTIONS ── */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -353,7 +351,6 @@ nav a.active {
     padding: 60px 40px;
 }
 
-/* ── ARTWORK CARDS ── */
 .artworks-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -460,7 +457,6 @@ nav a.active {
     letter-spacing: 0.02em;
 }
 
-/* ── PRINTS ── */
 .prints-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -517,7 +513,6 @@ nav a.active {
     letter-spacing: 0.02em;
 }
 
-/* ── ABOUT STRIP ── */
 .about-strip {
     margin: 0 40px 80px;
     background: var(--dark);
@@ -580,7 +575,6 @@ nav a.active {
     font-family: var(--font-body);
 }
 
-/* ── PAGE TITLE ── */
 .page-title {
     padding: 140px 40px 60px;
     position: relative;
@@ -609,7 +603,6 @@ nav a.active {
     font-family: var(--font-body);
 }
 
-/* ── TEXT SECTIONS ── */
 .about, .style {
     padding: 60px 40px;
     max-width: 800px;
@@ -686,7 +679,6 @@ nav a.active {
     padding: 0;
 }
 
-/* ── FORMS ── */
 form input,
 form select,
 form textarea {
@@ -919,7 +911,6 @@ footer p {
     color: var(--pink);
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
     header { padding: 16px 20px; }
     nav a { padding: 5px 10px; font-size: 0.72rem; }
