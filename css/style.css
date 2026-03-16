@@ -614,6 +614,7 @@ nav a.active {
     font-family: var(--font-body);
 }
 
+
 .order-section {
     padding: 60px 40px;
     display: grid;
@@ -904,6 +905,16 @@ footer p {
 
 .cart-total span {
     color: var(--pink);
+}
+
+img {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 
 @media (max-width: 900px) {
