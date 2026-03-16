@@ -20,7 +20,23 @@
         <a href="about.html">За мен</a>
         <a href="contact.html">Контакти</a>
     </nav>
-</header>
+     <button class="cart-toggle" onclick="toggleCart()">
+                🛒 <span class="cart-count" id="cart-count">0</span>
+            </button>
+        </header>
+
+        <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h3>Вашата количка</h3>
+                <button class="cart-close" onclick="toggleCart()">✕</button>
+            </div>
+            <ul id="cart-items"></ul>
+            <div class="cart-footer">
+                <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
+                <a href="order.html" class="box box-pink" style="display:block; text-align:center;">Поръчай →</a>
+            </div>
+        </div>
 
 <section class="page-title">
     <div class="blob blob-1"></div>
