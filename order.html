@@ -59,8 +59,20 @@
             <input type="email" name="email" placeholder="Вашият имейл" required>
             <input type="city" name="city" placeholder="Град/село" required>
             <input type="post-code" name="post-code" placeholder="Пощенски код" required>
-            <input type="delivery-form" name="delivery-form" placeholder="Начин на доставка" required>
-            <button type="submit" class="btn-submit">Поръчай</button>
+             <select name="delivery-type" required>
+                <option value="">Изберете начин на доставка</option>
+                <option>BOX NOW: 1,02 € / 1,99 лв.</option>
+                <option>До адрес: 2,55 € / 4,99 лв.</option>
+                <option>Speedy – Офиси и Автомати: 2,55 € / 4,99 лв.</option>
+                <option> Еконт – Офиси и Еконтомати: 2,55 € / 4,99 лв.</option>
+                <option>ЕКСПРЕСНА до Еконт – Офиси и Еконтомати: 5,11 € / 9,99 лв.</option>
+            </select>
+            <select name="payment-type" required>
+                <option value="">Изберете начин на плащане</option>
+                <option>Наложен платеж</option>
+                <option>Плащане с карта</option>
+            </select>
+               <button type="submit" class="btn-submit">Поръчай</button>
         </form>
     </div>
 </section>

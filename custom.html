@@ -77,9 +77,15 @@
             </select>
             <input type="text" name="theme" placeholder="Тема / мотив" required>
             <textarea name="description" rows="5" placeholder="Опишете вашата идея" required></textarea>
-            <button type="submit" class="btn-submit">Изпрати поръчка</button>
+            <button type="submit" class="btn-submit">Продължи с поръчката</button>
         </form>
     </div>
+    <script>
+function goToOrderPage(event) {
+    event.preventDefault(); 
+    window.location.href = "order.html";
+}
+</script>
 </section>
 
 <footer>
