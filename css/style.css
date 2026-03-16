@@ -81,7 +81,6 @@ nav a.active {
     color: var(--cream);
 }
 
-/* ── HERO ── */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -92,7 +91,6 @@ nav a.active {
     overflow: hidden;
 }
 
-/* ── BLOBS ── */
 .blob {
     position: absolute;
     border-radius: 50%;
@@ -422,7 +420,6 @@ nav a.active {
     font-family: var(--font-body);
 }
 
-/* ── GALLERY (old .art classes) ── */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -617,7 +614,6 @@ nav a.active {
     font-family: var(--font-body);
 }
 
-/* ── ORDER & CONTACT ── */
 .order-section {
     padding: 60px 40px;
     display: grid;
@@ -710,7 +706,6 @@ form textarea::placeholder {
     font-family: var(--font-body);
 }
 
-/* ── FOOTER ── */
 footer {
     background: var(--dark);
     padding: 40px;
