@@ -1,97 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Персонализирана картина - Asliceofartinyourlife</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-    <h1>Asliceofartinyourlife</h1>
-    <nav>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Asliceofartinyourlife</h1>
+      <nav>
         <a href="index.html">Начало</a>
         <a href="gallery.html">Картини</a>
         <a href="prints.html">Принтове</a>
-        <a href="style.html">Стил</a>
-        <a href="order.html">Поръчка</a>
         <a href="custom.html">Персонализирана картина</a>
+        <a href="order.html">Поръчка</a>
+        <a href="style.html">Стил</a>
         <a href="about.html">За мен</a>
         <a href="contact.html">Контакти</a>
-    </nav>
-     <button class="cart-toggle" onclick="toggleCart()">
-                🛒 <span class="cart-count" id="cart-count">0</span>
-            </button>
-        </header>
+      </nav>
+      <button class="cart-toggle" onclick="toggleCart()">
+        🛒 <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </header>
 
-        <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-        <div class="cart-sidebar" id="cart-sidebar">
-            <div class="cart-header">
-                <h3>Вашата количка</h3>
-                <button class="cart-close" onclick="toggleCart()">✕</button>
-            </div>
-            <ul id="cart-items"></ul>
-            <div class="cart-footer">
-                <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-                <a href="order.html" class="box box-pink" style="display:block; text-align:center;">Поръчай →</a>
-            </div>
-        </div>
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h3>Вашата количка</h3>
+        <button class="cart-close" onclick="toggleCart()">✕</button>
+      </div>
+      <ul id="cart-items"></ul>
+      <div class="cart-footer">
+        <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
+        <a
+          href="order.html"
+          class="box box-pink"
+          style="display: block; text-align: center"
+          >Поръчай →</a
+        >
+      </div>
+    </div>
 
-<section class="page-title">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="page-title-inner">
+    <section class="page-title">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="page-title-inner">
         <h2>Персонализирана картина</h2>
         <p>само за Вас</p>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section class="order-section">
-    <div class="order-info">
+    <section class="order-section">
+      <div class="order-info">
         <h3>Как работи?</h3>
         <ol>
-            <li>Попълвате формата</li>
-            <li>Получавате цена и потвърждение</li>
-            <li>Изработка до 2–4 седмици</li>
+          <li>Попълвате формата</li>
+          <li>Получавате цена и потвърждение</li>
+          <li>Изработка до 2–4 седмици</li>
         </ol>
-    </div>
+      </div>
 
-    <div class="order-form">
+      <div class="order-form">
         <form action="https://formspree.io/f/xpqwvlez" method="POST">
-            <input type="hidden" name="_subject" value="Нова поръчка">
-            <input type="text" name="name" placeholder="Вашето име" required>
-            <input type="email" name="email" placeholder="Вашият имейл" required>
-            <select name="size" required>
-                <option value="">Изберете размер</option>
-                <option>A4</option>
-                <option>A3</option>
-                <option>40x50 cm</option>
-            </select>
-            <select name="style" required>
-                <option value="">Изберете стил</option>
-                <option>Микс медия</option>
-                <option>Поп арт</option>
-                <option>Абстракт</option>
-            </select>
-            <input type="text" name="theme" placeholder="Тема / мотив" required>
-            <textarea name="description" rows="5" placeholder="Опишете вашата идея" required></textarea>
-            <button type="submit" class="btn-submit">Продължи с поръчката</button>
+          <input type="hidden" name="_subject" value="Нова поръчка" />
+          <input type="text" name="name" placeholder="Вашето име" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Вашият имейл"
+            required
+          />
+          <select name="size" required>
+            <option value="">Изберете размер</option>
+            <option>A4</option>
+            <option>A3</option>
+            <option>40x50 cm</option>
+          </select>
+          <select name="style" required>
+            <option value="">Изберете стил</option>
+            <option>Микс медия</option>
+            <option>Поп арт</option>
+            <option>Абстракт</option>
+          </select>
+          <input type="text" name="theme" placeholder="Тема / мотив" required />
+          <textarea
+            name="description"
+            rows="5"
+            placeholder="Опишете вашата идея"
+            required
+          ></textarea>
+          <button type="submit" class="btn-submit">Продължи с поръчката</button>
         </form>
-    </div>
-    <script>
-function goToOrderPage(event) {
-    event.preventDefault(); 
-    window.location.href = "order.html";
-}
-</script>
-</section>
+      </div>
+      <script>
+        function goToOrderPage(event) {
+          event.preventDefault();
+          window.location.href = "order.html";
+        }
+      </script>
+    </section>
 
-<footer>
-    <span class="footer-logo">Asliceofartinyourlife</span>
-    <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
-</footer>
-
-</body>
+    <footer>
+      <span class="footer-logo">Asliceofartinyourlife</span>
+      <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
+    </footer>
+  </body>
 </html>

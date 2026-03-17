@@ -1,17 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Контакти - Asliceofartinyourlife</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-    <h1>Asliceofartinyourlife</h1>
-    <nav>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Asliceofartinyourlife</h1>
+      <nav>
         <a href="index.html">Начало</a>
         <a href="gallery.html">Картини</a>
         <a href="prints.html">Принтове</a>
@@ -20,55 +19,70 @@
         <a href="style.html">Стил</a>
         <a href="about.html">За мен</a>
         <a href="contact.html" class="active">Контакти</a>
-    </nav>
-     <button class="cart-toggle" onclick="toggleCart()">
-                🛒 <span class="cart-count" id="cart-count">0</span>
-            </button>
-</header>
+      </nav>
+      <button class="cart-toggle" onclick="toggleCart()">
+        🛒 <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </header>
 
-        <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-        <div class="cart-sidebar" id="cart-sidebar">
-            <div class="cart-header">
-                <h3>Вашата количка</h3>
-                <button class="cart-close" onclick="toggleCart()">✕</button>
-            </div>
-            <ul id="cart-items"></ul>
-            <div class="cart-footer">
-                <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-                <a href="order.html" class="box box-pink" style="display:block; text-align:center;">Поръчай →</a>
-            </div>
-        </div>
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h3>Вашата количка</h3>
+        <button class="cart-close" onclick="toggleCart()">✕</button>
+      </div>
+      <ul id="cart-items"></ul>
+      <div class="cart-footer">
+        <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
+        <a
+          href="order.html"
+          class="box box-pink"
+          style="display: block; text-align: center"
+          >Поръчай →</a
+        >
+      </div>
+    </div>
 
-
-
-<section class="page-title">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="page-title-inner">
+    <section class="page-title">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="page-title-inner">
         <h2>Контакти</h2>
         <p>свържете се с мен</p>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section class="order-section">
-    <div class="order-info">
+    <section class="order-section">
+      <div class="order-info">
         <h3>Оставете ми съобщение</h3>
-        <p>Място за поръчки, въпроси и коментари.<br>Отговарям в рамките на 24 часа.</p>
-    </div>
-    <div class="order-form">
+        <p>
+          Място за поръчки, въпроси и коментари.<br />Отговарям в рамките на 24
+          часа.
+        </p>
+      </div>
+      <div class="order-form">
         <form action="https://formspree.io/f/xpqwvlez" method="POST">
-            <input type="text" name="name" placeholder="Вашето име" required>
-            <input type="email" name="email" placeholder="Вашият имейл" required>
-            <textarea name="message" rows="5" placeholder="Вашето съобщение" required></textarea>
-            <button type="submit" class="btn-submit">Изпрати</button>
+          <input type="text" name="name" placeholder="Вашето име" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Вашият имейл"
+            required
+          />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Вашето съобщение"
+            required
+          ></textarea>
+          <button type="submit" class="btn-submit">Изпрати</button>
         </form>
-    </div>
-</section>
+      </div>
+    </section>
 
-<footer>
-    <span class="footer-logo">Asliceofartinyourlife</span>
-    <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
-</footer>
-
-</body>
+    <footer>
+      <span class="footer-logo">Asliceofartinyourlife</span>
+      <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
+    </footer>
+  </body>
 </html>

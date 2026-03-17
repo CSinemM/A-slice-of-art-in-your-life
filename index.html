@@ -1,157 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Asliceofartinyourlife</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Asliceofartinyourlife</h1>
-            <nav>
-                <a href="index.html" class="active">Начало</a>
-                <a href="gallery.html">Картини</a>
-                <a href="prints.html">Принтове</a>
-                <a href="style.html">Стил</a>
-                <a href="order.html">Поръчка</a>
-                <a href="custom.html">Персонализирана картина</a>
-                <a href="about.html">За мен</a>
-                <a href="contact.html">Контакти</a>
-            </nav>
-            <button class="cart-toggle" onclick="toggleCart()">
-                🛒 <span class="cart-count" id="cart-count">0</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asliceofartinyourlife</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Asliceofartinyourlife</h1>
+      <nav>
+        <a href="index.html" class="active">Начало</a>
+        <a href="gallery.html">Картини</a>
+        <a href="prints.html">Принтове</a>
+        <a href="order.html">Поръчка</a>
+        <a href="custom.html">Персонализирана картина</a>
+        <a href="style.html">Стил</a>
+        <a href="about.html">За мен</a>
+        <a href="contact.html">Контакти</a>
+      </nav>
+      <button class="cart-toggle" onclick="toggleCart()">
+        🛒 <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </header>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h3>Вашата количка</h3>
+        <button class="cart-close" onclick="toggleCart()">✕</button>
+      </div>
+      <ul id="cart-items"></ul>
+      <div class="cart-footer">
+        <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
+        <div style="display: flex; gap: 10px; align-items: stretch">
+          <a
+            href="order.html"
+            class="box box-pink"
+            style="
+              flex: 1;
+              text-align: center;
+              padding: 10px;
+              word-break: break-word;
+            "
+            >Поръчай</a
+          >
+          <a
+            href="custom.html"
+            class="box box-pink"
+            style="
+              flex: 1;
+              text-align: center;
+              padding: 10px;
+              word-break: break-word;
+            "
+            >Поръчай персонализирана картина</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="hero-content">
+        <span class="hero-label">Оригинални творби</span>
+        <h2>малки картини,<br />големи<br />чувства.</h2>
+        <p>
+          Оригинални творби, изработени с любов — mixed media и pop art, които
+          Ви пренасят в друг свят.
+        </p>
+        <a href="gallery.html" class="box">Виж картините →</a>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="section-header">
+        <h2>Препоръчани<br />картини</h2>
+        <a href="gallery.html" class="box box-pink">Виж всички →</a>
+      </div>
+      <div class="artworks-grid">
+        <div class="artwork-card">
+          <div class="artwork-img artwork-img-1">
+            <img src="images/painting13.png" alt="Картина 1" />
+          </div>
+          <div class="artwork-info">
+            <span class="artwork-tag">Mixed Media</span>
+            <h3>Картина 1</h3>
+            <p>Описание на картината 1.</p>
+            <button class="box" onclick="addToCart('Картина 1', 50)">
+              Добави в количката
             </button>
-        </header>
-
-        <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-        <div class="cart-sidebar" id="cart-sidebar">
-            <div class="cart-header">
-                <h3>Вашата количка</h3>
-                <button class="cart-close" onclick="toggleCart()">✕</button>
-            </div>
-            <ul id="cart-items"></ul>
-            <div class="cart-footer">
-               <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-                <div style="display: flex; gap: 10px; align-items: stretch;">
-                <a href="order.html" class="box box-pink" style="flex: 1; text-align: center; padding: 10px; word-break: break-word;">Поръчай</a>
-                <a href="custom.html" class="box box-pink" style="flex: 1; text-align: center; padding: 10px; word-break: break-word;">Поръчай персонализирана картина</a>
-            </div>
+          </div>
         </div>
+        <div class="artwork-card">
+          <div class="artwork-img artwork-img-2">
+            <img src="images/painting24.png" alt="Картина 2" />
+          </div>
+          <div class="artwork-info">
+            <span class="artwork-tag">Pop Art</span>
+            <h3>Картина 2</h3>
+            <p>Описание на картината 2.</p>
+            <button class="box" onclick="addToCart('Картина 2', 75)">
+              Добави в количката
+            </button>
+          </div>
         </div>
+        <div class="artwork-card">
+          <div class="artwork-img artwork-img-3">
+            <img src="images/painting11.png" alt="Картина 3" />
+          </div>
+          <div class="artwork-info">
+            <span class="artwork-tag">Абстракт</span>
+            <h3>Картина 3</h3>
+            <p>Описание на картината 3.</p>
+            <button class="box" onclick="addToCart('Картина 3', 60)">
+              Добави в количката
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="hero">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
-            <div class="hero-content">
-                <span class="hero-label">Оригинални творби</span>
-                <h2>малки картини,<br>големи<br>чувства.</h2>
-                <p>Оригинални творби, изработени с любов — mixed media и pop art, които Ви пренасят в друг свят.</p>
-                <a href="gallery.html" class="box">Виж картините →</a>
-            </div>
-        </section>
+    <footer>
+      <span class="footer-logo">Asliceofartinyourlife</span>
+      <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
+    </footer>
 
-        <section class="featured">
-            <div class="section-header">
-                <h2>Препоръчани<br>картини</h2>
-                <a href="gallery.html" class="box box-pink">Виж всички →</a>
-            </div>
-            <div class="artworks-grid">
-                <div class="artwork-card">
-                    <div class="artwork-img artwork-img-1">
-                        <img src="images/painting13.png" alt="Картина 1">
-                    </div>
-                    <div class="artwork-info">
-                        <span class="artwork-tag">Mixed Media</span>
-                        <h3>Картина 1</h3>
-                        <p>Описание на картината 1.</p>
-                        <button class="box" onclick="addToCart('Картина 1', 50)">Добави в количката</button>
-                    </div>
-                </div>
-                <div class="artwork-card">
-                    <div class="artwork-img artwork-img-2">
-                        <img src="images/painting24.png" alt="Картина 2">
-                    </div>
-                    <div class="artwork-info">
-                        <span class="artwork-tag">Pop Art</span>
-                        <h3>Картина 2</h3>
-                        <p>Описание на картината 2.</p>
-                        <button class="box" onclick="addToCart('Картина 2', 75)">Добави в количката</button>
-                    </div>
-                </div>
-                <div class="artwork-card">
-                    <div class="artwork-img artwork-img-3">
-                        <img src="images/painting11.png" alt="Картина 3">
-                    </div>
-                    <div class="artwork-info">
-                        <span class="artwork-tag">Абстракт</span>
-                        <h3>Картина 3</h3>
-                        <p>Описание на картината 3.</p>
-                        <button class="box" onclick="addToCart('Картина 3', 60)">Добави в количката</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <script>
+      let cart = [];
 
-        <footer>
-            <span class="footer-logo">Asliceofartinyourlife</span>
-            <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
-        </footer>
+      function addToCart(name, price) {
+        const existing = cart.find((item) => item.name === name);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ name, price, qty: 1 });
+        }
+        renderCart();
+        document.getElementById("cart-sidebar").classList.add("open");
+        document.getElementById("cart-overlay").classList.add("open");
+      }
 
-        <script>
-            let cart = [];
+      function removeFromCart(index) {
+        cart.splice(index, 1);
+        renderCart();
+      }
 
-            function addToCart(name, price) {
-                const existing = cart.find(item => item.name === name);
-                if (existing) {
-                    existing.qty += 1;
-                } else {
-                    cart.push({ name, price, qty: 1 });
-                }
-                renderCart();
-                document.getElementById('cart-sidebar').classList.add('open');
-                document.getElementById('cart-overlay').classList.add('open');
-            }
+      function renderCart() {
+        const list = document.getElementById("cart-items");
+        const totalEl = document.getElementById("cart-total");
+        const countEl = document.getElementById("cart-count");
 
-            function removeFromCart(index) {
-                cart.splice(index, 1);
-                renderCart();
-            }
+        list.innerHTML = "";
+        let sum = 0;
+        let count = 0;
 
-            function renderCart() {
-                const list = document.getElementById('cart-items');
-                const totalEl = document.getElementById('cart-total');
-                const countEl = document.getElementById('cart-count');
-
-                list.innerHTML = '';
-                let sum = 0;
-                let count = 0;
-
-                cart.forEach((item, index) => {
-                    sum += item.price * item.qty;
-                    count += item.qty;
-                    const li = document.createElement('li');
-                    li.className = 'cart-item';
-                    li.innerHTML = `
+        cart.forEach((item, index) => {
+          sum += item.price * item.qty;
+          count += item.qty;
+          const li = document.createElement("li");
+          li.className = "cart-item";
+          li.innerHTML = `
                         <div class="cart-item-info">
                             <span class="cart-item-name">${item.name}</span>
                             <span class="cart-item-price">€${item.price} × ${item.qty}</span>
                         </div>
                         <button class="cart-item-remove" onclick="removeFromCart(${index})">✕</button>
                     `;
-                    list.appendChild(li);
-                });
+          list.appendChild(li);
+        });
 
-                totalEl.textContent = sum;
-                countEl.textContent = count;
-            }
+        totalEl.textContent = sum;
+        countEl.textContent = count;
+      }
 
-            function toggleCart() {
-                document.getElementById('cart-sidebar').classList.toggle('open');
-                document.getElementById('cart-overlay').classList.toggle('open');
-            }
-        </script>
-    </body>
+      function toggleCart() {
+        document.getElementById("cart-sidebar").classList.toggle("open");
+        document.getElementById("cart-overlay").classList.toggle("open");
+      }
+    </script>
+  </body>
 </html>
