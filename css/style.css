@@ -357,7 +357,7 @@ nav a.active {
 
 .artwork-card {
     background: #EDEAE0;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
@@ -389,7 +389,7 @@ nav a.active {
 .artwork-img-2 { background: linear-gradient(135deg, #F97316, #D63484, #FF9BD2); }
 .artwork-img-3 { background: linear-gradient(135deg, #8B5CF6, #F97316, #D63484); }
 
-.artwork-info { padding: 20px; }
+.artwork-info { padding: 10px; }
 
 .artwork-info h3 {
     font-family: var(--font-display);
@@ -414,7 +414,7 @@ nav a.active {
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 3px 10px;
+    padding: 1px 10px;
     border-radius: 100px;
     margin-bottom: 8px;
     font-family: var(--font-body);
