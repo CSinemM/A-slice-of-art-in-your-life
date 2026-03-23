@@ -6,6 +6,10 @@
     <title>Принтове - Asliceofartinyourlife</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 </head>
 <body>
 
@@ -22,8 +26,9 @@
         <a href="contact.html">Контакти</a>
     </nav>
      <button class="cart-toggle" onclick="toggleCart()">
-                🛒 <span class="cart-count" id="cart-count">0</span>
-            </button>
+        <i class="bi bi-bag-heart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
         </header>
 
         <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
