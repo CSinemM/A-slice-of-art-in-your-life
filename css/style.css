@@ -100,31 +100,43 @@ nav a.active {
 }
 
 .blob-1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #F97316, #D63484);
+    width: 475px;
+    height: 525px;
+    background: radial-gradient(circle, #F98FFA);
     top: -100px;
     right: -100px;
     animation: float1 8s ease-in-out infinite;
+    opacity: 0.6;
 }
 
 .blob-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #8B5CF6, #D63484);
+    width: 600px;
+    height: 500px;
+    background: radial-gradient(circle, #FA8E9E);
     bottom: 0;
     left: 10%;
     animation: float2 10s ease-in-out infinite;
+    opacity: 0.6;
 }
 
 .blob-3 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, #FF9BD2, #F97316);
+    width: 600px;
+    height: 650px;
+    background: radial-gradient(circle,#FAD972);
     top: 30%;
     left: 40%;
     animation: float1 12s ease-in-out infinite reverse;
     opacity: 0.35;
+}
+
+.blob-4 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #F5851D);
+    top: -80px;
+    left: -80px;
+    animation: float2 11s ease-in-out infinite;
+    opacity: 0.5;
 }
 
 @keyframes float1 {
