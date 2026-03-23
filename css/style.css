@@ -1083,3 +1083,9 @@ img {
 .popup {
     font-family: var(--font-body);
 }
+
+.footer-social i {
+  font-size: 30px;
+  align-self: center;
+  color: #E4405F;
+}
