@@ -1303,7 +1303,6 @@ img {
     }
 }
 
-/* the popup that shows after 3 seconds */
 .popup-overlay {
     display: none;
     position: fixed;
@@ -1539,10 +1538,10 @@ img {
     color: #1A1218;
 }
 
-/* social icons in footer */
 .footer-social i {
     font-size: 30px;
     color: #E4405F;
+    margin: 0 8px;
 }
 
 .lightbox{
