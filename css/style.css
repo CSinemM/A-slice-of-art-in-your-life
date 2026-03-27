@@ -1596,3 +1596,48 @@ img {
     border-radius: 50%;
     cursor: pointer;
 }
+
+.lb-content{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* Описание на картината_отдясно на самата картина */
+.lb-info{
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+    max-width: 80vw;
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.15);
+
+    font-family: 'DM Sans', sans-serif;
+    animation: lbIn 0.3s ease;
+}
+
+.lb-info h3{
+    font-family: 'Freeride', cursive;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #1A1218;
+}
+
+.lb-info p{
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #5A3D50;
+}
+
+@media (max-width:700px){
+    .lb-content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lb-info{
+        width: 90%;
+    }
+}
