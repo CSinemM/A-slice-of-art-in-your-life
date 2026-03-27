@@ -1,61 +1,40 @@
+```html
 <!doctype html>
 <html lang="bg">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Картини - Asliceofartinyourlife</title>
+
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
   </head>
+
   <body>
     <header>
       <div style="display: flex; align-items: center; gap: 12px">
         <a href="index.html">
-          <img
-            src="images/Logo.png"
-            alt="logo"
-            style="height: 40px; width: auto; display: block"
-          />
+          <img src="images/Logo.png" style="height: 40px" />
         </a>
         <h1>Asliceofartinyourlife</h1>
       </div>
+
       <nav>
         <a href="index.html">Начало</a>
         <a href="gallery.html" class="active">Картини</a>
         <a href="prints.html">Принтове</a>
         <a href="order.html">Поръчка</a>
         <a href="custom.html">Персонализирана картина</a>
-        <a href="style.html">Стил</a>s
+        <a href="style.html">Стил</a>
         <a href="about.html">За мен</a>
         <a href="contact.html">Контакти</a>
       </nav>
-      <button class="cart-toggle" onclick="toggleCart()">
-        <i class="bi bi-bag-heart"></i>
-        <span class="cart-count" id="cart-count">0</span>
-      </button>
     </header>
-
-    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-    <div class="cart-sidebar" id="cart-sidebar">
-      <div class="cart-header">
-        <h3>Вашата количка</h3>
-        <button class="cart-close" onclick="toggleCart()">✕</button>
-      </div>
-      <ul id="cart-items"></ul>
-      <div class="cart-footer">
-        <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <a
-          href="order.html"
-          class="box box-pink"
-          style="display: block; text-align: center"
-          >Поръчай →</a
-        >
-      </div>
-    </div>
 
     <section class="page-title">
       <div class="blob blob-1"></div>
@@ -68,379 +47,146 @@
 
     <section class="gallery-section">
       <div class="artworks-grid">
+        <!-- ВСИЧКИ КАРТИНИ -->
+
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting2.jpeg" alt="Картина 1" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed Media</span>
-            <h3>Картина 1</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting2.jpeg" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting13.png" alt="Картина 2" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop Art</span>
-            <h3>Картина 2</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting13.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting5.jpeg" alt="Картина 3" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Абстракт</span>
-            <h3>Картина 3</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting5.jpeg" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting6.png" alt="Картина 4" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag"> Mixed media</span>
-            <h3>Картина 4</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting6.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting9.png" alt="Картина 5" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag"> Mixed media</span>
-            <h3>Картина 5</h3>
-            <p>Описание на картината.</p>
-          </div>
-        </div>
-        <div class="artwok-card">
-          <div class="artwork-img">
-            <img src="images/painting10.png" alt="Картина 6" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag"> Pop art</span>
-            <h3>Картина 6</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting9.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting11.png" alt="Картина 7" />
-          </div>
-          <div class="artwok-info">
-            <span class="artwork-tag">Mixed media</span>
-            <h3>Картина 7</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting10.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting15.png" alt="Картина 8" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 8</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting11.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting14.png" alt="Картина 9" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 9</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting15.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting22.png" alt="Картина 10" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed Media</span>
-            <h3>Картина 10</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting14.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting16.png" alt="Картина 11" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 11</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting22.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting17.png" alt="Картина 12" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 12</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting16.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting18.png" alt="Картина 13" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 13</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting17.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting19.png" alt="Картина 14" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 14</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting18.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting20.png" alt="Картина 15" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 15</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting19.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting21.png" alt="Картина 16" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 16</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting20.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting25.png" alt="Картина 17" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media</span>
-            <h3>Картина 17</h3>
-            <p>Описание на картината.</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting21.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting26.png" alt="Картина 18" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag"> Mixed media & Pop art</span>
-            <h3>Картина 18</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting25.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting27.png" alt="Картина 19" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media & Pop art</span>
-            <h3>Картина 19</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting26.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting28.png" alt="Картина 20" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 20</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting27.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting29.png" alt="Картина 21" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media & Pop art</span>
-            <h3>Картина 21</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting28.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting30.png" alt="Картина 22" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media & Pop art</span>
-            <h3>Картина 22</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting29.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting31.png" alt="Картина 23" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media</span>
-            <h3>Картина 23</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting30.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting32.png" alt="Картина 24" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 24</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting31.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting33.png" alt="Картина 25" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media & Pop art</span>
-            <h3>Картина 25</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting32.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting34.png" alt="Картина 26" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 26</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting33.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting35.png" alt="Картина 27" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media & Pop art</span>
-            <h3>Картина 27</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting34.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting36.png" alt="Картина 28" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media</span>
-            <h3>Картина 28</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting35.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting37.png" alt="Картина 29" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media</span>
-            <h3>Картина 29</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting36.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting38.png" alt="Картина 30" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media & Pop art</span>
-            <h3>Картина 30</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting37.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting39.png" alt="Картина 31" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 31</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting38.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting40.png" alt="Картина 32" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 32</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting39.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting41.png" alt="Картина 33" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media & Pop art</span>
-            <h3>Картина 33</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting40.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting42.png" alt="Картина 34" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Pop art</span>
-            <h3>Картина 34</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting41.png" /></div>
         </div>
         <div class="artwork-card">
-          <div class="artwork-img">
-            <img src="images/painting43.png" alt="Картина 35" />
-          </div>
-          <div class="artwork-info">
-            <span class="artwork-tag">Mixed media & Pop art</span>
-            <h3>Картина 35</h3>
-            <p>Описание на картината</p>
-          </div>
+          <div class="artwork-img"><img src="images/painting42.png" /></div>
+        </div>
+        <div class="artwork-card">
+          <div class="artwork-img"><img src="images/painting43.png" /></div>
         </div>
       </div>
     </section>
-    <footer>
-      <span class="footer-logo">Asliceofartinyourlife</span>
-      <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
-      <div class="footer-social">
-        <a
-          href="https://www.instagram.com/asliceofartinyourlife/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a
-          href="https://www.facebook.com/profile.php?id=61578555131246"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-        >
-          <i class="bi bi-facebook"></i>
-        </a>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <div class="lb-overlay" onclick="closeLightbox()"></div>
+      <div class="lb-img">
+        <button class="lb-close" onclick="closeLightbox()">✕</button>
+        <img id="lb-image" />
       </div>
-    </footer>
+    </div>
+
+    <script>
+      function openLightbox(src) {
+        document.getElementById("lb-image").src = src;
+        document.getElementById("lightbox").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
+
+      document.querySelectorAll(".artwork-card img").forEach((img) => {
+        img.addEventListener("click", () => {
+          openLightbox(img.src);
+        });
+      });
+    </script>
   </body>
 </html>

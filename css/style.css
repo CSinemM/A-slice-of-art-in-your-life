@@ -1548,3 +1548,51 @@ img {
     font-size: 30px;
     color: #E4405F;
 }
+
+.lightbox{
+    position: fixed;
+    inset:0;
+    z-index:999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+}
+
+.lightbox.open{
+    display:flex;
+}
+
+.lb-overlay{
+    position:absolute;
+    inset:0;
+    background: rgba(26, 18,24,0.88);
+    backdrop-filter:blur(8px);
+    cursor:pointer;
+}
+
+.lb-img{
+    position:relative;
+    z-index: 2;
+    max-width: 520px;
+    width:90vw;
+    border-radius: 10px;
+    overflow: hidden;
+    animation:lbIn 0.3s ease;
+}
+
+@keyframes lbIn{
+    from{transform: scale(0.88); opacity:0;}
+    to{transform: scale(1); opacity:1;}
+}
+
+.lb-close{
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width:32px;
+    height:32px;
+    background: #F5F0E8;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
