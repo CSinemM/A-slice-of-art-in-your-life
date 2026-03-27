@@ -1,7 +1,5 @@
-/* importing the fonts i need */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
 
-/* custom font i downloaded */
 @font-face {
     font-family: 'Freeride';
     src: url('../fonts/Freeride.otf') format('opentype');
@@ -10,7 +8,6 @@
     font-display: swap;
 }
 
-/* TODO: maybe use these later idk */
 /* main colors:
    cream = #F5F0E8
    dark = #1A1218
@@ -157,7 +154,6 @@ nav a.active {
     opacity: 0.5;
 }
 
-/* animations for the blobs */
 @keyframes float1 {
     0% {
         transform: translate(0px, 0px) scale(1);
