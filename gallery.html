@@ -488,7 +488,7 @@
       }
 
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLightbox();
+        if (e.key === "Escape" && e.key === "Enter") closeLightbox();
       });
 
       document.querySelectorAll(".artwork-card img").forEach((img) => {

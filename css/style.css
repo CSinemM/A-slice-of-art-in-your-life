@@ -1582,8 +1582,8 @@ img {
 
 .lb-close{
     position: absolute;
-    top: -14px;
-    right: -14px;
+    top: -0%;
+    right: -0%;
     width:32px;
     height:32px;
     background: #F5F0E8;
