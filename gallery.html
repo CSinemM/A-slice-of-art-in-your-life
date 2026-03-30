@@ -72,8 +72,8 @@
           <div class="artwork-img">
             <img
               src="images/painting2.jpeg"
-              data-title="Картина 1"
-              data-desc="Girl with a pearl earring."
+              data-title="Girl with a pearl earring- 20x60 cm"
+              data-desc="Акрил върху платно. <br>Портретна композиция, вдъхновена от класическата визия на момичето с перлената обица, пресъздадена в съвременен стил. Наситените цветове и изразителните форми придават дълбочина и емоционалност, а контрастите подчертават погледа и индивидуалността на образа."
             />
           </div>
         </div>
@@ -83,8 +83,8 @@
           <div class="artwork-img">
             <img
               src="images/painting13.png"
-              data-title="Картина 2"
-              data-desc="Цветна композиция, вдъхновена от движение и светлина."
+              data-title="Divine- 50x70 cm"
+              data-desc="Акрил върху платно. <br>Модерна поп-арт композиция, съчетаваща графични елементи, контрастни форми и ярки акценти. Централният женски образ е изразителен и емоционален, обграден от символи и урбанистични детайли, които създават усещане за движение, бунт и съвременна естетика."
             />
           </div>
         </div>
@@ -94,8 +94,8 @@
           <div class="artwork-img">
             <img
               src="images/painting5.jpeg"
-              data-title="Картина 3"
-              data-desc="Мек баланс между текстура и минимализъм."
+              data-title="Pastel Veil of Love- 50 cm"
+              data-desc="Акрил върху платно. <br> Нежна композиция в пастелни тонове, която създава усещане за мекота, топлина и романтика. Плавните цветови преходи и деликатните форми обгръщат зрителя като воал, носещ чувство за любов, спокойствие и хармония.."
             />
           </div>
         </div>
@@ -475,7 +475,8 @@
       function openLightbox(src, title, desc) {
         document.getElementById("lb-image").src = src;
         document.getElementById("lb-title").innerText = title;
-        document.getElementById("lb-desc").innerText = desc;
+        //document.getElementById("lb-desc").innerText = desc;
+        document.getElementById("lb-desc").innerHTML = desc;
 
         document.getElementById("lightbox").classList.add("open");
         document.body.style.overflow = "hidden";
