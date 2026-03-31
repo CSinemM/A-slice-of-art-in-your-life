@@ -117,7 +117,7 @@
             <img
               src="images/painting9.png"
               data-title="Vroom- 50x70 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p> <br>Стилизирана попарт композиция с колажен характер, включваща женски портрет, наподобяващ Betty Boop. В творбата са изобразени елементи от Formula One и боулинг – състезателен автомобил, кегли и топка. Фонът с точков мотив и графити текст „VROOM“ създава усещане за движение и динамика. Композицията съчетава попарт и стрийт арт естетика."
+              data-desc="<p><em>Акрил върху платно.</em></p> <br>Стилизирана попарт композиция с колажен характер, включваща женски портрет, наподобяващ Betty Boop. В творбата са изобразени елементи от Formula One и боулинг – състезателен автомобил, кегли и топка. Фонът с точков мотив и графити текст „VROOM" създава усещане за движение и динамика. Композицията съчетава попарт и стрийт арт естетика."
             />
           </div>
         </div>
@@ -139,7 +139,7 @@
             <img
               src="images/painting11.png"
               data-title="Love- 50x70 cm"
-              data-desc="<p><em>Акрил върху платно. </em></p><br>Картината е ярък и емоционален колаж от символи и стилове, който съчетава улично изкуство с нежност. Контрастът между графити елементи, каска и смели цветове и милата сцена с двете зайчета, които се докосват, създава усещане за любов, уязвимост и вътрешен свят зад външната „броня“. Тя е специална, защото съчетава сила и мекота в едно – като малка история за близост, скрита сред шума на модерния живот."
+              data-desc="<p><em>Акрил върху платно. </em></p><br>Картината е ярък и емоционален колаж от символи и стилове, който съчетава улично изкуство с нежност. Контрастът между графити елементи, каска и смели цветове и милата сцена с двете зайчета, които се докосват, създава усещане за любов, уязвимост и вътрешен свят зад външната „броня". Тя е специална, защото съчетава сила и мекота в едно – като малка история за близост, скрита сред шума на модерния живот."
             />
           </div>
         </div>
@@ -160,7 +160,7 @@
           <div class="artwork-img">
             <img
               src="images/painting14.png"
-              data-title="The Little Swan’s Lullaby- 10x10 cm"
+              data-title="The Little Swan's Lullaby- 10x10 cm"
               data-desc="<p><em>Акрил върху платно.</em></p><br>Нежна и спокойна композиция, изобразяваща лебед, който носи усещане за тишина и крехка красота, а светлосивият фон подчертава чистотата и мекотата на формите. Тя е специална, защото създава усещане за покой и деликатна хармония-като тих момент на уединение и вътрешен мир."
             />
           </div>
@@ -466,17 +466,24 @@
 
         <div class="lb-info">
           <h3 id="lb-title"></h3>
-          <p id="lb-desc"></p>
+          <div id="lb-desc"></div>
+          <button class="lb-add-btn" id="lb-add-btn">Добави в количката</button>
         </div>
       </div>
     </div>
 
     <script>
+      let currentItem = null;
+
       function openLightbox(src, title, desc) {
+        currentItem = { src, title, desc };
         document.getElementById("lb-image").src = src;
         document.getElementById("lb-title").innerText = title;
-        //document.getElementById("lb-desc").innerText = desc;
         document.getElementById("lb-desc").innerHTML = desc;
+
+        const btn = document.getElementById("lb-add-btn");
+        btn.textContent = "Добави в количката";
+        btn.style.background = "#1A1218";
 
         document.getElementById("lightbox").classList.add("open");
         document.body.style.overflow = "hidden";
@@ -485,7 +492,19 @@
       function closeLightbox() {
         document.getElementById("lightbox").classList.remove("open");
         document.body.style.overflow = "";
+        currentItem = null;
       }
+
+      document.getElementById("lb-add-btn").addEventListener("click", function () {
+        if (!currentItem) return;
+        const btn = this;
+        btn.textContent = "✓ Добавено!";
+        btn.style.background = "#D63484";
+        setTimeout(() => {
+          btn.textContent = "Добави в количката";
+          btn.style.background = "#1A1218";
+        }, 1800);
+      });
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeLightbox();
