@@ -443,7 +443,7 @@ nav a.active {
 
 .artwork-card {
     background-color: #EDEAE0;
-    border-radius: 10px;
+    border-radius: 1px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
