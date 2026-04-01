@@ -58,7 +58,7 @@ Asliceofartinyourlife
 - HTML
 - CSS
 - Javascript
-- Guthub Pages
+- Github Pages
 
 Интерактивни елементи:
 
