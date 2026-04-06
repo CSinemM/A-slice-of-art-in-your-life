@@ -1320,7 +1320,7 @@ img {
 .popup {
     background-color: #F5F0E8;
     background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-    border-radius: 20px;
+    border-radius: 1px;
     padding-top: 52px;
     padding-bottom: 44px;
     padding-left: 48px;
