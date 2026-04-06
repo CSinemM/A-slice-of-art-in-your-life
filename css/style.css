@@ -1570,7 +1570,7 @@ img {
     z-index: 2;
     max-width: 520px;
     width:90vw;
-    border-radius: 10px;
+    border-radius: 1px;
     overflow: hidden;
     animation:lbIn 0.3s ease;
 }
