@@ -188,7 +188,7 @@
 
         <div class="col-12 col-md-6 col-lg-4">
           <div class="artwork-card">
-            <div class="artwork-img"><img src="images/painting30.png" data-title="Reckless- 40x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Изображението представлява наслагване от различни елементи – лист с математически задачи, тъмни абстрактни форми и част от цветна илюстрация. Композицията изглежда фрагментирана и леко размазана, което създава усещане за хаос и движение. Контрастът между строгия текст и артистичните изображения подсилва напрежението в сцената. Цветовете варират от приглушени тъмни тонове до ярки акценти. Общото внушение е за смесване на реалност и въображение." /></div>
+            <div class="artwork-img"><img src="images/painting30.png" data-title="Reckless- 40x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Наслагване от различни елементи – лист с математически задачи, тъмни абстрактни форми." /></div>
           </div>
         </div>
 
@@ -269,35 +269,61 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/cart.js"></script>
     <script>
-      let currentItem = null;
-      function openLightbox(src, title, desc) {
-        currentItem = { src, title, desc };
-        document.getElementById('lb-image').src = src;
-        document.getElementById('lb-title').innerText = title;
-        document.getElementById('lb-desc').innerHTML = desc;
-        const btn = document.getElementById('lb-add-btn');
-        btn.textContent = 'Добави в количката'; btn.style.background = '#1A1218';
-        document.getElementById('lightbox').classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('open');
-        document.body.style.overflow = ''; currentItem = null;
-      }
-      document.getElementById('lb-add-btn').addEventListener('click', function () {
-        if (!currentItem) return;
-        this.textContent = '✓ Добавено!'; this.style.background = '#D63484';
-        setTimeout(() => { this.textContent = 'Добави в количката'; this.style.background = '#1A1218'; }, 1800);
-      });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-      document.querySelectorAll('.artwork-card img').forEach(img => {
-        img.addEventListener('click', () => openLightbox(img.src, img.dataset.title, img.dataset.desc));
-      });
-      function toggleCart() {
-        document.getElementById('cart-sidebar').classList.toggle('open');
-        document.getElementById('cart-overlay').classList.toggle('open');
-      }
-    </script>
+  let currentItem = null;
+
+  function openLightbox(src, title, desc) {
+    currentItem = { src, title, desc };
+
+    document.getElementById('lb-image').src = src;
+    document.getElementById('lb-title').innerText = title;
+    document.getElementById('lb-desc').innerHTML = desc;
+
+    const btn = document.getElementById('lb-add-btn');
+    btn.textContent = 'Добави в количката';
+    btn.style.background = '#1A1218';
+
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+    currentItem = null;
+  }
+
+  // ESC closes lightbox
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Open lightbox on image click
+  document.querySelectorAll('.artwork-card img').forEach((img) => {
+    img.addEventListener('click', () =>
+      openLightbox(img.src, img.dataset.title, img.dataset.desc)
+    );
+  });
+
+  // Connecting with cart.js to add items
+  document.getElementById('lb-add-btn').addEventListener('click', function () {
+    if (!currentItem) return;
+
+    addToCart({
+      title: currentItem.title,
+      image: currentItem.src,
+      price: 0 
+    });
+
+    this.textContent = '✓ Добавено!';
+    this.style.background = '#D63484';
+
+    setTimeout(() => {
+      this.textContent = 'Добави в количката';
+      this.style.background = '#1A1218';
+    }, 1500);
+  });
+</script>
   </body>
 </html>

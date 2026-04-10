@@ -440,48 +440,70 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart.js"></script>
     <script>
       let currentItem = null;
-      function openLightbox(src, title, desc) {
-        currentItem = { src, title, desc };
+
+      function openLightbox(src, title, desc, price = 0) {
+        currentItem = { src, title, desc, price };
+
         document.getElementById("lb-image").src = src;
         document.getElementById("lb-title").innerText = title;
         document.getElementById("lb-desc").innerHTML = desc;
+
         const btn = document.getElementById("lb-add-btn");
         btn.textContent = "Добави в количката";
         btn.style.background = "#1A1218";
+
         document.getElementById("lightbox").classList.add("open");
         document.body.style.overflow = "hidden";
       }
+
       function closeLightbox() {
         document.getElementById("lightbox").classList.remove("open");
         document.body.style.overflow = "";
         currentItem = null;
       }
+
+      // ESC closes lightbox
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
+
+      // Open lightbox on image click (FIXED SELECTOR)
+      document.querySelectorAll(".print-thumb img").forEach((img) => {
+        img.style.cursor = "pointer";
+
+        img.addEventListener("click", () =>
+          openLightbox(
+            img.src,
+            img.dataset.title,
+            img.dataset.desc,
+            img.dataset.price || 0,
+          ),
+        );
+      });
+
+      // Add to cart
       document
         .getElementById("lb-add-btn")
         .addEventListener("click", function () {
           if (!currentItem) return;
+
+          addToCart({
+            title: currentItem.title,
+            image: currentItem.src,
+            price: Number(currentItem.price) || 0,
+          });
+
           this.textContent = "✓ Добавено!";
           this.style.background = "#D63484";
+
           setTimeout(() => {
             this.textContent = "Добави в количката";
             this.style.background = "#1A1218";
-          }, 1800);
+          }, 1500);
         });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLightbox();
-      });
-      document.querySelectorAll(".print-thumb img").forEach((img) => {
-        img.style.cursor = "pointer";
-        img.addEventListener("click", () =>
-          openLightbox(img.src, img.dataset.title, img.dataset.desc),
-        );
-      });
-      function toggleCart() {
-        document.getElementById("cart-sidebar").classList.toggle("open");
-        document.getElementById("cart-overlay").classList.toggle("open");
-      }
     </script>
   </body>
 </html>
