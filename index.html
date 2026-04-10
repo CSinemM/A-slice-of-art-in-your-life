@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asliceofartinyourlife</title>
     <link rel="stylesheet" href="css/reset.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -12,8 +17,9 @@
     />
   </head>
   <body>
-    <header>
-      <div style="display: flex; align-items: center; gap: 12px">
+    <!-- HEADER -->
+    <header class="d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
         <a href="index.html">
           <img
             src="images/Logo.png"
@@ -23,7 +29,7 @@
         </a>
         <h1>Asliceofartinyourlife</h1>
       </div>
-      <nav>
+      <nav class="d-flex align-items-center gap-1">
         <a href="index.html" class="active">Начало</a>
         <a href="gallery.html">Картини</a>
         <a href="prints.html">Принтове</a>
@@ -39,6 +45,7 @@
       </button>
     </header>
 
+    <!-- CART -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
@@ -48,33 +55,24 @@
       <ul id="cart-items"></ul>
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <div style="display: flex; gap: 10px; align-items: stretch">
+        <div class="d-flex gap-2 align-items-stretch">
           <a
             href="order.html"
-            class="box box-pink"
-            style="
-              flex: 1;
-              text-align: center;
-              padding: 10px;
-              word-break: break-word;
-            "
+            class="box box-pink flex-fill text-center"
+            style="padding: 10px; word-break: break-word"
             >Поръчай</a
           >
           <a
             href="custom.html"
-            class="box box-pink"
-            style="
-              flex: 1;
-              text-align: center;
-              padding: 10px;
-              word-break: break-word;
-            "
+            class="box box-pink flex-fill text-center"
+            style="padding: 10px; word-break: break-word"
             >Поръчай персонализирана картина</a
           >
         </div>
       </div>
     </div>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -91,70 +89,106 @@
       </div>
     </section>
 
+    <!-- FEATURED -->
     <section class="featured">
       <div class="section-header">
         <h2>Препоръчани<br />картини</h2>
         <a href="gallery.html" class="box box-pink">Виж всички →</a>
       </div>
-      <div class="artworks-grid">
-        <div class="artwork-card">
-          <div class="artwork-img artwork-img-1">
-            <img src="images/painting13.png" alt="Картина 1" />
-          </div>
-          <div class="artwork-info">
-            <h3>Divine- 50x70 cm</h3>
-            <br />
-          </div>
-        </div>
-        <div class="artwork-card">
-          <div class="artwork-img artwork-img-2">
-            <img src="images/painting24.png" alt="Картина 2" />
-          </div>
-          <div class="artwork-info">
-            <h3>Meanwhile- 50x70 cm</h3>
-            <br />
+      <div class="row g-4 artworks-grid">
+        <div class="col-12 col-md-4">
+          <div class="artwork-card">
+            <div class="artwork-img artwork-img-1">
+              <img src="images/painting13.png" alt="Картина 1" />
+            </div>
+            <div class="artwork-info">
+              <h3>Divine- 50x70 cm</h3>
+              <br />
+            </div>
           </div>
         </div>
-        <div class="artwork-card">
-          <div class="artwork-img artwork-img-3">
-            <img src="images/painting11.png" alt="Картина 3" />
+        <div class="col-12 col-md-4">
+          <div class="artwork-card">
+            <div class="artwork-img artwork-img-2">
+              <img src="images/painting24.png" alt="Картина 2" />
+            </div>
+            <div class="artwork-info">
+              <h3>Meanwhile- 50x70 cm</h3>
+              <br />
+            </div>
           </div>
-          <div class="artwork-info">
-            <h3>Love- 50x70 cm</h3>
-            <br />
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="artwork-card">
+            <div class="artwork-img artwork-img-3">
+              <img src="images/painting11.png" alt="Картина 3" />
+            </div>
+            <div class="artwork-info">
+              <h3>Love- 50x70 cm</h3>
+              <br />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>
+    <!-- FOOTER -->
+    <footer class="d-flex justify-content-between align-items-center">
       <span class="footer-logo">Asliceofartinyourlife</span>
-      <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
-      <div class="footer-social">
+      <p class="mb-0">
+        &copy; 2026 Asliceofartinyourlife. Всички права запазени.
+      </p>
+      <div class="footer-social d-flex gap-3">
         <a
           href="https://www.instagram.com/asliceofartinyourlife/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-        >
-          <i class="bi bi-instagram"></i>
-        </a>
+          ><i class="bi bi-instagram"></i
+        ></a>
         <a
           href="https://www.facebook.com/profile.php?id=61578555131246"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
-        >
-          <i class="bi bi-facebook"></i>
-        </a>
+          ><i class="bi bi-facebook"></i
+        ></a>
       </div>
     </footer>
 
+    <!-- POPUP -->
+    <div id="myPopup" class="popup-overlay">
+      <div class="popup">
+        <button
+          class="popup-close"
+          onclick="document.getElementById('myPopup').style.display = 'none'"
+        >
+          ✕
+        </button>
+        <span class="popup-label">СПЕЦИАЛНО ЗА ВАС</span>
+        <h2 class="popup-heading">10% <span>ОТСТЪПКА</span></h2>
+        <p class="popup-sub">
+          абонирайте се и получете отстъпка за Вашата първа поръчка :)
+        </p>
+        <input type="email" placeholder="Вашият имейл..." class="popup-input" />
+        <button class="popup-btn" onclick="alert('Абонирахте се успешно!!')">
+          ВЗЕМЕТЕ ОТСТЪПКА
+        </button>
+        <button
+          class="popup-skip"
+          onclick="document.getElementById('myPopup').style.display = 'none'"
+        >
+          не желая отстъпка
+        </button>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       let cart = [];
-
       function addToCart(name, price) {
-        const existing = cart.find((item) => item.name === name);
+        const existing = cart.find((i) => i.name === name);
         if (existing) {
           existing.qty += 1;
         } else {
@@ -164,78 +198,32 @@
         document.getElementById("cart-sidebar").classList.add("open");
         document.getElementById("cart-overlay").classList.add("open");
       }
-
       function removeFromCart(index) {
         cart.splice(index, 1);
         renderCart();
       }
-
       function renderCart() {
         const list = document.getElementById("cart-items");
         const totalEl = document.getElementById("cart-total");
         const countEl = document.getElementById("cart-count");
-
         list.innerHTML = "";
-        let sum = 0;
-        let count = 0;
-
+        let sum = 0,
+          count = 0;
         cart.forEach((item, index) => {
           sum += item.price * item.qty;
           count += item.qty;
           const li = document.createElement("li");
           li.className = "cart-item";
-          li.innerHTML = `
-                        <div class="cart-item-info">
-                            <span class="cart-item-name">${item.name}</span>
-                            <span class="cart-item-price">€${item.price} × ${item.qty}</span>
-                        </div>
-                        <button class="cart-item-remove" onclick="removeFromCart(${index})">✕</button>
-                    `;
+          li.innerHTML = `<div class="cart-item-info"><span class="cart-item-name">${item.name}</span><span class="cart-item-price">€${item.price} × ${item.qty}</span></div><button class="cart-item-remove" onclick="removeFromCart(${index})">✕</button>`;
           list.appendChild(li);
         });
-
         totalEl.textContent = sum;
         countEl.textContent = count;
       }
-
       function toggleCart() {
         document.getElementById("cart-sidebar").classList.toggle("open");
         document.getElementById("cart-overlay").classList.toggle("open");
       }
-    </script>
-
-    <div id="myPopup" class="popup-overlay">
-      <div class="popup">
-        <button
-          class="popup-close"
-          onclick="document.getElementById('myPopup').style.display = 'none'"
-        >
-          ✕
-        </button>
-
-        <span class="popup-label">СПЕЦИАЛНО ЗА ВАС </span>
-
-        <h2 class="popup-heading">10% <span>ОТСТЪПКА</span></h2>
-
-        <p class="popup-sub">
-          абонирайте се и получете отстъпка за Вашата първа поръчка :)
-        </p>
-
-        <input type="email" placeholder="Вашият имейл..." class="popup-input" />
-
-        <button class="popup-btn" onclick="alert('Абонирахте се успешно!!')">
-          ВЗЕМЕТЕ ОТСТЪПКА
-        </button>
-
-        <button
-          class="popup-skip"
-          onclick="document.getElementById('myPopup').style.display = 'none'"
-        >
-          не желая отстъпка
-        </button>
-      </div>
-    </div>
-    <script>
       setTimeout(function () {
         document.getElementById("myPopup").style.display = "flex";
       }, 3000);
