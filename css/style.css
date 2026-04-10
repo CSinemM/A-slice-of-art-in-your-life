@@ -1,5 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
 
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+nav a {
+  color: #2D1F2B !important;
+  text-decoration: none !important;
+}
+nav a:hover {
+  color: #D63484 !important;
+}
+nav a.active {
+  color: #F5F0E8 !important;
+}
+
+.about-strip-text p,
+.order-info p,
+.hero p,
+.about p,
+.style p {
+  margin-bottom: 16px;
+}
+
+.prints-section .row,
+.featured .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+form input,
+form select,
+form textarea {
+  border: 1px solid rgba(214, 52, 132, 0.2) !important;
+  border-radius: 12px !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #D63484 !important;
+  box-shadow: 0 0 0 3px rgba(214, 52, 132, 0.1) !important;
+  background-color: white !important;
+}
+
+header h1,
+.section-header h2,
+.page-title h2,
+.hero h2,
+.about-strip h2,
+.artwork-info h3,
+.print-card h3,
+.art h3,
+.art-card h3,
+.lb-info h3,
+.cart-header h3,
+.order-info h3,
+.footer-logo,
+.popup-heading,
+.cart-total {
+  font-family: 'Freeride', cursive !important;
+  font-weight: normal !important;
+}
+
 @font-face {
     font-family: 'Freeride';
     src: url('../fonts/Freeride.otf') format('opentype');
