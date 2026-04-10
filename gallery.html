@@ -4,26 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Картини - Asliceofartinyourlife</title>
-
     <link rel="stylesheet" href="css/reset.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   </head>
-
   <body>
-    <header>
-      <div style="display: flex; align-items: center; gap: 12px">
-        <a href="index.html">
-          <img src="images/Logo.png" style="height: 40px" />
-        </a>
+    <!-- HEADER -->
+    <header class="d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html"><img src="images/Logo.png" style="height:40px;" alt="logo" /></a>
         <h1>Asliceofartinyourlife</h1>
       </div>
-
-      <nav>
+      <nav class="d-flex align-items-center gap-1">
         <a href="index.html">Начало</a>
         <a href="gallery.html" class="active">Картини</a>
         <a href="prints.html">Принтове</a>
@@ -38,6 +32,8 @@
         <span class="cart-count" id="cart-count">0</span>
       </button>
     </header>
+
+    <!-- CART -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
@@ -47,15 +43,11 @@
       <ul id="cart-items"></ul>
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <a
-          href="order.html"
-          class="box box-pink"
-          style="display: block; text-align: center"
-          >Поръчай →</a
-        >
+        <a href="order.html" class="box box-pink d-block text-center">Поръчай →</a>
       </div>
     </div>
 
+    <!-- PAGE TITLE -->
     <section class="page-title">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -65,414 +57,199 @@
       </div>
     </section>
 
+    <!-- GALLERY GRID — Bootstrap row/col for responsive layout -->
     <section class="gallery-section">
-      <div class="artworks-grid">
-        <!-- 1 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting2.jpeg"
-              data-title="Girl with a pearl earring- 20x60 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p> <br>Портретна композиция, вдъхновена от класическата визия на момичето с перлената обица, пресъздадена в съвременен стил. Наситените цветове и изразителните форми придават дълбочина и емоционалност, а контрастите подчертават погледа и индивидуалността на образа."
-            />
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting2.jpeg" data-title="Girl with a pearl earring- 20x60 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Портретна композиция, вдъхновена от класическата визия на момичето с перлената обица, пресъздадена в съвременен стил." /></div>
           </div>
         </div>
 
-        <!-- 2 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting13.png"
-              data-title="Divine- 50x70 cm"
-              data-desc="<p><em>Акрил върху платно. </em></p> <br>Модерна поп-арт композиция, съчетаваща графични елементи, контрастни форми и ярки акценти. Централният женски образ е изразителен и емоционален, обграден от символи и урбанистични детайли, които създават усещане за движение, бунт и съвременна естетика."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting13.png" data-title="Divine- 50x70 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Модерна поп-арт композиция, съчетаваща графични елементи, контрастни форми и ярки акценти." /></div>
           </div>
         </div>
 
-        <!-- 3 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting5.jpeg"
-              data-title="Pastel Veil of Love- 50 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p> <br> Нежна композиция в пастелни тонове, която създава усещане за мекота, топлина и романтика. Плавните цветови преходи и деликатните форми обгръщат зрителя като воал, носещ чувство за любов, спокойствие и хармония.."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting5.jpeg" data-title="Pastel Veil of Love- 50 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Нежна композиция в пастелни тонове, която създава усещане за мекота, топлина и романтика." /></div>
           </div>
         </div>
 
-        <!-- 4 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting6.png"
-              data-title="Special- 30x40 cm"
-              data-desc="<p><em>Акрил върху платно. </em></p> <br>Стилизирана попарт картина, изобразяваща женски портрет, наподобяващ Marilyn Monroe. Фигурата е изградена с черни контури, колажни елементи и пръски боя. Фонът с червени точки създава силен контраст. Композицията съчетава попарт и стрийт арт естетика."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting6.png" data-title="Special- 30x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Стилизирана попарт картина, изобразяваща женски портрет, наподобяващ Marilyn Monroe." /></div>
           </div>
         </div>
 
-        <!-- 5 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting9.png"
-              data-title="Vroom- 50x70 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p> <br>Стилизирана попарт композиция с колажен характер, включваща женски портрет, наподобяващ Betty Boop. В творбата са изобразени елементи от Formula One и боулинг – състезателен автомобил, кегли и топка. Фонът с точков мотив и графити текст „VROOM" създава усещане за движение и динамика. Композицията съчетава попарт и стрийт арт естетика."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting9.png" data-title="Vroom- 50x70 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Стилизирана попарт композиция с колажен характер, включваща женски портрет, наподобяващ Betty Boop." /></div>
           </div>
         </div>
 
-        <!-- 6 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting10.png"
-              data-title="Between Petal and Fruit- 50x70 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината изобразява стилизирана ваза със зелени клонки и портокали, подредени в спокойна и хармонична композиция. Ярките цветове и меките форми създават усещане за уют, лекота и тиха радост. "
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting10.png" data-title="Between Petal and Fruit- 50x70 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината изобразява стилизирана ваза със зелени клонки и портокали." /></div>
           </div>
         </div>
 
-        <!-- 7 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting11.png"
-              data-title="Love- 50x70 cm"
-              data-desc="<p><em>Акрил върху платно. </em></p><br>Картината е ярък и емоционален колаж от символи и стилове, който съчетава улично изкуство с нежност. Контрастът между графити елементи, каска и смели цветове и милата сцена с двете зайчета, които се докосват, създава усещане за любов, уязвимост и вътрешен свят зад външната „броня". Тя е специална, защото съчетава сила и мекота в едно – като малка история за близост, скрита сред шума на модерния живот."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting11.png" data-title="Love- 50x70 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Ярък и емоционален колаж от символи и стилове, съчетаващ улично изкуство с нежност." /></div>
           </div>
         </div>
 
-        <!-- 8 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting15.png"
-              data-title="Candy- 50x60 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината е динамичен и провокативен колаж, изпълнен с контрасти и енергия. Агресивни образи като черната пантера и спортната кола се сблъскват с игриви и носталгични елементи, създавайки усещане за хаос, движение и градска култура. Тя е специална, защото улавя напрежението между сила и уязвимост, между бунт и поп естетика – като визуален пулс на съвременния свят."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting15.png" data-title="Candy- 50x60 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Динамичен и провокативен колаж, изпълнен с контрасти и енергия." /></div>
           </div>
         </div>
 
-        <!-- 9 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting14.png"
-              data-title="The Little Swan's Lullaby- 10x10 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Нежна и спокойна композиция, изобразяваща лебед, който носи усещане за тишина и крехка красота, а светлосивият фон подчертава чистотата и мекотата на формите. Тя е специална, защото създава усещане за покой и деликатна хармония-като тих момент на уединение и вътрешен мир."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting14.png" data-title="The Little Swan's Lullaby- 10x10 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Нежна и спокойна композиция, изобразяваща лебед." /></div>
           </div>
         </div>
 
-        <!-- 10 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting22.png"
-              data-title="Break the habit- 70 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината изобразява супергерой, който символично се противопоставя на тютюнопушенето. На заден план има знак за забрана, а графити надписът подсилва посланието. Силните контрастни цветове правят творбата въздействаща и насочват вниманието към идеята за здравословен начин на живот."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting22.png" data-title="Break the habit- 70 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината изобразява супергерой, който символично се противопоставя на тютюнопушенето." /></div>
           </div>
         </div>
 
-        <!-- 11 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting16.png"
-              data-title="Orchids - 30x40 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картина, изобразяваща орхидеи в стил, който съчетава реалистични детайли с абстрактни елементи. Ярките цветове и динамичните форми придават усещане за живот и движение, а контрастът между меките цветя и графичните линии създава визуален интерес и хармония."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting16.png" data-title="Orchids - 30x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картина, изобразяваща орхидеи в стил, съчетаващ реалистични детайли с абстрактни елементи." /></div>
           </div>
         </div>
 
-        <!-- 12 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting17.png"
-              data-title="Yin and yang- 50 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината изобразява две котета – черно и бяло – седнали едно до друго и гледащи към нощно небе, вдъхновено от стила на „Звездна нощ“. Те символизират Ин и Ян – противоположните, но допълващи се сили в природата. Фонът е изпълнен с динамични вихрови линии и ярки контрастни цветове, които създават движение и дълбочина. Композицията и съчетанието на цветове внушават усещане за баланс, хармония и спокойствие."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting17.png" data-title="Yin and yang- 50 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината изобразява две котета – черно и бяло – вдъхновено от стила на „Звездна нощ"." /></div>
           </div>
         </div>
 
-        <!-- 13 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting18.png"
-              data-title="Butterflies in Bloom- 30x40 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината изобразява две пеперуди, носещи се свободно в нежно розово небе с меки облаци. Контрастът между тъмните крила с ярки жълти акценти и пастелния фон създава усещане за лекота и елегантност. Декоративните перлени елементи придават допълнителна дълбочина и изисканост. Композицията внушава спокойствие, свобода и красотата на кратките, но ценни моменти в природата."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting18.png" data-title="Butterflies in Bloom- 30x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината изобразява две пеперуди, носещи се свободно в нежно розово небе." /></div>
           </div>
         </div>
 
-        <!-- 14 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting19.png"
-              data-title="In the Margins of Time- 50x70 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината улавя деликатен момент на замисъл, сякаш героинята е застинала между спомен и мечта. Изрисувана в контрастни черно-бели линии, тя изпъква върху фон от пожълтели вестникарски страници — носители на отминали времена, забравени истории и тихи истини. Лекото накланяне на главата и докосването до косата ѝ излъчват едновременно уязвимост и увереност, като шепот от друга епоха. Миналото и настоящето се преплитат, а образът се превръща в символ на вечната женственост, запечатана между редовете на историята."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting19.png" data-title="In the Margins of Time- 50x70 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината улавя деликатен момент на замисъл, сякаш героинята е застинала между спомен и мечта." /></div>
           </div>
         </div>
 
-        <!-- 15 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting20.png"
-              data-title="I am my own muse- 30x40 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината съчетава скицов реализъм с ярък и динамичен фон, изпълнен с графити елементи и символи. В центъра стоят две фигури, потънали в мисли и дистанцирани една от друга, което създава усещане за вътрешна изолация. Около тях цветният хаос носи енергия и напрежение, напомняйки за шума на съвременния свят и култура. Надписът „I am my own muse“ подчертава основното послание — търсенето на идентичност и вдъхновение отвътре, въпреки външното влияние. Картината говори за баланса между вътрешния свят и заобикалящата реалност."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting20.png" data-title="I am my own muse- 30x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината съчетава скицов реализъм с ярък фон, изпълнен с графити елементи." /></div>
           </div>
         </div>
 
-        <!-- 16 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting21.png"
-              data-title="Consumer Culture- 50x70 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината представя съвременен свят, доминиран от брандове, символи и материални желания. Централната фигура изглежда безлична и откъсната, сякаш изгубена сред култа към статус и пари. Контрастът между монохромния персонаж и ярките лога подчертава вътрешната празнота зад външния блясък. Произведението поставя въпрос за истинската стойност на идентичността в общество, водено от потребление и имидж."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting21.png" data-title="Consumer Culture- 50x70 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината представя съвременен свят, доминиран от брандове, символи и материални желания." /></div>
           </div>
         </div>
 
-        <!-- 17 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting25.png"
-              data-title="Saffron- 40x50 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината е в графити и поп арт стил. Изобразен е мъж в профил с цигара, до странна анимационна фигура с големи очи. Над тях пише „GAME OVER“ със стичаща се боя, отляво – „HATE“, а долу – „BOYS“. Цветовете са ярки и контрастни, създаващи усещане за хаос и напрежение."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting25.png" data-title="Saffron- 40x50 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината е в графити и поп арт стил. Изобразен е мъж в профил с цигара." /></div>
           </div>
         </div>
 
-        <!-- 18 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting26.png"
-              data-title="Kendrick- 30x40 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината двъхновена от албума на изпълнителя <strong> Kendrick Lamar</strong> в минималистичен графити стил с черно-бяла цветова гама. Изобразени са две стилизирани лица с корони, напомнящи улично изкуство. Над тях има надпис „Kendrick“ в груб, ръчно изписан стил. Общото усещане е сурово, контрастно и вдъхновено от хип-хоп културата."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting26.png" data-title="Kendrick- 30x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Картината двъхновена от албума на изпълнителя <strong>Kendrick Lamar</strong> в минималистичен графити стил." /></div>
           </div>
         </div>
 
-        <!-- 19 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting27.png"
-              data-title="Armed with a smile- 40x40 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината представлява модерна, поп-арт композиция с ярки цветове и силно изразено емоционално внушение. В центъра е изобразена жена със стилизирани черти – къса тъмна коса, подчертани устни и сълзи, стичащи се от очите ѝ. Основното послание е изписано с големи, графити-подобни букви: “ARMED WITH A SMILE” („Въоръжена с усмивка“). Думата SMILE е особено подчертана – обемна, бяла и динамична, сякаш контрастира с тъжното изражение на жената. Стилът е съвременен и експресивен, с влияние от уличното изкуство и поп културата."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting27.png" data-title="Armed with a smile- 40x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Модерна, поп-арт композиция с ярки цветове и силно изразено емоционално внушение." /></div>
           </div>
         </div>
 
-        <!-- 20 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting28.png"
-              data-title="Wasted- 30x40 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината „Wasted“ представлява ярка и въздействаща композиция в поп арт стил. В центъра е изобразена жена с изразителни черти – светла кожа, подчертани очи и наситено червило, която гледа директно към зрителя с уверен поглед. Фонът е изпълнен с ярки, контрастни цветове и графити елементи, включително надпис „WASTED“ в големи, бели букви, които сякаш се стичат надолу. Стилът е динамичен и експресивен, съчетаващ уличното изкуство с поп културата, като създава силно визуално въздействие и предава усещане за бунт и индивидуалност."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting28.png" data-title="Wasted- 30x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Ярка и въздействаща композиция в поп арт стил." /></div>
           </div>
         </div>
 
-        <!-- 21 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting29.png"
-              data-title="Not yours never was-50x70 cm "
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Картината е ярък поп арт колаж, съчетаващ различни образи – двойка, черепи, анимационни герои и символи. Цветовете са наситени, а композицията – динамична и хаотична. В долната част е изобразена женска фигура, напомняща класически холивудски стил, която прави жест с ръка, сякаш представя или подчертава случващото се около нея. До нея се вижда анимационен персонаж, напомнящ за поп културата, което внася контраст между невинност и по-дълбоки, тъмни теми."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting29.png" data-title="Not yours never was- 50x70 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Ярък поп арт колаж, съчетаващ различни образи – двойка, черепи, анимационни герои и символи." /></div>
           </div>
         </div>
 
-        <!-- 22 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting30.png"
-              data-title="Reckless- 40x40 cm "
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Изображението представлява наслагване от различни елементи – лист с математически задачи, тъмни абстрактни форми и част от цветна илюстрация. Композицията изглежда фрагментирана и леко размазана, което създава усещане за хаос и движение. Контрастът между строгия текст и артистичните изображения подсилва напрежението в сцената. Цветовете варират от приглушени тъмни тонове до ярки акценти. Общото внушение е за смесване на реалност и въображение."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting30.png" data-title="Reckless- 40x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Наслагване от различни елементи – лист с математически задачи, тъмни абстрактни форми." /></div>
           </div>
         </div>
 
-        <!-- 23 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting31.png"
-              data-title="ALL CAPS- 30x40 cm"
-              data-desc="<p><em>Акрил върху платно.</em></p><br>Свежа цветова комбинация."
-            />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card">
+            <div class="artwork-img"><img src="images/painting31.png" data-title="ALL CAPS- 30x40 cm" data-desc="<p><em>Акрил върху платно.</em></p><br>Свежа цветова комбинация." /></div>
           </div>
         </div>
 
-        <!-- 24 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting32.png"
-              data-title="Картина 24"
-              data-desc="Текстурна игра."
-            />
-          </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting32.png" data-title="Картина 24" data-desc="Текстурна игра." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting33.png" data-title="Картина 25" data-desc="Мек минимализъм." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting34.png" data-title="Картина 26" data-desc="Абстрактен баланс." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting35.png" data-title="Картина 27" data-desc="Емоционално изразяване." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting36.png" data-title="Картина 28" data-desc="Флуидни форми." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting37.png" data-title="Картина 29" data-desc="Енергичен стил." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting38.png" data-title="Картина 30" data-desc="Лека и ефирна композиция." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting39.png" data-title="Картина 31" data-desc="Модерен абстрактен дизайн." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting40.png" data-title="Картина 32" data-desc="Геометричен стил." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting41.png" data-title="Картина 33" data-desc="Изразителна цветова гама." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting42.png" data-title="Картина 34" data-desc="Съвременен стил." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/painting43.png" data-title="Картина 35" data-desc="Финален акцент на колекцията." /></div></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="artwork-card"><div class="artwork-img"><img src="images/david.jpeg" data-title="Limited- 50x70 cm" data-desc="Завършващ акцент на галерията." /></div></div>
         </div>
 
-        <!-- 25 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting33.png"
-              data-title="Картина 25"
-              data-desc="Мек минимализъм."
-            />
-          </div>
-        </div>
-
-        <!-- 26 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting34.png"
-              data-title="Картина 26"
-              data-desc="Абстрактен баланс."
-            />
-          </div>
-        </div>
-
-        <!-- 27 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting35.png"
-              data-title="Картина 27"
-              data-desc="Емоционално изразяване."
-            />
-          </div>
-        </div>
-
-        <!-- 28 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting36.png"
-              data-title="Картина 28"
-              data-desc="Флуидни форми."
-            />
-          </div>
-        </div>
-
-        <!-- 29 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting37.png"
-              data-title="Картина 29"
-              data-desc="Енергичен стил."
-            />
-          </div>
-        </div>
-
-        <!-- 30 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting38.png"
-              data-title="Картина 30"
-              data-desc="Лека и ефирна композиция."
-            />
-          </div>
-        </div>
-
-        <!-- 31 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting39.png"
-              data-title="Картина 31"
-              data-desc="Модерен абстрактен дизайн."
-            />
-          </div>
-        </div>
-
-        <!-- 32 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting40.png"
-              data-title="Картина 32"
-              data-desc="Геометричен стил."
-            />
-          </div>
-        </div>
-
-        <!-- 33 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting41.png"
-              data-title="Картина 33"
-              data-desc="Изразителна цветова гама."
-            />
-          </div>
-        </div>
-
-        <!-- 34 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting42.png"
-              data-title="Картина 34"
-              data-desc="Съвременен стил."
-            />
-          </div>
-        </div>
-
-        <!-- 35 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/painting43.png"
-              data-title="Картина 35"
-              data-desc="Финален акцент на колекцията."
-            />
-          </div>
-        </div>
-         <!-- 36 -->
-        <div class="artwork-card">
-          <div class="artwork-img">
-            <img
-              src="images/david.jpeg"
-              data-title="Limited- 50x70 cm"
-              data-desc="Завършващ акцент на галерията."
-            />
-        </div>
-      </div>
+      </div><!-- /row -->
     </section>
 
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
       <div class="lb-overlay" onclick="closeLightbox()"></div>
-
       <div class="lb-content">
         <div class="lb-img">
           <button class="lb-close" onclick="closeLightbox()">✕</button>
           <img id="lb-image" />
         </div>
-
         <div class="lb-info">
           <h3 id="lb-title"></h3>
           <div id="lb-desc"></div>
@@ -481,49 +258,47 @@
       </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <span class="footer-logo">Asliceofartinyourlife</span>
+      <p class="mb-0">&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
+      <div class="footer-social d-flex gap-3">
+        <a href="https://www.instagram.com/asliceofartinyourlife/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61578555131246" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       let currentItem = null;
-
       function openLightbox(src, title, desc) {
         currentItem = { src, title, desc };
-        document.getElementById("lb-image").src = src;
-        document.getElementById("lb-title").innerText = title;
-        document.getElementById("lb-desc").innerHTML = desc;
-
-        const btn = document.getElementById("lb-add-btn");
-        btn.textContent = "Добави в количката";
-        btn.style.background = "#1A1218";
-
-        document.getElementById("lightbox").classList.add("open");
-        document.body.style.overflow = "hidden";
+        document.getElementById('lb-image').src = src;
+        document.getElementById('lb-title').innerText = title;
+        document.getElementById('lb-desc').innerHTML = desc;
+        const btn = document.getElementById('lb-add-btn');
+        btn.textContent = 'Добави в количката'; btn.style.background = '#1A1218';
+        document.getElementById('lightbox').classList.add('open');
+        document.body.style.overflow = 'hidden';
       }
-
       function closeLightbox() {
-        document.getElementById("lightbox").classList.remove("open");
-        document.body.style.overflow = "";
-        currentItem = null;
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = ''; currentItem = null;
       }
-
-      document.getElementById("lb-add-btn").addEventListener("click", function () {
+      document.getElementById('lb-add-btn').addEventListener('click', function () {
         if (!currentItem) return;
-        const btn = this;
-        btn.textContent = "✓ Добавено!";
-        btn.style.background = "#D63484";
-        setTimeout(() => {
-          btn.textContent = "Добави в количката";
-          btn.style.background = "#1A1218";
-        }, 1800);
+        this.textContent = '✓ Добавено!'; this.style.background = '#D63484';
+        setTimeout(() => { this.textContent = 'Добави в количката'; this.style.background = '#1A1218'; }, 1800);
       });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLightbox();
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+      document.querySelectorAll('.artwork-card img').forEach(img => {
+        img.addEventListener('click', () => openLightbox(img.src, img.dataset.title, img.dataset.desc));
       });
-
-      document.querySelectorAll(".artwork-card img").forEach((img) => {
-        img.addEventListener("click", () => {
-          openLightbox(img.src, img.dataset.title, img.dataset.desc);
-        });
-      });
+      function toggleCart() {
+        document.getElementById('cart-sidebar').classList.toggle('open');
+        document.getElementById('cart-overlay').classList.toggle('open');
+      }
     </script>
   </body>
 </html>
