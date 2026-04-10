@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Поръчка</title>
+    <title>Поръчка - Asliceofartinyourlife</title>
     <link rel="stylesheet" href="css/reset.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -12,22 +17,22 @@
     />
   </head>
   <body>
-    <header>
-      <div style="display: flex; align-items: center; gap: 12px">
-        <a href="index.html">
-          <img
+    <!-- HEADER -->
+    <header class="d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html"
+          ><img
             src="images/Logo.png"
             alt="logo"
             style="height: 40px; width: auto; display: block"
-          />
-        </a>
+        /></a>
         <h1>Asliceofartinyourlife</h1>
       </div>
-      <nav>
+      <nav class="d-flex align-items-center gap-1">
         <a href="index.html">Начало</a>
         <a href="gallery.html">Картини</a>
         <a href="prints.html">Принтове</a>
-        <a href="order.html">Поръчка</a>
+        <a href="order.html" class="active">Поръчка</a>
         <a href="custom.html">Персонализирана картина</a>
         <a href="style.html">Стил</a>
         <a href="about.html">За мен</a>
@@ -39,6 +44,7 @@
       </button>
     </header>
 
+    <!-- CART -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
@@ -48,15 +54,13 @@
       <ul id="cart-items"></ul>
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <a
-          href="order.html"
-          class="box box-pink"
-          style="display: block; text-align: center"
+        <a href="order.html" class="box box-pink d-block text-center"
           >Поръчай →</a
         >
       </div>
     </div>
 
+    <!-- PAGE TITLE -->
     <section class="page-title">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -65,68 +69,83 @@
       </div>
     </section>
 
+    <!-- ORDER SECTION — Bootstrap row for two-column layout -->
     <section class="order-section">
-      <div class="order-info">
-        <h3>Как работи?</h3>
-        <p>Попълвате формата с данни за доставка</p>
-      </div>
-
-      <div class="order-form">
-        <form action="https://formspree.io/f/xpqwvlez" method="POST">
-          <input type="text" name="name" placeholder="Вашето име" required />
-          <input
-            type="email"
-            name="email"
-            placeholder="Вашият имейл"
-            required
-          />
-          <input type="city" name="city" placeholder="Град/село" required />
-          <input
-            type="post-code"
-            name="post-code"
-            placeholder="Пощенски код"
-            required
-          />
-          <select name="delivery-type" required>
-            <option value="">Изберете начин на доставка</option>
-            <option>BOX NOW: 1,02 € / 1,99 лв.</option>
-            <option>До адрес: 2,55 € / 4,99 лв.</option>
-            <option>Speedy – Офиси и Автомати: 2,55 € / 4,99 лв.</option>
-            <option>Еконт – Офиси и Еконтомати: 2,55 € / 4,99 лв.</option>
-            <option>
-              ЕКСПРЕСНА до Еконт – Офиси и Еконтомати: 5,11 € / 9,99 лв.
-            </option>
-          </select>
-          <select name="payment-type" required>
-            <option value="">Изберете начин на плащане</option>
-            <option>Наложен платеж</option>
-            <option>Плащане с карта</option>
-          </select>
-          <button type="submit" class="btn-submit">Поръчай</button>
-        </form>
+      <div class="row g-5 align-items-start">
+        <div class="col-12 col-md-6 order-info">
+          <h3>Как работи?</h3>
+          <p>Попълвате формата с данни за доставка</p>
+        </div>
+        <div class="col-12 col-md-6 order-form">
+          <form action="https://formspree.io/f/xpqwvlez" method="POST">
+            <input type="text" name="name" placeholder="Вашето име" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Вашият имейл"
+              required
+            />
+            <input type="text" name="city" placeholder="Град/село" required />
+            <input
+              type="text"
+              name="post-code"
+              placeholder="Пощенски код"
+              required
+            />
+            <select name="delivery-type" required>
+              <option value="">Изберете начин на доставка</option>
+              <option>BOX NOW: 1,02 € / 1,99 лв.</option>
+              <option>До адрес: 2,55 € / 4,99 лв.</option>
+              <option>Speedy – Офиси и Автомати: 2,55 € / 4,99 лв.</option>
+              <option>Еконт – Офиси и Еконтомати: 2,55 € / 4,99 лв.</option>
+              <option>
+                ЕКСПРЕСНА до Еконт – Офиси и Еконтомати: 5,11 € / 9,99 лв.
+              </option>
+            </select>
+            <select name="payment-type" required>
+              <option value="">Изберете начин на плащане</option>
+              <option>Наложен платеж</option>
+              <option>Плащане с карта</option>
+            </select>
+            <button type="submit" class="btn-submit">Поръчай</button>
+          </form>
+        </div>
       </div>
     </section>
-    <footer>
+
+    <!-- FOOTER -->
+    <footer
+      class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+    >
       <span class="footer-logo">Asliceofartinyourlife</span>
-      <p>&copy; 2026 Asliceofartinyourlife. Всички права запазени.</p>
-      <div class="footer-social">
+      <p class="mb-0">
+        &copy; 2026 Asliceofartinyourlife. Всички права запазени.
+      </p>
+      <div class="footer-social d-flex gap-3">
         <a
           href="https://www.instagram.com/asliceofartinyourlife/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-        >
-          <i class="bi bi-instagram"></i>
-        </a>
+          ><i class="bi bi-instagram"></i
+        ></a>
         <a
           href="https://www.facebook.com/profile.php?id=61578555131246"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
-        >
-          <i class="bi bi-facebook"></i>
-        </a>
+          ><i class="bi bi-facebook"></i
+        ></a>
       </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function toggleCart() {
+        document.getElementById("cart-sidebar").classList.toggle("open");
+        document.getElementById("cart-overlay").classList.toggle("open");
+      }
+    </script>
   </body>
 </html>
