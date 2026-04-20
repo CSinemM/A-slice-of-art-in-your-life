@@ -1763,3 +1763,106 @@ img {
 .lb-add-btn:hover {
     background: #D63484;
 }
+
+/* ── HAMBURGER BUTTON ── */
+.burger-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.burger-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #1A1218;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* animate to X when open */
+.burger-btn.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-btn.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── MOBILE NAV DRAWER ── */
+.mobile-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ── GALLERY GRID FIX ── */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .art img,
+  .art-card img {
+    border-radius: 8px;
+  }
+
+  .art h3,
+  .art-card h3 {
+    font-size: 1rem;
+  }
+}
+
+/* ── MOBILE BREAKPOINT FOR NAV ── */
+@media (max-width: 900px) {
+  .burger-btn {
+    display: flex;
+  }
+
+  /* hide the desktop nav */
+  nav.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1A1218;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px;
+    gap: 8px;
+    z-index: 99;
+  }
+
+  nav.mobile-nav.open {
+    display: flex;
+  }
+
+  nav.mobile-nav a {
+    font-size: 1.4rem;
+    color: rgba(245, 240, 232, 0.6) !important;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.08);
+    width: 100%;
+    border-radius: 0;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    background: transparent !important;
+  }
+
+  nav.mobile-nav a:hover,
+  nav.mobile-nav a.active {
+    color: #FF9BD2 !important;
+    background: transparent !important;
+  }
+}

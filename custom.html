@@ -28,7 +28,16 @@
         /></a>
         <h1>Asliceofartinyourlife</h1>
       </div>
-      <nav class="d-flex align-items-center gap-1">
+      <button
+        class="burger-btn"
+        id="burger-btn"
+        onclick="toggleMenu()"
+        aria-label="Меню"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="mobile-nav" id="mobile-nav">
         <a href="index.html">Начало</a>
         <a href="gallery.html">Картини</a>
         <a href="prints.html">Принтове</a>
@@ -155,6 +164,10 @@
       function toggleCart() {
         document.getElementById("cart-sidebar").classList.toggle("open");
         document.getElementById("cart-overlay").classList.toggle("open");
+      }
+      function toggleMenu() {
+        document.getElementById("mobile-nav").classList.toggle("open");
+        document.getElementById("burger-btn").classList.toggle("open");
       }
     </script>
   </body>
