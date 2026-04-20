@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Принтове - Asliceofartinyourlife</title>
     <link rel="stylesheet" href="css/reset.css" />
-    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -31,27 +30,73 @@
       <button
         class="burger-btn"
         id="burger-btn"
-        onclick="toggleMenu()"
+        onclick="openNav()"
         aria-label="Меню"
       >
         <span></span><span></span><span></span>
       </button>
-
-      <nav class="mobile-nav" id="mobile-nav">
-        <a href="index.html">Начало</a>
-        <a href="gallery.html">Картини</a>
-        <a href="prints.html" class="active">Принтове</a>
-        <a href="order.html">Поръчка</a>
-        <a href="custom.html">Персонализирана картина</a>
-        <a href="style.html">Стил</a>
-        <a href="about.html">За мен</a>
-        <a href="contact.html">Контакти</a>
-      </nav>
       <button class="cart-toggle" onclick="toggleCart()">
         <i class="bi bi-bag-heart"></i>
         <span class="cart-count" id="cart-count">0</span>
       </button>
     </header>
+
+    <!-- FULLSCREEN NAV OVERLAY -->
+    <div class="nav-overlay" id="nav-overlay">
+      <div class="nav-overlay-header">
+        <span class="nav-overlay-brand">Asliceofartinyourlife</span>
+        <button
+          class="nav-close-btn"
+          onclick="closeNav()"
+          aria-label="Затвори"
+        ></button>
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html"
+          >Начало <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="gallery.html"
+          >Картини <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link active" href="prints.html"
+          >Принтове <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="order.html"
+          >Поръчка <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="custom.html"
+          >Персонализирана картина <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="style.html"
+          >Стил <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="about.html"
+          >За мен <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="contact.html"
+          >Контакти <span class="nav-link-arrow">→</span></a
+        >
+      </nav>
+      <div class="nav-footer">
+        <div class="nav-footer-label">Последвай ме</div>
+        <div class="nav-social-row">
+          <a
+            class="nav-social-btn"
+            href="https://www.instagram.com/asliceofartinyourlife/"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a
+            class="nav-social-btn"
+            href="https://www.facebook.com/profile.php?id=61578555131246"
+            target="_blank"
+            aria-label="Facebook"
+            ><i class="bi bi-facebook"></i
+          ></a>
+        </div>
+      </div>
+    </div>
 
     <!-- CART -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
@@ -79,7 +124,6 @@
       </div>
     </section>
 
-    <!-- PRINTS GRID — Bootstrap row/col -->
     <section class="prints-section">
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
@@ -89,7 +133,8 @@
                 src="images/painting2.jpeg"
                 alt="Принт №01"
                 data-title="Girl with a pearl earring"
-                data-desc="<p><em>21×30 cm · €50.</em></p><br>Принт от оригиналната творба, вдъхновена от класическата визия на момичето с перлената обица."
+                data-desc="<p><em>21×30 cm · €50.</em></p><br>Принт от оригиналната творба."
+                data-price="50"
               />
             </div>
             <div class="print-card-row">
@@ -101,7 +146,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -110,6 +154,7 @@
                 alt="Принт №02"
                 data-title="Divine"
                 data-desc="<p><em>21×30 cm · €35.</em></p><br>Принт от оригиналната модерна поп-арт композиция."
+                data-price="35"
               />
             </div>
             <div class="print-card-row">
@@ -121,7 +166,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -130,6 +174,7 @@
                 alt="Принт №03"
                 data-title="Pastel Veil of Love"
                 data-desc="<p><em>50 cm · €50.</em></p><br>Нежна композиция в пастелни тонове."
+                data-price="50"
               />
             </div>
             <div class="print-card-row">
@@ -141,7 +186,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -149,7 +193,8 @@
                 src="images/painting9.png"
                 alt="Принт №04"
                 data-title="Vroom"
-                data-desc="<p><em>50×70 cm · €170.</em></p><br>Стилизирана попарт композиция с Betty Boop, Formula One и боулинг."
+                data-desc="<p><em>50×70 cm · €170.</em></p><br>Стилизирана попарт композиция с Betty Boop и Formula One."
+                data-price="170"
               />
             </div>
             <div class="print-card-row">
@@ -161,7 +206,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -170,6 +214,7 @@
                 alt="Принт №05"
                 data-title="Between Petal and Fruit"
                 data-desc="<p><em>50×70 cm · €150.</em></p><br>Стилизирана ваза със зелени клонки и портокали."
+                data-price="150"
               />
             </div>
             <div class="print-card-row">
@@ -181,7 +226,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -190,6 +234,7 @@
                 alt="Принт №06"
                 data-title="Love"
                 data-desc="<p><em>50×70 cm · €35.</em></p><br>Ярък и емоционален колаж от символи и стилове."
+                data-price="35"
               />
             </div>
             <div class="print-card-row">
@@ -201,7 +246,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -210,6 +254,7 @@
                 alt="Принт №07"
                 data-title="Candy"
                 data-desc="<p><em>50×60 cm · €50.</em></p><br>Динамичен и провокативен колаж с черна пантера и спортна кола."
+                data-price="50"
               />
             </div>
             <div class="print-card-row">
@@ -221,7 +266,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -230,6 +274,7 @@
                 alt="Принт №08"
                 data-title="The Little Swan's Lullaby"
                 data-desc="<p><em>10×10 cm · €50.</em></p><br>Нежна и спокойна композиция, изобразяваща лебед."
+                data-price="50"
               />
             </div>
             <div class="print-card-row">
@@ -241,7 +286,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -250,6 +294,7 @@
                 alt="Принт №09"
                 data-title="Orchids"
                 data-desc="<p><em>30×40 cm · €50.</em></p><br>Деликатна цветна композиция с орхидеи."
+                data-price="50"
               />
             </div>
             <div class="print-card-row">
@@ -261,7 +306,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -270,6 +314,7 @@
                 alt="Принт №10"
                 data-title="Yin and Yang"
                 data-desc="<p><em>50×70 cm · €120.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="120"
               />
             </div>
             <div class="print-card-row">
@@ -281,7 +326,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -290,6 +334,7 @@
                 alt="Принт №11"
                 data-title="Butterflies in Bloom"
                 data-desc="<p><em>50×70 cm · €40.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="40"
               />
             </div>
             <div class="print-card-row">
@@ -301,7 +346,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -310,6 +354,7 @@
                 alt="Принт №12"
                 data-title="In the Margins of Time"
                 data-desc="<p><em>30×40 cm · €50.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="50"
               />
             </div>
             <div class="print-card-row">
@@ -321,7 +366,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -330,6 +374,7 @@
                 alt="Принт №13"
                 data-title="I am my own muse"
                 data-desc="<p><em>40×40 cm · €140.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="140"
               />
             </div>
             <div class="print-card-row">
@@ -341,7 +386,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -350,6 +394,7 @@
                 alt="Принт №14"
                 data-title="Consumer Culture"
                 data-desc="<p><em>50×70 cm · €100.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="100"
               />
             </div>
             <div class="print-card-row">
@@ -361,7 +406,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -370,6 +414,7 @@
                 alt="Принт №15"
                 data-title="Break the Habit"
                 data-desc="<p><em>50×70 cm · €200.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="200"
               />
             </div>
             <div class="print-card-row">
@@ -381,7 +426,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -390,6 +434,7 @@
                 alt="Meanwhile"
                 data-title="Meanwhile"
                 data-desc="<p><em>30×30 cm · €100.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="100"
               />
             </div>
             <div class="print-card-row">
@@ -409,6 +454,7 @@
                 alt="David"
                 data-title="David"
                 data-desc="<p><em>50x70 cm · €150.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="150"
               />
             </div>
             <div class="print-card-row">
@@ -421,13 +467,14 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="print-card  h-100">
+          <div class="print-card h-100">
             <div class="print-thumb">
               <img
                 src="images/painting6.png"
                 alt="Special"
                 data-title="Special"
                 data-desc="<p><em>30x40 cm · €50.</em></p><br>Авторски принт в ограничен тираж."
+                data-price="50"
               />
             </div>
             <div class="print-card-row">
@@ -437,8 +484,9 @@
               </div>
               <span class="print-price">€50</span>
             </div>
+          </div>
+        </div>
       </div>
-      <!-- /row -->
     </section>
 
     <!-- LIGHTBOX -->
@@ -483,42 +531,48 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/cart.js"></script>
     <script>
-      let currentItem = null;
+      function openNav() {
+        document.getElementById("nav-overlay").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeNav() {
+        document.getElementById("nav-overlay").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeNav();
+          closeLightbox();
+        }
+      });
 
+      function toggleCart() {
+        document.getElementById("cart-sidebar").classList.toggle("open");
+        document.getElementById("cart-overlay").classList.toggle("open");
+      }
+
+      let currentItem = null;
       function openLightbox(src, title, desc, price = 0) {
         currentItem = { src, title, desc, price };
-
         document.getElementById("lb-image").src = src;
         document.getElementById("lb-title").innerText = title;
         document.getElementById("lb-desc").innerHTML = desc;
-
         const btn = document.getElementById("lb-add-btn");
         btn.textContent = "Добави в количката";
         btn.style.background = "#1A1218";
-
         document.getElementById("lightbox").classList.add("open");
         document.body.style.overflow = "hidden";
       }
-
       function closeLightbox() {
         document.getElementById("lightbox").classList.remove("open");
         document.body.style.overflow = "";
         currentItem = null;
       }
-
-      // ESC closes lightbox
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLightbox();
-      });
-
-      // Open lightbox on image click (FIXED SELECTOR)
       document.querySelectorAll(".print-thumb img").forEach((img) => {
         img.style.cursor = "pointer";
-
         img.addEventListener("click", () =>
           openLightbox(
             img.src,
@@ -528,31 +582,22 @@
           ),
         );
       });
-
-      // Add to cart
       document
         .getElementById("lb-add-btn")
         .addEventListener("click", function () {
           if (!currentItem) return;
-
           addToCart({
             title: currentItem.title,
             image: currentItem.src,
             price: Number(currentItem.price) || 0,
           });
-
           this.textContent = "✓ Добавено!";
           this.style.background = "#D63484";
-
           setTimeout(() => {
             this.textContent = "Добави в количката";
             this.style.background = "#1A1218";
           }, 1500);
         });
-      function toggleMenu() {
-        document.getElementById("mobile-nav").classList.toggle("open");
-        document.getElementById("burger-btn").classList.toggle("open");
-      }
     </script>
   </body>
 </html>

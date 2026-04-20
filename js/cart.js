@@ -86,3 +86,15 @@ function toggleCart() {
 document.addEventListener("DOMContentLoaded", () => {
   updateCartUI();
 });
+function openNav() {
+  document.getElementById('nav-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeNav() {
+  document.getElementById('nav-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close with ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeNav();
+});

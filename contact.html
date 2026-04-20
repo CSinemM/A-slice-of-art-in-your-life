@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Контакти - Asliceofartinyourlife</title>
     <link rel="stylesheet" href="css/reset.css" />
-    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -31,27 +30,73 @@
       <button
         class="burger-btn"
         id="burger-btn"
-        onclick="toggleMenu()"
+        onclick="openNav()"
         aria-label="Меню"
       >
         <span></span><span></span><span></span>
       </button>
-
-      <nav class="mobile-nav" id="mobile-nav">
-        <a href="index.html">Начало</a>
-        <a href="gallery.html">Картини</a>
-        <a href="prints.html">Принтове</a>
-        <a href="order.html">Поръчка</a>
-        <a href="custom.html">Персонализирана картина</a>
-        <a href="style.html">Стил</a>
-        <a href="about.html">За мен</a>
-        <a href="contact.html" class="active">Контакти</a>
-      </nav>
       <button class="cart-toggle" onclick="toggleCart()">
         <i class="bi bi-bag-heart"></i>
         <span class="cart-count" id="cart-count">0</span>
       </button>
     </header>
+
+    <!-- FULLSCREEN NAV OVERLAY -->
+    <div class="nav-overlay" id="nav-overlay">
+      <div class="nav-overlay-header">
+        <span class="nav-overlay-brand">Asliceofartinyourlife</span>
+        <button
+          class="nav-close-btn"
+          onclick="closeNav()"
+          aria-label="Затвори"
+        ></button>
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html"
+          >Начало <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="gallery.html"
+          >Картини <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="prints.html"
+          >Принтове <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="order.html"
+          >Поръчка <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="custom.html"
+          >Персонализирана картина <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="style.html"
+          >Стил <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link" href="about.html"
+          >За мен <span class="nav-link-arrow">→</span></a
+        >
+        <a class="nav-link active" href="contact.html"
+          >Контакти <span class="nav-link-arrow">→</span></a
+        >
+      </nav>
+      <div class="nav-footer">
+        <div class="nav-footer-label">Последвай ме</div>
+        <div class="nav-social-row">
+          <a
+            class="nav-social-btn"
+            href="https://www.instagram.com/asliceofartinyourlife/"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a
+            class="nav-social-btn"
+            href="https://www.facebook.com/profile.php?id=61578555131246"
+            target="_blank"
+            aria-label="Facebook"
+            ><i class="bi bi-facebook"></i
+          ></a>
+        </div>
+      </div>
+    </div>
 
     <!-- CART -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
@@ -79,7 +124,6 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION — Bootstrap row for two-column layout -->
     <section class="order-section">
       <div class="row g-5 align-items-start">
         <div class="col-12 col-md-6 order-info">
@@ -136,16 +180,22 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+      function openNav() {
+        document.getElementById("nav-overlay").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeNav() {
+        document.getElementById("nav-overlay").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeNav();
+      });
       function toggleCart() {
         document.getElementById("cart-sidebar").classList.toggle("open");
         document.getElementById("cart-overlay").classList.toggle("open");
-      }
-      function toggleMenu() {
-        document.getElementById("mobile-nav").classList.toggle("open");
-        document.getElementById("burger-btn").classList.toggle("open");
       }
     </script>
   </body>
