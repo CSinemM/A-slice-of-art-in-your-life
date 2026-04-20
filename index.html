@@ -170,8 +170,17 @@
         <p class="popup-sub">
           абонирайте се и получете отстъпка за Вашата първа поръчка :)
         </p>
-        <input type="email" placeholder="Вашият имейл..." class="popup-input" />
-        <button class="popup-btn" onclick="handleSubscribe()">
+        <input
+          type="email"
+          id="emailInput"
+          placeholder="Вашият имейл..."
+          class="popup-input"
+        />
+        <button
+          type="button"
+          class="popup-btn"
+          onclick="handleSubscribe(event)"
+        >
           ВЗЕМЕТЕ ОТСТЪПКА
         </button>
         <button
@@ -228,17 +237,29 @@
         document.getElementById("myPopup").style.display = "flex";
       }, 3000);
       function handleSubscribe() {
+        const email = document.getElementById("emailInput").value.trim();
+
+        // ако няма имейл не прави нищо
+        if (email === "") {
+          document.getElementById("emailInput").style.borderColor = "red";
+          return;
+        }
+
         const popup = document.getElementById("popupContent");
 
         popup.innerHTML = `
     <img src="images/popup.png" class="popup-success-img">
   `;
 
-        // затваря popup-а след 3 секунди
         setTimeout(() => {
           document.getElementById("myPopup").style.display = "none";
         }, 3000);
       }
+      document
+        .getElementById("emailInput")
+        .addEventListener("input", function () {
+          this.style.borderColor = "";
+        });
     </script>
   </body>
 </html>
