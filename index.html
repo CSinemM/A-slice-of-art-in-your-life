@@ -158,7 +158,7 @@
 
     <!-- POPUP -->
     <div id="myPopup" class="popup-overlay">
-      <div class="popup">
+      <div class="popup" id="popupContent">
         <button
           class="popup-close"
           onclick="document.getElementById('myPopup').style.display = 'none'"
@@ -171,7 +171,7 @@
           абонирайте се и получете отстъпка за Вашата първа поръчка :)
         </p>
         <input type="email" placeholder="Вашият имейл..." class="popup-input" />
-        <button class="popup-btn" onclick="alert('Абонирахте се успешно!!')">
+        <button class="popup-btn" onclick="handleSubscribe()">
           ВЗЕМЕТЕ ОТСТЪПКА
         </button>
         <button
@@ -227,6 +227,18 @@
       setTimeout(function () {
         document.getElementById("myPopup").style.display = "flex";
       }, 3000);
+      function handleSubscribe() {
+        const popup = document.getElementById("popupContent");
+
+        popup.innerHTML = `
+    <img src="images/popup.png" class="popup-success-img">
+  `;
+
+        // затваря popup-а след 3 секунди
+        setTimeout(() => {
+          document.getElementById("myPopup").style.display = "none";
+        }, 3000);
+      }
     </script>
   </body>
 </html>
