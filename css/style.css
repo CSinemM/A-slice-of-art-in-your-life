@@ -1902,3 +1902,53 @@ img {
   transition: background 0.2s;
 }
 .nav-social-btn:hover { background: rgba(214, 52, 132, 0.2); color: #FF9BD2; }
+
+/* Desktop nav - visible on large screens */
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.desktop-nav a {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #2D1F2B;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+
+.desktop-nav a:hover {
+  background-color: rgba(214, 52, 132, 0.1);
+  color: #D63484;
+}
+
+.desktop-nav a.active {
+  background-color: #1A1218;
+  color: #F5F0E8;
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
+/* Hide burger on desktop */
+@media (min-width: 901px) {
+  .burger-btn {
+    display: none;
+  }
+}
