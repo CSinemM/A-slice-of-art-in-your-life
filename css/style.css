@@ -1794,7 +1794,7 @@ img {
 .nav-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: #df7ca2;
+  background:  #e09b6a;
   z-index: 200;
   display: flex;
   flex-direction: column;
@@ -1869,9 +1869,9 @@ img {
 }
 
 .nav-link.active {
-  background: #e14895;
+  background: #f29654;
   color: #F5F0E8;
-  border-color: #D63484;
+  border-color: #f38435;
 }
 .nav-link-arrow { opacity: 0.4; transition: opacity 0.2s; }
 .nav-link:hover .nav-link-arrow,
@@ -1951,5 +1951,47 @@ img {
 @media (min-width: 901px) {
   .burger-btn {
     display: none;
+  }
+}
+@media (max-width: 700px) {
+  .lb-content {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100vw;
+    max-height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+    border-radius: 0;
+  }
+
+  .lb-img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    flex-shrink: 0;
+  }
+
+  .lb-img img {
+    max-height: 55dvh;
+    object-fit: contain;
+    background: #111;
+  }
+
+  .lb-close {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .lb-info {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px 20px 36px;
+    flex-shrink: 0;
   }
 }
