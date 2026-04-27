@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Принтове - Asliceofartinyourlife</title>
+    <title>Принтове – Asliceofartinyourlife</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link
       rel="stylesheet"
@@ -16,10 +16,12 @@
     />
   </head>
   <body>
-    <!-- HEADER -->
-    <header class="d-flex align-items-center justify-content-between">
-      <!-- LEFT: logo + title -->
-      <div class="d-flex align-items-center gap-3" style="flex-shrink: 0">
+    <!-- HEADER
+         Bootstrap: d-flex align-items-center justify-content-between px-4 px-md-5 py-3 -->
+    <header
+      class="d-flex align-items-center justify-content-between px-4 px-md-5 py-3"
+    >
+      <div class="d-flex align-items-center gap-3 flex-shrink-0">
         <a href="index.html">
           <img
             src="images/Logo.png"
@@ -29,9 +31,8 @@
         </a>
         <h1>Asliceofartinyourlife</h1>
       </div>
-
-      <!-- CENTER: desktop nav -->
-      <nav class="desktop-nav">
+      <!-- Desktop nav — Bootstrap d-none d-lg-flex hides on mobile -->
+      <nav class="desktop-nav d-none d-lg-flex align-items-center">
         <a href="index.html">Начало</a>
         <a href="gallery.html">Картини</a>
         <a href="prints.html" class="active">Принтове</a>
@@ -41,12 +42,10 @@
         <a href="about.html">За мен</a>
         <a href="contact.html">Контакти</a>
       </nav>
-
-      <!-- RIGHT: burger (mobile only) + cart -->
-      <div class="d-flex align-items-center gap-2" style="flex-shrink: 0">
+      <div class="d-flex align-items-center gap-2 flex-shrink-0">
+        <!-- Burger — Bootstrap d-lg-none keeps it mobile-only -->
         <button
-          class="burger-btn"
-          id="burger-btn"
+          class="burger-btn d-lg-none"
           onclick="openNav()"
           aria-label="Меню"
         >
@@ -59,7 +58,7 @@
       </div>
     </header>
 
-    <!-- FULLSCREEN NAV OVERLAY -->
+    <!-- MOBILE NAV OVERLAY -->
     <div class="nav-overlay" id="nav-overlay">
       <div class="nav-overlay-header">
         <span class="nav-overlay-brand">Asliceofartinyourlife</span>
@@ -97,7 +96,8 @@
       </nav>
       <div class="nav-footer">
         <div class="nav-footer-label">Последвай ме</div>
-        <div class="nav-social-row">
+        <!-- Bootstrap: d-flex gap-2 -->
+        <div class="d-flex gap-2">
           <a
             class="nav-social-btn"
             href="https://www.instagram.com/asliceofartinyourlife/"
@@ -116,7 +116,7 @@
       </div>
     </div>
 
-    <!-- CART -->
+    <!-- CART SIDEBAR -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
@@ -126,14 +126,27 @@
       <ul id="cart-items"></ul>
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <a href="order.html" class="box box-pink d-block text-center"
-          >Поръчай →</a
-        >
+        <!-- Bootstrap: d-flex gap-2 -->
+        <div class="d-flex gap-2">
+          <a
+            href="order.html"
+            class="box box-pink flex-fill text-center"
+            style="padding: 10px"
+            >Поръчай</a
+          >
+          <a
+            href="custom.html"
+            class="box box-pink flex-fill text-center"
+            style="padding: 10px; font-size: 0.65rem"
+            >Поръчай персонализирана картина</a
+          >
+        </div>
       </div>
     </div>
 
-    <!-- PAGE TITLE -->
-    <section class="page-title">
+    <!-- PAGE TITLE
+         Bootstrap: position-relative overflow-hidden px-4 px-md-5 -->
+    <section class="page-title position-relative overflow-hidden px-4 px-md-5">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="page-title-inner">
@@ -142,7 +155,9 @@
       </div>
     </section>
 
-    <section class="prints-section">
+    <!-- PRINTS GRID
+         Bootstrap: py-5 px-4 px-md-5 / row g-4 / col-12 col-md-6 col-lg-4 -->
+    <section class="py-5 px-4 px-md-5">
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
@@ -155,7 +170,7 @@
                 data-price="50"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Girl with a pearl earring</h3>
                 <p>21×30 cm</p>
@@ -164,6 +179,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -175,7 +191,7 @@
                 data-price="35"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Divine</h3>
                 <p>21×30 cm</p>
@@ -184,6 +200,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -195,7 +212,7 @@
                 data-price="50"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Pastel Veil of Love</h3>
                 <p>50 cm</p>
@@ -204,6 +221,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -215,15 +233,16 @@
                 data-price="170"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Vroom</h3>
-                <p>50x70 cm</p>
+                <p>50×70 cm</p>
               </div>
               <span class="print-price">€170</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -235,15 +254,16 @@
                 data-price="150"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Between Petal and Fruit</h3>
-                <p>50x70 cm</p>
+                <p>50×70 cm</p>
               </div>
               <span class="print-price">€150</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -255,15 +275,16 @@
                 data-price="35"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Love</h3>
-                <p>50x70 cm</p>
+                <p>50×70 cm</p>
               </div>
               <span class="print-price">€35</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -275,15 +296,16 @@
                 data-price="50"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Candy</h3>
-                <p>50x60 cm</p>
+                <p>50×60 cm</p>
               </div>
               <span class="print-price">€50</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -295,15 +317,16 @@
                 data-price="50"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>The Little Swan's Lullaby</h3>
-                <p>10x10 cm</p>
+                <p>10×10 cm</p>
               </div>
               <span class="print-price">€50</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -315,7 +338,7 @@
                 data-price="50"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Orchids</h3>
                 <p>30×40 cm</p>
@@ -324,6 +347,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -335,15 +359,16 @@
                 data-price="120"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Yin and Yang</h3>
-                <p>50x70 cm</p>
+                <p>50×70 cm</p>
               </div>
               <span class="print-price">€120</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -355,15 +380,16 @@
                 data-price="40"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Butterflies in Bloom</h3>
-                <p>50x70 cm</p>
+                <p>50×70 cm</p>
               </div>
               <span class="print-price">€40</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -375,15 +401,16 @@
                 data-price="50"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>In the Margins of Time</h3>
-                <p>30x40 cm</p>
+                <p>30×40 cm</p>
               </div>
               <span class="print-price">€50</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -395,15 +422,16 @@
                 data-price="140"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>I am my own muse</h3>
-                <p>40x40 cm</p>
+                <p>40×40 cm</p>
               </div>
               <span class="print-price">€140</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -415,15 +443,16 @@
                 data-price="100"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Consumer Culture</h3>
-                <p>50x70 cm</p>
+                <p>50×70 cm</p>
               </div>
               <span class="print-price">€100</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -435,15 +464,16 @@
                 data-price="200"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Break the Habit</h3>
-                <p>50x70 cm</p>
+                <p>50×70 cm</p>
               </div>
               <span class="print-price">€200</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -455,15 +485,16 @@
                 data-price="100"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Meanwhile</h3>
-                <p>30x30 cm</p>
+                <p>30×30 cm</p>
               </div>
               <span class="print-price">€100</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -471,19 +502,20 @@
                 src="images/david.jpeg"
                 alt="David"
                 data-title="David"
-                data-desc="<p><em>50x70 cm · €150.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="<p><em>50×70 cm · €150.</em></p><br>Авторски принт в ограничен тираж."
                 data-price="150"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>David</h3>
-                <p>50x70 cm</p>
+                <p>50×70 cm</p>
               </div>
               <span class="print-price">€150</span>
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
           <div class="print-card h-100">
             <div class="print-thumb">
@@ -491,20 +523,21 @@
                 src="images/painting6.png"
                 alt="Special"
                 data-title="Special"
-                data-desc="<p><em>30x40 cm · €50.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="<p><em>30×40 cm · €50.</em></p><br>Авторски принт в ограничен тираж."
                 data-price="50"
               />
             </div>
-            <div class="print-card-row">
+            <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h3>Special</h3>
-                <p>30x40 cm</p>
+                <p>30×40 cm</p>
               </div>
               <span class="print-price">€50</span>
             </div>
           </div>
         </div>
       </div>
+      <!-- /row -->
     </section>
 
     <!-- LIGHTBOX -->
@@ -513,7 +546,7 @@
       <div class="lb-content">
         <div class="lb-img">
           <button class="lb-close" onclick="closeLightbox()">✕</button>
-          <img id="lb-image" />
+          <img id="lb-image" alt="" />
         </div>
         <div class="lb-info">
           <h3 id="lb-title"></h3>
@@ -523,9 +556,10 @@
       </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER
+         Bootstrap: d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 -->
     <footer
-      class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+      class="d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 px-4 px-md-5 py-5"
     >
       <span class="footer-logo">Asliceofartinyourlife</span>
       <p class="mb-0">
@@ -551,71 +585,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/cart.js"></script>
-    <script>
-      function openNav() {
-        document.getElementById("nav-overlay").classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-      function closeNav() {
-        document.getElementById("nav-overlay").classList.remove("open");
-        document.body.style.overflow = "";
-      }
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          closeNav();
-          closeLightbox();
-        }
-      });
-
-      function toggleCart() {
-        document.getElementById("cart-sidebar").classList.toggle("open");
-        document.getElementById("cart-overlay").classList.toggle("open");
-      }
-
-      let currentItem = null;
-      function openLightbox(src, title, desc, price = 0) {
-        currentItem = { src, title, desc, price };
-        document.getElementById("lb-image").src = src;
-        document.getElementById("lb-title").innerText = title;
-        document.getElementById("lb-desc").innerHTML = desc;
-        const btn = document.getElementById("lb-add-btn");
-        btn.textContent = "Добави в количката";
-        btn.style.background = "#1A1218";
-        document.getElementById("lightbox").classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-      function closeLightbox() {
-        document.getElementById("lightbox").classList.remove("open");
-        document.body.style.overflow = "";
-        currentItem = null;
-      }
-      document.querySelectorAll(".print-thumb img").forEach((img) => {
-        img.style.cursor = "pointer";
-        img.addEventListener("click", () =>
-          openLightbox(
-            img.src,
-            img.dataset.title,
-            img.dataset.desc,
-            img.dataset.price || 0,
-          ),
-        );
-      });
-      document
-        .getElementById("lb-add-btn")
-        .addEventListener("click", function () {
-          if (!currentItem) return;
-          addToCart({
-            title: currentItem.title,
-            image: currentItem.src,
-            price: Number(currentItem.price) || 0,
-          });
-          this.textContent = "✓ Добавено!";
-          this.style.background = "#D63484";
-          setTimeout(() => {
-            this.textContent = "Добави в количката";
-            this.style.background = "#1A1218";
-          }, 1500);
-        });
-    </script>
   </body>
 </html>
