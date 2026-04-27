@@ -242,59 +242,275 @@
     <!-- ============================================================
      POPUP  –  newsletter / discount
      ============================================================ -->
-    <div id="myPopup" class="popup-overlay">
-      <div class="popup" id="popupContent">
-        <button
-          class="popup-close"
-          onclick="document.getElementById('myPopup').style.display = 'none'"
+    <!-- ============================================================
+     CHARITY TOAST  –  top-right, auto-dismisses
+     ============================================================ -->
+    <div
+      id="charityToast"
+      style="
+        position: fixed;
+        top: 80px;
+        right: 24px;
+        z-index: 1055;
+        width: 280px;
+        background: rgba(245, 240, 232, 0.97);
+        background-image: url(&quot;https://www.transparenttextures.com/patterns/cream-paper.png&quot;);
+        border: 1px solid rgba(214, 52, 132, 0.18);
+        border-radius: 16px;
+        padding: 16px 18px;
+        box-shadow: 0 8px 32px rgba(26, 18, 24, 0.12);
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        transform: translateX(120%);
+        transition:
+          transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.4s;
+        opacity: 0;
+      "
+    >
+      <div
+        style="
+          width: 36px;
+          height: 36px;
+          flex-shrink: 0;
+          background: #fff0f6;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+        "
+      >
+        🐾
+      </div>
+      <div>
+        <p
+          style="
+            font-family: &quot;Freeride&quot;, &quot;Georgia&quot;, serif;
+            font-size: 0.85rem;
+            color: #1a1218;
+            margin: 0 0 4px;
+            line-height: 1.2;
+          "
         >
-          ✕
-        </button>
-        <span class="popup-label">СПЕЦИАЛНО ЗА ВАС</span>
-        <h2 class="popup-heading">10% <span>ОТСТЪПКА</span></h2>
-        <p class="popup-sub">
-          абонирайте се и получете отстъпка за Вашата първа поръчка :)
+          Всяка покупка помага
         </p>
+        <p
+          style="
+            font-size: 0.72rem;
+            color: #7a5f70;
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 300;
+          "
+        >
+          Част от приходите отиват за бездомни животни
+        </p>
+      </div>
+      <button
+        onclick="closeCharityToast()"
+        style="
+          background: transparent;
+          border: none;
+          color: #b0909f;
+          font-size: 0.8rem;
+          cursor: pointer;
+          padding: 0;
+          flex-shrink: 0;
+          line-height: 1;
+        "
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- ============================================================
+     DISCOUNT CORNER POPUP  –  bottom-right, non-blocking
+     ============================================================ -->
+    <div
+      id="discountCorner"
+      style="
+        position: fixed;
+        bottom: 28px;
+        right: 24px;
+        z-index: 1055;
+        width: 300px;
+        background: rgba(245, 240, 232, 0.97);
+        background-image: url(&quot;https://www.transparenttextures.com/patterns/cream-paper.png&quot;);
+        border: 1px solid rgba(214, 52, 132, 0.22);
+        border-radius: 20px;
+        padding: 22px 22px 18px;
+        box-shadow: 0 12px 40px rgba(26, 18, 24, 0.14);
+        transform: translateY(120%);
+        transition:
+          transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.45s;
+        opacity: 0;
+      "
+    >
+      <button
+        onclick="closeDiscountCorner()"
+        style="
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          background: transparent;
+          border: none;
+          font-size: 0.8rem;
+          color: #b0909f;
+          cursor: pointer;
+          padding: 4px 6px;
+          border-radius: 100px;
+          transition: background 0.2s;
+        "
+        onmouseover="this.style.background = 'rgba(214,52,132,0.1)'"
+        onmouseout="this.style.background = 'transparent'"
+      >
+        ✕
+      </button>
+
+      <span
+        style="
+          font-size: 0.6rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #d63484;
+          font-weight: 500;
+          border: 1px solid #d63484;
+          padding: 2px 10px;
+          border-radius: 100px;
+          display: inline-block;
+          margin-bottom: 10px;
+        "
+        >СПЕЦИАЛНО ЗА ВАС</span
+      >
+
+      <p
+        style="
+          font-family: &quot;Freeride&quot;, &quot;Georgia&quot;, serif;
+          font-size: 1.9rem;
+          font-weight: normal;
+          color: #1a1218;
+          line-height: 1.05;
+          margin: 0 0 6px;
+        "
+      >
+        10% <span style="color: #d63484">ОТСТЪПКА</span>
+      </p>
+
+      <p
+        style="
+          font-size: 0.78rem;
+          color: #7a5f70;
+          font-weight: 300;
+          line-height: 1.5;
+          margin: 0 0 14px;
+        "
+      >
+        Абонирайте се за отстъпка при първа поръчка :)
+      </p>
+
+      <div id="discountCornerForm">
         <input
           type="email"
-          id="emailInput"
+          id="cornerEmailInput"
           placeholder="Вашият имейл..."
-          class="popup-input"
+          style="
+            display: block;
+            width: 100%;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(214, 52, 132, 0.25) !important;
+            border-radius: 10px !important;
+            font-family: &quot;DM Sans&quot;, sans-serif;
+            font-size: 0.82rem;
+            color: #1a1218;
+            outline: none;
+            box-sizing: border-box;
+          "
         />
-        <button type="button" class="popup-btn" onclick="handleSubscribe()">
+        <button
+          type="button"
+          onclick="handleCornerSubscribe()"
+          class="box"
+          style="width: 100%; padding: 11px 16px; font-size: 0.7rem"
+        >
           ВЗЕМЕТЕ ОТСТЪПКА
         </button>
-        <button
-          class="popup-skip"
-          onclick="document.getElementById('myPopup').style.display = 'none'"
+      </div>
+
+      <div
+        id="discountCornerSuccess"
+        style="display: none; text-align: center; padding: 8px 0"
+      >
+        <p
+          style="
+            font-family: &quot;Freeride&quot;, &quot;Georgia&quot;, serif;
+            font-size: 1.1rem;
+            color: #1a1218;
+            margin: 0;
+          "
         >
-          не желая отстъпка
-        </button>
+          Благодаря! 🎉
+        </p>
+        <p
+          style="
+            font-size: 0.75rem;
+            color: #7a5f70;
+            margin: 6px 0 0;
+            font-weight: 300;
+          "
+        >
+          Проверете имейла си за кода.
+        </p>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/cart.js"></script>
     <script>
-      // Popup
+      // Charity toast — появява се след 2 секунди, auto-hide след 10 секунди
       setTimeout(() => {
-        document.getElementById("myPopup").style.display = "flex";
+        const t = document.getElementById("charityToast");
+        t.style.transform = "translateX(0)";
+        t.style.opacity = "1";
+        setTimeout(() => closeCharityToast(), 10000);
       }, 3000);
 
-      function handleSubscribe() {
-        const email = document.getElementById("emailInput").value.trim();
+      function closeCharityToast() {
+        const t = document.getElementById("charityToast");
+        t.style.transform = "translateX(120%)";
+        t.style.opacity = "0";
+      }
+
+      // Discount corner popup — появява се след 3 секунди
+      setTimeout(() => {
+        const d = document.getElementById("discountCorner");
+        d.style.transform = "translateY(0)";
+        d.style.opacity = "1";
+      }, 3000);
+
+      function closeDiscountCorner() {
+        const d = document.getElementById("discountCorner");
+        d.style.transform = "translateY(120%)";
+        d.style.opacity = "0";
+      }
+
+      function handleCornerSubscribe() {
+        const email = document.getElementById("cornerEmailInput").value.trim();
+        const input = document.getElementById("cornerEmailInput");
         if (!email) {
-          document.getElementById("emailInput").style.borderColor = "red";
+          input.style.borderColor = "red";
           return;
         }
-        document.getElementById("popupContent").innerHTML =
-          `<img src="images/popup.png" class="popup-success-img" alt="Благодаря">`;
-        setTimeout(() => {
-          document.getElementById("myPopup").style.display = "none";
-        }, 3000);
+        document.getElementById("discountCornerForm").style.display = "none";
+        document.getElementById("discountCornerSuccess").style.display =
+          "block";
+        setTimeout(() => closeDiscountCorner(), 5000);
       }
+
       document
-        .getElementById("emailInput")
+        .getElementById("cornerEmailInput")
         .addEventListener("input", function () {
           this.style.borderColor = "";
         });
