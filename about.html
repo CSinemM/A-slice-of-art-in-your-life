@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>За мен – Asliceofartinyourlife</title>
+
     <link rel="stylesheet" href="css/reset.css" />
     <link
       rel="stylesheet"
@@ -15,9 +16,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
   </head>
+
   <body>
-    <!-- HEADER
-         Bootstrap: d-flex align-items-center justify-content-between px-4 px-md-5 py-3 -->
+    <!-- HEADER -->
     <header
       class="d-flex align-items-center justify-content-between px-4 px-md-5 py-3"
     >
@@ -31,6 +32,7 @@
         </a>
         <h1>Asliceofartinyourlife</h1>
       </div>
+
       <nav class="desktop-nav d-none d-lg-flex align-items-center">
         <a href="index.html">Начало</a>
         <a href="gallery.html">Картини</a>
@@ -41,6 +43,7 @@
         <a href="about.html" class="active">За мен</a>
         <a href="contact.html">Контакти</a>
       </nav>
+
       <div class="d-flex align-items-center gap-2 flex-shrink-0">
         <button
           class="burger-btn d-lg-none"
@@ -49,6 +52,7 @@
         >
           <span></span><span></span><span></span>
         </button>
+
         <button class="cart-toggle" onclick="toggleCart()">
           <i class="bi bi-bag-heart"></i>
           <span class="cart-count" id="cart-count">0</span>
@@ -56,7 +60,7 @@
       </div>
     </header>
 
-    <!-- MOBILE NAV OVERLAY -->
+    <!-- MOBILE NAV -->
     <div class="nav-overlay" id="nav-overlay">
       <div class="nav-overlay-header">
         <span class="nav-overlay-brand">Asliceofartinyourlife</span>
@@ -66,112 +70,60 @@
           aria-label="Затвори"
         ></button>
       </div>
+
       <nav class="nav-links">
-        <a class="nav-link" href="index.html"
-          >Начало <span class="nav-link-arrow">→</span></a
-        >
-        <a class="nav-link" href="gallery.html"
-          >Картини <span class="nav-link-arrow">→</span></a
-        >
-        <a class="nav-link" href="prints.html"
-          >Принтове <span class="nav-link-arrow">→</span></a
-        >
-        <a class="nav-link" href="order.html"
-          >Поръчка <span class="nav-link-arrow">→</span></a
-        >
-        <a class="nav-link" href="custom.html"
-          >Персонализирана картина <span class="nav-link-arrow">→</span></a
-        >
-        <a class="nav-link" href="style.html"
-          >Стил <span class="nav-link-arrow">→</span></a
-        >
-        <a class="nav-link active" href="about.html"
-          >За мен <span class="nav-link-arrow">→</span></a
-        >
-        <a class="nav-link" href="contact.html"
-          >Контакти <span class="nav-link-arrow">→</span></a
-        >
+        <a class="nav-link" href="index.html">Начало →</a>
+        <a class="nav-link" href="gallery.html">Картини →</a>
+        <a class="nav-link" href="prints.html">Принтове →</a>
+        <a class="nav-link" href="order.html">Поръчка →</a>
+        <a class="nav-link" href="custom.html">Персонализирана картина →</a>
+        <a class="nav-link" href="style.html">Стил →</a>
+        <a class="nav-link active" href="about.html">За мен →</a>
+        <a class="nav-link" href="contact.html">Контакти →</a>
       </nav>
-      <div class="nav-footer">
-        <div class="nav-footer-label">Последвай ме</div>
-        <div class="d-flex gap-2">
-          <a
-            class="nav-social-btn"
-            href="https://www.instagram.com/asliceofartinyourlife/"
-            target="_blank"
-            aria-label="Instagram"
-            ><i class="bi bi-instagram"></i
-          ></a>
-          <a
-            class="nav-social-btn"
-            href="https://www.facebook.com/profile.php?id=61578555131246"
-            target="_blank"
-            aria-label="Facebook"
-            ><i class="bi bi-facebook"></i
-          ></a>
-        </div>
-      </div>
     </div>
 
-    <!-- CART SIDEBAR -->
-    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-    <div class="cart-sidebar" id="cart-sidebar">
-      <div class="cart-header">
-        <h3>Вашата количка</h3>
-        <button class="cart-close" onclick="toggleCart()">✕</button>
-      </div>
-      <ul id="cart-items"></ul>
-      <div class="cart-footer">
-        <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <div class="d-flex gap-2">
-          <a
-            href="order.html"
-            class="box box-pink flex-fill text-center"
-            style="padding: 10px"
-            >Поръчай</a
-          >
-          <a
-            href="custom.html"
-            class="box box-pink flex-fill text-center"
-            style="padding: 10px; font-size: 0.65rem"
-            >Поръчай персонализирана картина</a
-          >
-        </div>
-      </div>
-    </div>
-
-    <!-- PAGE TITLE
-         Bootstrap: position-relative overflow-hidden px-4 px-md-5 -->
+    <!-- PAGE TITLE -->
     <section class="page-title position-relative overflow-hidden px-4 px-md-5">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
+
       <div class="page-title-inner">
         <h2>За мен</h2>
         <p>човекът зад картините</p>
       </div>
     </section>
 
-    <!-- ABOUT STRIP
-         Bootstrap: py-5 px-4 px-md-5 / row g-5 align-items-center / col-12 col-md-6 -->
+    <!-- ABOUT SECTION (UPDATED) -->
     <section class="py-5 px-4 px-md-5">
       <div class="about-strip">
         <div class="row g-5 align-items-center">
-          <div class="col-12 col-md-6">
+          <!-- IMAGE LEFT -->
+          <div class="col-12 col-md-4 text-center">
+            <img
+              src="images/about.jpeg"
+              alt="SH"
+              class="about-image img-fluid"
+            />
+          </div>
+
+          <!-- TEXT RIGHT -->
+          <div class="col-12 col-md-8">
             <span class="about-strip-label">За художничката</span>
             <h2>Аз съм SH —<br />самоука<br />художничка.</h2>
-          </div>
-          <div class="col-12 col-md-6 about-strip-text">
-            <p>
-              Здравейте! Аз съм SH – самоука художничка с голяма любов към
-              изкуството. Още от малка рисуването е моят начин да изразявам
-              емоции, мечти и малките истории от въображението ми. Всяка картина
-              е частица от мен и съм много щастлива, че мога да я споделя с вас.
-            </p>
-            <p>
-              Моят стил е предимно mixed media и pop art – обичам да
-              експериментирам с различни материали, текстури и ярки цветове.
-              Всяка картина носи собствено настроение и частица от моя свят.
-            </p>
+
+            <div class="about-strip-text">
+              <p>
+                Здравейте! Аз съм SH – самоука художничка с голяма любов към
+                изкуството. Още от малка рисуването е моят начин да изразявам
+                емоции, мечти и малките истории от въображението ми.
+              </p>
+              <p>
+                Моят стил е предимно mixed media и pop art – обичам да
+                експериментирам с различни материали, текстури и ярки цветове.
+                Всяка картина носи собствено настроение и частица от моя свят.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -182,24 +134,24 @@
       class="d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 px-4 px-md-5 py-5"
     >
       <span class="footer-logo">Asliceofartinyourlife</span>
+
       <p class="mb-0">
         &copy; 2026 Asliceofartinyourlife. Всички права запазени.
       </p>
+
       <div class="footer-social d-flex gap-3">
         <a
           href="https://www.instagram.com/asliceofartinyourlife/"
           target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          ><i class="bi bi-instagram"></i
-        ></a>
+        >
+          <i class="bi bi-instagram"></i>
+        </a>
         <a
           href="https://www.facebook.com/profile.php?id=61578555131246"
           target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          ><i class="bi bi-facebook"></i
-        ></a>
+        >
+          <i class="bi bi-facebook"></i>
+        </a>
       </div>
     </footer>
 
