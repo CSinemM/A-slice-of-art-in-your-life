@@ -16,10 +16,15 @@
     />
   </head>
   <body>
-    <!-- HEADER -->
-    <header class="d-flex align-items-center justify-content-between">
-      <!-- LEFT: logo + title -->
-      <div class="d-flex align-items-center gap-3" style="flex-shrink: 0">
+    <!-- ============================================================
+     HEADER
+     Bootstrap: d-flex align-items-center justify-content-between
+                px-4 px-md-5 py-3
+     ============================================================ -->
+    <header
+      class="d-flex align-items-center justify-content-between px-4 px-md-5 py-3"
+    >
+      <div class="d-flex align-items-center gap-3 flex-shrink-0">
         <a href="index.html">
           <img
             src="images/Logo.png"
@@ -30,8 +35,8 @@
         <h1>Asliceofartinyourlife</h1>
       </div>
 
-      <!-- CENTER: desktop nav -->
-      <nav class="desktop-nav">
+      <!-- Desktop nav — Bootstrap d-none d-lg-flex hides on mobile -->
+      <nav class="desktop-nav d-none d-lg-flex align-items-center">
         <a href="index.html" class="active">Начало</a>
         <a href="gallery.html">Картини</a>
         <a href="prints.html">Принтове</a>
@@ -42,10 +47,10 @@
         <a href="contact.html">Контакти</a>
       </nav>
 
-      <!-- RIGHT: burger (mobile only) + cart -->
-      <div class="d-flex align-items-center gap-2" style="flex-shrink: 0">
+      <div class="d-flex align-items-center gap-2 flex-shrink-0">
+        <!-- Burger — Bootstrap d-lg-none keeps it mobile-only -->
         <button
-          class="burger-btn"
+          class="burger-btn d-lg-none"
           id="burger-btn"
           onclick="openNav()"
           aria-label="Меню"
@@ -58,7 +63,10 @@
         </button>
       </div>
     </header>
-    <!-- FULLSCREEN NAV OVERLAY -->
+
+    <!-- ============================================================
+     MOBILE NAV OVERLAY
+     ============================================================ -->
     <div class="nav-overlay" id="nav-overlay">
       <div class="nav-overlay-header">
         <span class="nav-overlay-brand">Asliceofartinyourlife</span>
@@ -96,7 +104,7 @@
       </nav>
       <div class="nav-footer">
         <div class="nav-footer-label">Последвай ме</div>
-        <div class="nav-social-row">
+        <div class="d-flex gap-2">
           <a
             class="nav-social-btn"
             href="https://www.instagram.com/asliceofartinyourlife/"
@@ -115,7 +123,9 @@
       </div>
     </div>
 
-    <!-- CART -->
+    <!-- ============================================================
+     CART SIDEBAR
+     ============================================================ -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
@@ -125,24 +135,27 @@
       <ul id="cart-items"></ul>
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <div class="d-flex gap-2 align-items-stretch">
+        <!-- Bootstrap: d-flex gap-2 -->
+        <div class="d-flex gap-2">
           <a
             href="order.html"
             class="box box-pink flex-fill text-center"
-            style="padding: 10px; word-break: break-word"
+            style="padding: 10px"
             >Поръчай</a
           >
           <a
             href="custom.html"
             class="box box-pink flex-fill text-center"
-            style="padding: 10px; word-break: break-word"
+            style="padding: 10px; font-size: 0.65rem"
             >Поръчай персонализирана картина</a
           >
         </div>
       </div>
     </div>
 
-    <!-- HERO -->
+    <!-- ============================================================
+     HERO
+     ============================================================ -->
     <section class="hero">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -159,51 +172,51 @@
       </div>
     </section>
 
-    <!-- FEATURED -->
-    <section class="featured">
+    <!-- ============================================================
+     FEATURED PAINTINGS
+     Bootstrap: py-5 px-4 px-md-5 / row g-4 / col-12 col-md-4
+     ============================================================ -->
+    <section class="py-5 px-4 px-md-5">
       <div class="section-header">
         <h2>Препоръчани<br />картини</h2>
         <a href="gallery.html" class="box box-pink">Виж всички →</a>
       </div>
-      <div class="row g-4 artworks-grid">
+      <div class="row g-4">
         <div class="col-12 col-md-4">
           <div class="artwork-card">
             <div class="artwork-img artwork-img-1">
-              <img src="images/painting13.png" alt="Картина 1" />
+              <img src="images/painting13.png" alt="Divine" />
             </div>
-            <div class="artwork-info">
-              <h3>Divine- 50x70 cm</h3>
-              <br />
-            </div>
+            <div class="artwork-info"><h3>Divine – 50x70 cm</h3></div>
           </div>
         </div>
         <div class="col-12 col-md-4">
           <div class="artwork-card">
             <div class="artwork-img artwork-img-2">
-              <img src="images/painting24.png" alt="Картина 2" />
+              <img src="images/painting24.png" alt="Meanwhile" />
             </div>
-            <div class="artwork-info">
-              <h3>Meanwhile- 50x70 cm</h3>
-              <br />
-            </div>
+            <div class="artwork-info"><h3>Meanwhile – 50x70 cm</h3></div>
           </div>
         </div>
         <div class="col-12 col-md-4">
           <div class="artwork-card">
             <div class="artwork-img artwork-img-3">
-              <img src="images/painting11.png" alt="Картина 3" />
+              <img src="images/painting11.png" alt="Love" />
             </div>
-            <div class="artwork-info">
-              <h3>Love- 50x70 cm</h3>
-              <br />
-            </div>
+            <div class="artwork-info"><h3>Love – 50x70 cm</h3></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="d-flex justify-content-between align-items-center">
+    <!-- ============================================================
+     FOOTER
+     Bootstrap: d-flex flex-column flex-md-row justify-content-between
+                align-items-center flex-wrap gap-3
+     ============================================================ -->
+    <footer
+      class="d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 px-4 px-md-5 py-5"
+    >
       <span class="footer-logo">Asliceofartinyourlife</span>
       <p class="mb-0">
         &copy; 2026 Asliceofartinyourlife. Всички права запазени.
@@ -226,7 +239,9 @@
       </div>
     </footer>
 
-    <!-- POPUP -->
+    <!-- ============================================================
+     POPUP  –  newsletter / discount
+     ============================================================ -->
     <div id="myPopup" class="popup-overlay">
       <div class="popup" id="popupContent">
         <button
@@ -259,68 +274,21 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart.js"></script>
     <script>
-      function openNav() {
-        document.getElementById("nav-overlay").classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-      function closeNav() {
-        document.getElementById("nav-overlay").classList.remove("open");
-        document.body.style.overflow = "";
-      }
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeNav();
-      });
-
-      let cart = [];
-      function addToCart(name, price) {
-        const existing = cart.find((i) => i.name === name);
-        if (existing) {
-          existing.qty += 1;
-        } else {
-          cart.push({ name, price, qty: 1 });
-        }
-        renderCart();
-        document.getElementById("cart-sidebar").classList.add("open");
-        document.getElementById("cart-overlay").classList.add("open");
-      }
-      function removeFromCart(index) {
-        cart.splice(index, 1);
-        renderCart();
-      }
-      function renderCart() {
-        const list = document.getElementById("cart-items");
-        const totalEl = document.getElementById("cart-total");
-        const countEl = document.getElementById("cart-count");
-        list.innerHTML = "";
-        let sum = 0,
-          count = 0;
-        cart.forEach((item, index) => {
-          sum += item.price * item.qty;
-          count += item.qty;
-          const li = document.createElement("li");
-          li.className = "cart-item";
-          li.innerHTML = `<div class="cart-item-info"><span class="cart-item-name">${item.name}</span><span class="cart-item-price">€${item.price} × ${item.qty}</span></div><button class="cart-item-remove" onclick="removeFromCart(${index})">✕</button>`;
-          list.appendChild(li);
-        });
-        totalEl.textContent = sum;
-        countEl.textContent = count;
-      }
-      function toggleCart() {
-        document.getElementById("cart-sidebar").classList.toggle("open");
-        document.getElementById("cart-overlay").classList.toggle("open");
-      }
+      // Popup
       setTimeout(() => {
         document.getElementById("myPopup").style.display = "flex";
       }, 3000);
+
       function handleSubscribe() {
         const email = document.getElementById("emailInput").value.trim();
-        if (email === "") {
+        if (!email) {
           document.getElementById("emailInput").style.borderColor = "red";
           return;
         }
         document.getElementById("popupContent").innerHTML =
-          `<img src="images/popup.png" class="popup-success-img">`;
+          `<img src="images/popup.png" class="popup-success-img" alt="Благодаря">`;
         setTimeout(() => {
           document.getElementById("myPopup").style.display = "none";
         }, 3000);

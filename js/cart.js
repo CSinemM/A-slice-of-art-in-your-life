@@ -1,91 +1,56 @@
-const CART_KEY = "art_cart";
+/* ================================================================
+   cart.js  –  Asliceofartinyourlife
+   Shared cart + lightbox logic. Include on every page AFTER
+   Bootstrap's JS bundle.
+================================================================ */
 
-/* -----------------------------
-   CART STORAGE
------------------------------- */
-function getCart() {
-  return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+let cart = [];
+
+/* ── ADD / REMOVE ─────────────────────────────────────────────── */
+function addToCart(title, price) {
+  const ex = cart.find(i => i.title === title);
+  if (ex) { ex.qty++; } else { cart.push({ title, price: Number(price) || 0, qty: 1 }); }
+  renderCart();
+  document.getElementById('cart-sidebar').classList.add('open');
+  document.getElementById('cart-overlay').classList.add('open');
 }
 
-function saveCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+function removeFromCart(idx) {
+  cart.splice(idx, 1);
+  renderCart();
 }
 
-/* -----------------------------
-   ADD ITEM
------------------------------- */
-function addToCart(item) {
-  const cart = getCart();
-
-  cart.push({
-    title: item.title,
-    src: item.src,
-    price: item.price || 0,
-  });
-
-  saveCart(cart);
-  updateCartUI();
-}
-
-/* -----------------------------
-   REMOVE ITEM
------------------------------- */
-function removeItem(index) {
-  const cart = getCart();
-  cart.splice(index, 1);
-  saveCart(cart);
-  updateCartUI();
-}
-
-/* -----------------------------
-   RENDER CART UI
------------------------------- */
-function updateCartUI() {
-  const cart = getCart();
-
-  const countEl = document.getElementById("cart-count");
-  const listEl = document.getElementById("cart-items");
-  const totalEl = document.getElementById("cart-total");
-
-  if (!countEl || !listEl || !totalEl) return;
-
-  countEl.innerText = cart.length;
-  listEl.innerHTML = "";
-
-  let total = 0;
-
-  cart.forEach((item, index) => {
-    const li = document.createElement("li");
-
+/* ── RENDER ───────────────────────────────────────────────────── */
+function renderCart() {
+  const list    = document.getElementById('cart-items');
+  const totalEl = document.getElementById('cart-total');
+  const countEl = document.getElementById('cart-count');
+  list.innerHTML = '';
+  let sum = 0, count = 0;
+  cart.forEach((item, i) => {
+    sum   += item.price * item.qty;
+    count += item.qty;
+    const li = document.createElement('li');
+    li.className = 'cart-item';
     li.innerHTML = `
-      <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;">
-        <span>${item.title}</span>
-        <button onclick="removeItem(${index})" style="background:none;border:none;color:red;font-size:18px;cursor:pointer;">✕</button>
+      <div>
+        <div class="cart-item-name">${item.title}</div>
+        <div class="cart-item-price">€${item.price} × ${item.qty}</div>
       </div>
-    `;
-
-    listEl.appendChild(li);
-
-    total += Number(item.price || 0);
+      <button class="cart-item-remove" onclick="removeFromCart(${i})">✕</button>`;
+    list.appendChild(li);
   });
-
-  totalEl.innerText = total;
+  totalEl.textContent = sum;
+  countEl.textContent = count;
 }
 
-/* -----------------------------
-   TOGGLE CART SIDEBAR
------------------------------- */
+/* ── TOGGLE SIDEBAR ───────────────────────────────────────────── */
 function toggleCart() {
-  document.getElementById("cart-sidebar")?.classList.toggle("open");
-  document.getElementById("cart-overlay")?.classList.toggle("open");
+  document.getElementById('cart-sidebar').classList.toggle('open');
+  document.getElementById('cart-overlay').classList.toggle('open');
 }
 
-/* -----------------------------
-   INIT ON LOAD
------------------------------- */
-document.addEventListener("DOMContentLoaded", () => {
-  updateCartUI();
-});
+/* ── MOBILE NAV ───────────────────────────────────────────────── */
 function openNav() {
   document.getElementById('nav-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -94,7 +59,64 @@ function closeNav() {
   document.getElementById('nav-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-// Close with ESC key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeNav();
+
+/* ── LIGHTBOX  (gallery.html uses this) ──────────────────────── */
+let _lbCurrent = null;
+
+function openLightbox(src, title, desc, price) {
+  _lbCurrent = { src, title, desc, price: Number(price) || 0 };
+  document.getElementById('lb-image').src          = src;
+  document.getElementById('lb-title').textContent  = title;
+  document.getElementById('lb-desc').innerHTML     = desc;
+  const btn = document.getElementById('lb-add-btn');
+  btn.textContent       = 'Добави в количката';
+  btn.style.background  = '#1A1218';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+  _lbCurrent = null;
+}
+
+/* ── GLOBAL KEY HANDLER ───────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeNav();
+    if (document.getElementById('lightbox')) closeLightbox();
+  }
+});
+
+/* ── WIRE UP lb-add-btn AFTER DOM READY ──────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const addBtn = document.getElementById('lb-add-btn');
+  if (addBtn) {
+    addBtn.addEventListener('click', function () {
+      if (!_lbCurrent) return;
+      addToCart(_lbCurrent.title, _lbCurrent.price);
+      this.textContent      = '✓ Добавено!';
+      this.style.background = '#D63484';
+      setTimeout(() => {
+        this.textContent      = 'Добави в количката';
+        this.style.background = '#1A1218';
+      }, 1500);
+    });
+  }
+
+  /* wire gallery image clicks */
+  document.querySelectorAll('.artwork-card img').forEach(img => {
+    img.addEventListener('click', () =>
+      openLightbox(img.src, img.dataset.title, img.dataset.desc, 0)
+    );
+  });
+
+  /* wire print thumbnail clicks */
+  document.querySelectorAll('.print-thumb img').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () =>
+      openLightbox(img.src, img.dataset.title, img.dataset.desc, img.dataset.price || 0)
+    );
+  });
 });
