@@ -16,8 +16,7 @@
     />
   </head>
   <body>
-    <!-- HEADER
-         Bootstrap: d-flex align-items-center justify-content-between px-4 px-md-5 py-3 -->
+    <!-- HEADER -->
     <header
       class="d-flex align-items-center justify-content-between px-4 px-md-5 py-3"
     >
@@ -95,14 +94,14 @@
       <div class="nav-footer">
         <div class="nav-footer-label">Последвай ме</div>
         <div class="d-flex gap-2">
-          <a
+          
             class="nav-social-btn"
             href="https://www.instagram.com/asliceofartinyourlife/"
             target="_blank"
             aria-label="Instagram"
             ><i class="bi bi-instagram"></i
           ></a>
-          <a
+          
             class="nav-social-btn"
             href="https://www.facebook.com/profile.php?id=61578555131246"
             target="_blank"
@@ -124,13 +123,13 @@
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
         <div class="d-flex gap-2">
-          <a
+          
             href="order.html"
             class="box box-pink flex-fill text-center"
             style="padding: 10px"
             >Поръчай</a
           >
-          <a
+          
             href="custom.html"
             class="box box-pink flex-fill text-center"
             style="padding: 10px; font-size: 0.65rem"
@@ -140,8 +139,7 @@
       </div>
     </div>
 
-    <!-- PAGE TITLE
-         Bootstrap: position-relative overflow-hidden px-4 px-md-5 -->
+    <!-- PAGE TITLE -->
     <section class="page-title position-relative overflow-hidden px-4 px-md-5">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -151,61 +149,190 @@
       </div>
     </section>
 
-    <!-- ORDER CONTENT
-         Bootstrap: py-5 px-4 px-md-5 / row g-5 align-items-start / col-12 col-md-6 -->
+    <!-- ORDER CONTENT -->
     <section class="order-section py-5 px-4 px-md-5">
       <div class="row g-5 align-items-start">
         <div class="col-12 col-md-6 order-info">
-          <h3>Как работи?</h3>
+          <h3>Как работи процесът?</h3>
+          <p>
+            Създаването на персонализирана картина е лесно и вълнуващо! Следвай
+            тези прости стъпки:
+          </p>
           <ol>
-            <li>Попълвате формата</li>
-            <li>Получавате цена и потвърждение</li>
-            <li>Изработка до 2–4 седмици</li>
+            <li>Избери стил и размер на платното</li>
+            <li>Изпрати ми своята снимка или идея</li>
+            <li>Получи първоначален скициран дизайн за одобрение</li>
+            <li>Направи промени, ако е необходимо</li>
+            <li>Аз създавам финалната картина за теб</li>
+            <li>Получаваш своето уникално произведение на изкуството!</li>
           </ol>
+          <p style="margin-top: 24px; font-size: 0.9rem; color: var(--text)">
+            Времето за изработка е между 1-2 седмици, в зависимост от
+            сложността. Всяка картина е ръчно рисувана с акрилни бои върху
+            качествено платно.
+          </p>
+          <div style="margin-top: 32px">
+            <p style="font-weight: 700; margin-bottom: 12px">Цени:</p>
+            <ul style="list-style: none; padding: 0">
+              <li style="margin-bottom: 8px">
+                📐 <strong>20x30 см</strong> – €35
+              </li>
+              <li style="margin-bottom: 8px">
+                📐 <strong>30x40 см</strong> – €55
+              </li>
+              <li style="margin-bottom: 8px">
+                📐 <strong>40x50 см</strong> – €75
+              </li>
+              <li style="margin-bottom: 8px">
+                📐 <strong>50x70 см</strong> – €95
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="col-12 col-md-6">
-          <form action="https://formspree.io/f/xpqwvlez" method="POST">
-            <input type="hidden" name="_subject" value="Нова поръчка" />
-            <input type="text" name="name" placeholder="Вашето име" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Вашият имейл"
-              required
-            />
-            <select name="size" required>
-              <option value="">Изберете размер</option>
-              <option>A4</option>
-              <option>A3</option>
-              <option>40x50 cm</option>
-            </select>
-            <select name="style" required>
-              <option value="">Изберете стил</option>
-              <option>Микс медия</option>
-              <option>Поп арт</option>
-              <option>Абстракт</option>
-            </select>
-            <input
-              type="text"
-              name="theme"
-              placeholder="Тема / мотив"
-              required
-            />
-            <textarea
-              name="description"
-              rows="5"
-              placeholder="Опишете вашата идея"
-              required
-            ></textarea>
-            <button type="submit" class="btn-submit">
-              Продължи с поръчката
-            </button>
+          <form id="custom-form">
+            <div class="mb-3">
+              <label for="name">Вашето име *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email">Имейл *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="mb-3">
+              <label for="size">Размер на платното *</label>
+              <select id="size" name="size" required>
+                <option value="">Избери размер</option>
+                <option value="20x30">20x30 см – €35</option>
+                <option value="30x40">30x40 см – €55</option>
+                <option value="40x50">40x50 см – €75</option>
+                <option value="50x70">50x70 см – €95</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="style">Предпочитан стил</label>
+              <select id="style" name="style">
+                <option value="">Избери стил</option>
+                <option value="pop-art">Поп арт</option>
+                <option value="abstract">Абстрактен</option>
+                <option value="realistic">Реалистичен</option>
+                <option value="minimalist">Минималистичен</option>
+                <option value="surreal">Сюрреалистичен</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="message">Опиши идеята си *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Разкажи ми повече за своята идея - какво искаш да видиш на картината, какви цветове предпочиташ, каква е целта на картината и т.н."
+                required
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="reference">
+                Прикачи референтни снимки
+                <small style="display: block; margin-top: 4px; color: var(--text-muted)">
+                  (По избор - можеш да изпратиш снимки и по имейл)
+                </small>
+              </label>
+              <input
+                type="file"
+                id="reference"
+                name="reference"
+                multiple
+                accept="image/*"
+                style="padding: 8px"
+              />
+            </div>
+            <button type="submit" class="btn-submit">Изпрати заявка</button>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- CUSTOMER REVIEWS SECTION -->
+    <section class="customer-reviews py-5 px-4 px-md-5">
+      <div class="section-header mb-5">
+        <h2>Какво мислят клиентите</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Review 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="review-card">
+            <div class="review-image-container">
+              <img src="images/custom_phone_cases.jpeg" alt="Персонализирани кейсове за телфон с избрани картини" class="review-image" />
+            </div>
+            <div class="review-content">
+              <div class="review-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="review-text">
+                "Абсолютно съм влюбена в кeйсовете! Дизайнът е точно както си го представях, а качеството надминава очакванията ми. Благодаря за страхотната работа!"
+              </p>
+              <p class="review-author">— Мария, София</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="review-card">
+            <div class="review-image-container">
+              <img src="images/custom_cases.jpeg" alt="Персонализирани кейсове за телфон с избрани картини" class="review-image" />
+            </div>
+            <div class="review-content">
+              <div class="review-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="review-text">
+                "Поръчах тези кейсове като подарък и получателят беше в екстаз! Уникалният дизайн и внимателното изпълнение наистина правят впечатление. Препоръчвам!"
+              </p>
+              <p class="review-author">— Георги, Пловдив</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="review-card">
+            <div class="review-image-container">
+              <img src="images/custom_painting.jpeg" alt="Персонализирана картина" class="review-image" />
+            </div>
+            <div class="review-content">
+              <div class="review-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="review-text">
+                "Комуникацията беше перфектна през целия процес. Получих точно това, което исках - красива, авторска картина с изключително качество. Определено ще поръчам отново!"
+              </p>
+              <p class="review-author">— Елена, Варна</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER
+         Bootstrap: d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 -->
     <footer
       class="d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 px-4 px-md-5 py-5"
     >
