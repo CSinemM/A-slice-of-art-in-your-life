@@ -71,7 +71,7 @@
 - CSS3
 - Bootstrap 5.3
 - JavaScript / jQuery
-- GitHub Pages (предполагам)
+- GitHub Pages
 
 **Интерактивни елементи:**
 
