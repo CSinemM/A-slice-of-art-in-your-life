@@ -16,11 +16,6 @@
     />
   </head>
   <body>
-    <!-- ============================================================
-     HEADER
-     Bootstrap: d-flex align-items-center justify-content-between
-                px-4 px-md-5 py-3
-     ============================================================ -->
     <header
       class="d-flex align-items-center justify-content-between px-4 px-md-5 py-3"
     >
@@ -35,7 +30,6 @@
         <h1>Asliceofartinyourlife</h1>
       </div>
 
-      <!-- Desktop nav — Bootstrap d-none d-lg-flex hides on mobile -->
       <nav class="desktop-nav d-none d-lg-flex align-items-center">
         <a href="index.html" class="active">Начало</a>
         <a href="gallery.html">Картини</a>
@@ -48,33 +42,20 @@
       </nav>
 
       <div class="d-flex align-items-center gap-2 flex-shrink-0">
-        <!-- Burger — Bootstrap d-lg-none keeps it mobile-only -->
-        <button
-          class="burger-btn d-lg-none"
-          id="burger-btn"
-          onclick="openNav()"
-          aria-label="Меню"
-        >
+        <button class="burger-btn d-lg-none" id="burger-btn" aria-label="Меню">
           <span></span><span></span><span></span>
         </button>
-        <button class="cart-toggle" onclick="toggleCart()">
+        <button class="cart-toggle">
           <i class="bi bi-bag-heart"></i>
           <span class="cart-count" id="cart-count">0</span>
         </button>
       </div>
     </header>
 
-    <!-- ============================================================
-     MOBILE NAV OVERLAY
-     ============================================================ -->
     <div class="nav-overlay" id="nav-overlay">
       <div class="nav-overlay-header">
         <span class="nav-overlay-brand">Asliceofartinyourlife</span>
-        <button
-          class="nav-close-btn"
-          onclick="closeNav()"
-          aria-label="Затвори"
-        ></button>
+        <button class="nav-close-btn" aria-label="Затвори"></button>
       </div>
       <nav class="nav-links">
         <a class="nav-link active" href="index.html"
@@ -123,14 +104,11 @@
       </div>
     </div>
 
-    <!-- ============================================================
-     CART SIDEBAR
-     ============================================================ -->
-    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
         <h3>Вашата количка</h3>
-        <button class="cart-close" onclick="toggleCart()">✕</button>
+        <button class="cart-close">✕</button>
       </div>
       <ul id="cart-items"></ul>
       <div class="cart-footer">
@@ -152,10 +130,6 @@
         </div>
       </div>
     </div>
-
-    <!-- ============================================================
-     HERO
-     ============================================================ -->
     <section class="hero">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -172,10 +146,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-     FEATURED PAINTINGS
-     Bootstrap: py-5 px-4 px-md-5 / row g-4 / col-12 col-md-4
-     ============================================================ -->
     <section class="py-5 px-4 px-md-5">
       <div class="section-header">
         <h2>Препоръчани<br />картини</h2>
@@ -209,11 +179,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-     FOOTER
-     Bootstrap: d-flex flex-column flex-md-row justify-content-between
-                align-items-center flex-wrap gap-3
-     ============================================================ -->
     <footer
       class="d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 px-4 px-md-5 py-5"
     >
@@ -239,12 +204,6 @@
       </div>
     </footer>
 
-    <!-- ============================================================
-     POPUP  –  newsletter / discount
-     ============================================================ -->
-    <!-- ============================================================
-     CHARITY TOAST  –  top-right, auto-dismisses
-     ============================================================ -->
     <div
       id="charityToast"
       style="
@@ -325,9 +284,6 @@
       </button>
     </div>
 
-    <!-- ============================================================
-     DISCOUNT CORNER POPUP  –  bottom-right, non-blocking
-     ============================================================ -->
     <div
       id="discountCorner"
       style="
@@ -468,6 +424,8 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart.js"></script>
     <script>
       // Charity toast — появява се след 2 секунди, auto-hide след 10 секунди
       setTimeout(() => {
