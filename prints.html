@@ -16,8 +16,6 @@
     />
   </head>
   <body>
-    <!-- HEADER
-         Bootstrap: d-flex align-items-center justify-content-between px-4 px-md-5 py-3 -->
     <header
       class="d-flex align-items-center justify-content-between px-4 px-md-5 py-3"
     >
@@ -31,7 +29,6 @@
         </a>
         <h1>Asliceofartinyourlife</h1>
       </div>
-      <!-- Desktop nav — Bootstrap d-none d-lg-flex hides on mobile -->
       <nav class="desktop-nav d-none d-lg-flex align-items-center">
         <a href="index.html">Начало</a>
         <a href="gallery.html">Картини</a>
@@ -43,7 +40,6 @@
         <a href="contact.html">Контакти</a>
       </nav>
       <div class="d-flex align-items-center gap-2 flex-shrink-0">
-        <!-- Burger — Bootstrap d-lg-none keeps it mobile-only -->
         <button
           class="burger-btn d-lg-none"
           onclick="openNav()"
@@ -57,8 +53,6 @@
         </button>
       </div>
     </header>
-
-    <!-- MOBILE NAV OVERLAY -->
     <div class="nav-overlay" id="nav-overlay">
       <div class="nav-overlay-header">
         <span class="nav-overlay-brand">Asliceofartinyourlife</span>
@@ -96,7 +90,6 @@
       </nav>
       <div class="nav-footer">
         <div class="nav-footer-label">Последвай ме</div>
-        <!-- Bootstrap: d-flex gap-2 -->
         <div class="d-flex gap-2">
           <a
             class="nav-social-btn"
@@ -115,8 +108,6 @@
         </div>
       </div>
     </div>
-
-    <!-- CART SIDEBAR -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
@@ -143,9 +134,6 @@
         </div>
       </div>
     </div>
-
-    <!-- PAGE TITLE
-         Bootstrap: position-relative overflow-hidden px-4 px-md-5 -->
     <section class="page-title position-relative overflow-hidden px-4 px-md-5">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -154,9 +142,6 @@
         <p>ограничен тираж</p>
       </div>
     </section>
-
-    <!-- PRINTS GRID
-         Bootstrap: py-5 px-4 px-md-5 / row g-4 / col-12 col-md-6 col-lg-4 -->
     <section class="py-5 px-4 px-md-5">
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
@@ -537,10 +522,8 @@
           </div>
         </div>
       </div>
-      <!-- /row -->
     </section>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
       <div class="lb-overlay" onclick="closeLightbox()"></div>
       <div class="lb-content">
@@ -555,9 +538,6 @@
         </div>
       </div>
     </div>
-
-    <!-- FOOTER
-         Bootstrap: d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 -->
     <footer
       class="d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 px-4 px-md-5 py-5"
     >

@@ -427,7 +427,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/cart.js"></script>
     <script>
-      // Charity toast — появява се след 2 секунди, auto-hide след 10 секунди
       setTimeout(() => {
         const t = document.getElementById("charityToast");
         t.style.transform = "translateX(0)";
@@ -440,8 +439,6 @@
         t.style.transform = "translateX(120%)";
         t.style.opacity = "0";
       }
-
-      // Discount corner popup — появява се след 3 секунди
       setTimeout(() => {
         const d = document.getElementById("discountCorner");
         d.style.transform = "translateY(0)";

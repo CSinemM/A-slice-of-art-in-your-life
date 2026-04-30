@@ -1033,7 +1033,7 @@ footer p { font-size: .8rem; color: rgba(245, 240, 232, .5); }
 
 .review-card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 1px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
