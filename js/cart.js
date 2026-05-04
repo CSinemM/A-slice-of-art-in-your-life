@@ -161,15 +161,15 @@ document.addEventListener('DOMContentLoaded', () => {
     cartOverlay.addEventListener('click', toggleCart);
   }
 
-  // Wire up cart close button
-  const cartClose = document.querySelector('.cart-close');
-  if (cartClose) {
-    cartClose.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleCart();
-    });
-  }
+  // // Wire up cart close button
+  // const cartClose = document.querySelector('.cart-close');
+  // if (cartClose) {
+  //   cartClose.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //     toggleCart();
+  //   });
+  // }
 
   // Wire up lightbox add button
   const addBtn = document.getElementById('lb-add-btn');
