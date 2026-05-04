@@ -93,7 +93,9 @@
 - Responsive burger menu
 
 **Bootstrap & Custom CSS:**
+
 Къде е използван Bootstrap 5.3:
+
 Структура и Grid система:
 
 - Container, row, col система за отзивчива подредба
