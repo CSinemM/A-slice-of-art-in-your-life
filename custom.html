@@ -182,49 +182,30 @@
         </div>
         <div class="col-12 col-md-6">
           <form id="custom-form">
-            <div class="mb-3">
-              <label for="name">Вашето име *</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="mb-3">
-              <label for="email">Имейл *</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="mb-3">
-              <label for="phone">Телефон</label>
-              <input type="tel" id="phone" name="phone" />
-            </div>
-            <div class="mb-3">
-              <label for="size">Размер на платното *</label>
-              <select id="size" name="size" required>
-                <option value="">Избери размер</option>
-                <option value="20x30">20x30 см – €35</option>
-                <option value="30x40">30x40 см – €55</option>
-                <option value="40x50">40x50 см – €75</option>
-                <option value="50x70">50x70 см – €95</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="style">Предпочитан стил</label>
-              <select id="style" name="style">
-                <option value="">Избери стил</option>
-                <option value="pop-art">Поп арт</option>
-                <option value="abstract">Абстрактен</option>
-                <option value="realistic">Реалистичен</option>
-                <option value="minimalist">Минималистичен</option>
-                <option value="surreal">Сюрреалистичен</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="message">Опиши идеята си *</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Разкажи ми повече за своята идея - какво искаш да видиш на картината, какви цветове предпочиташ, каква е целта на картината и т.н."
-                required
-              ></textarea>
-            </div>
+         <input type="text" name="name" placeholder="Вашето име" required />
+<input type="email" name="email" placeholder="Вашият имейл" required />
+<input type="tel" name="phone" placeholder="Телефон" />
+<select name="size" required>
+  <option value="">Избери размер</option>
+  <option value="20x30">20x30 см – €35</option>
+  <option value="30x40">30x40 см – €55</option>
+  <option value="40x50">40x50 см – €75</option>
+  <option value="50x70">50x70 см – €95</option>
+</select>
+<select name="style">
+  <option value="">Избери стил</option>
+  <option value="pop-art">Поп арт</option>
+  <option value="abstract">Абстрактен</option>
+  <option value="realistic">Реалистичен</option>
+  <option value="minimalist">Минималистичен</option>
+  <option value="surreal">Сюрреалистичен</option>
+</select>
+<textarea
+  name="message"
+  rows="5"
+  placeholder="Разкажи ми повече за своята идея - какво искаш да видиш на картината, какви цветове предпочиташ, каква е целта на картината и т.н."
+  required
+></textarea>
             <div class="mb-3">
               <label for="reference">
                 Прикачи референтни снимки
