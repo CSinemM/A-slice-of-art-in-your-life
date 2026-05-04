@@ -185,8 +185,6 @@ A-slice-of-art-in-your-life/
 ├── images/
 │   ├── Logo.png
 │   ├── about.jpeg
-│   ├── custom_*.jpeg
-│   ├── painting*.png/jpeg
 │   └── david.jpeg
 │
 └── README.md
