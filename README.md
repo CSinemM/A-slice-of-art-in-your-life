@@ -161,8 +161,9 @@ https://github.com/CSinemM/A-slice-of-art-in-your-life
 Live Website:
 https://csinemm.github.io/A-slice-of-art-in-your-life/
 
-## 7. Файлова структура:
+## 7. Файлова структура
 
+```
 A-slice-of-art-in-your-life/
 │
 ├── index.html
@@ -175,17 +176,18 @@ A-slice-of-art-in-your-life/
 ├── style.html
 │
 ├── css/
-│ ├── reset.css
-│ └── style.css
+│   ├── reset.css
+│   └── style.css
 │
 ├── js/
-│ └── cart.js
+│   └── cart.js
 │
 ├── images/
-│ ├── Logo.png
-│ ├── about.jpeg
-│ ├── custom\__.jpeg
-│ ├── painting_.png/jpeg
-│ └── david.jpeg
+│   ├── Logo.png
+│   ├── about.jpeg
+│   ├── custom_*.jpeg
+│   ├── painting*.png/jpeg
+│   └── david.jpeg
 │
 └── README.md
+```
