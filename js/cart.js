@@ -13,8 +13,7 @@ function addToCart(title, price) {
   if (ex) { ex.qty++; } else { cart.push({ title, price: Number(price) || 0, qty: 1 }); }
   saveCart();
   renderCart();
-  document.getElementById('cart-sidebar').classList.add('open');
-  document.getElementById('cart-overlay').classList.add('open');
+  openCart();
 }
 
 function removeFromCart(idx) {
@@ -33,9 +32,9 @@ function renderCart() {
   const list    = document.getElementById('cart-items');
   const totalEl = document.getElementById('cart-total');
   const countEl = document.getElementById('cart-count');
-  
+
   if (!list || !totalEl || !countEl) return;
-  
+
   list.innerHTML = '';
   let sum = 0, count = 0;
   cart.forEach((item, i) => {
@@ -55,13 +54,28 @@ function renderCart() {
   countEl.textContent = count;
 }
 
-/* ── TOGGLE SIDEBAR ───────────────────────────────────────────── */
-function toggleCart() {
+/* ── OPEN / CLOSE / TOGGLE CART ───────────────────────────────── */
+function openCart() {
   const sidebar = document.getElementById('cart-sidebar');
   const overlay = document.getElementById('cart-overlay');
-  if (sidebar && overlay) {
-    sidebar.classList.toggle('open');
-    overlay.classList.toggle('open');
+  if (sidebar) sidebar.classList.add('open');
+  if (overlay) overlay.classList.add('open');
+}
+
+function closeCart() {
+  const sidebar = document.getElementById('cart-sidebar');
+  const overlay = document.getElementById('cart-overlay');
+  if (sidebar) sidebar.classList.remove('open');
+  if (overlay) overlay.classList.remove('open');
+}
+
+function toggleCart() {
+  const sidebar = document.getElementById('cart-sidebar');
+  if (!sidebar) return;
+  if (sidebar.classList.contains('open')) {
+    closeCart();
+  } else {
+    openCart();
   }
 }
 
@@ -82,20 +96,20 @@ function closeNav() {
   }
 }
 
-/* ── LIGHTBOX  (gallery.html uses this) ──────────────────────── */
+/* ── LIGHTBOX  (gallery.html / prints.html use this) ─────────── */
 let _lbCurrent = null;
 
 function openLightbox(src, title, desc, price) {
   _lbCurrent = { src, title, desc, price: Number(price) || 0 };
   const lightbox = document.getElementById('lightbox');
   if (!lightbox) return;
-  
-  document.getElementById('lb-image').src          = src;
-  document.getElementById('lb-title').textContent  = title;
-  document.getElementById('lb-desc').innerHTML     = desc;
+
+  document.getElementById('lb-image').src         = src;
+  document.getElementById('lb-title').textContent = title;
+  document.getElementById('lb-desc').innerHTML    = desc;
   const btn = document.getElementById('lb-add-btn');
-  btn.textContent       = 'Добави в количката';
-  btn.style.background  = '#1A1218';
+  btn.textContent      = 'Добави в количката';
+  btn.style.background = '#1A1218';
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -103,7 +117,6 @@ function openLightbox(src, title, desc, price) {
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
   if (!lightbox) return;
-  
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
   _lbCurrent = null;
@@ -114,64 +127,48 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     closeNav();
     const lightbox = document.getElementById('lightbox');
-    if (lightbox && lightbox.classList.contains('open')) {
-      closeLightbox();
-    }
+    if (lightbox && lightbox.classList.contains('open')) closeLightbox();
+    const sidebar = document.getElementById('cart-sidebar');
+    if (sidebar && sidebar.classList.contains('open')) closeCart();
   }
 });
 
 /* ── INITIALIZE ON PAGE LOAD ─────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  // Render cart on page load
+
+  // Render cart badge + items on every page
   renderCart();
 
-  // Wire up burger menu button
-  const burgerBtn = document.querySelector('.burger-btn');
-  if (burgerBtn) {
-    burgerBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      openNav();
-    });
-  }
+  /* ---- NAV ---- */
+  // Burger button (works whether wired with onclick in HTML or not)
+  document.querySelectorAll('.burger-btn').forEach(btn => {
+    btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); openNav(); });
+  });
 
-  // Wire up nav close button
-  const navCloseBtn = document.querySelector('.nav-close-btn');
-  if (navCloseBtn) {
-    navCloseBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      closeNav();
-    });
-  }
+  // Nav close button
+  document.querySelectorAll('.nav-close-btn').forEach(btn => {
+    btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); closeNav(); });
+  });
 
-  // Wire up cart toggle button
-  const cartToggle = document.querySelector('.cart-toggle');
-  if (cartToggle) {
-    cartToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleCart();
-    });
-  }
+  /* ---- CART ---- */
+  // Cart toggle buttons (header button)
+  document.querySelectorAll('.cart-toggle').forEach(btn => {
+    btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); toggleCart(); });
+  });
 
-  // Wire up cart overlay close
+  // Cart close button (inside sidebar)
+  document.querySelectorAll('.cart-close').forEach(btn => {
+    btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); closeCart(); });
+  });
+
+  // Cart overlay click-outside to close
   const cartOverlay = document.getElementById('cart-overlay');
   if (cartOverlay) {
-    cartOverlay.addEventListener('click', toggleCart);
+    cartOverlay.addEventListener('click', closeCart);
   }
 
-  // // Wire up cart close button
-  // const cartClose = document.querySelector('.cart-close');
-  // if (cartClose) {
-  //   cartClose.addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     e.stopPropagation();
-  //     toggleCart();
-  //   });
-  // }
-
-  // Wire up lightbox add button
+  /* ---- LIGHTBOX ---- */
+  // Add-to-cart button inside lightbox
   const addBtn = document.getElementById('lb-add-btn');
   if (addBtn) {
     addBtn.addEventListener('click', function () {
@@ -186,26 +183,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Wire up lightbox overlay close
+  // Lightbox overlay close
   const lbOverlay = document.querySelector('.lb-overlay');
-  if (lbOverlay) {
-    lbOverlay.addEventListener('click', closeLightbox);
-  }
+  if (lbOverlay) lbOverlay.addEventListener('click', closeLightbox);
 
-  // Wire up lightbox close button
+  // Lightbox close button
   const lbClose = document.querySelector('.lb-close');
-  if (lbClose) {
-    lbClose.addEventListener('click', closeLightbox);
-  }
+  if (lbClose) lbClose.addEventListener('click', closeLightbox);
 
-  /* wire gallery image clicks */
+  // Wire gallery image clicks → lightbox
   document.querySelectorAll('.artwork-card img').forEach(img => {
     img.addEventListener('click', () =>
       openLightbox(img.src, img.dataset.title, img.dataset.desc, 0)
     );
   });
 
-  /* wire print thumbnail clicks */
+  // Wire print thumbnail image clicks → lightbox
   document.querySelectorAll('.print-thumb img').forEach(img => {
     img.style.cursor = 'pointer';
     img.addEventListener('click', () =>

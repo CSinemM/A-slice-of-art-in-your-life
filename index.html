@@ -42,7 +42,8 @@
       </nav>
 
       <div class="d-flex align-items-center gap-2 flex-shrink-0">
-        <button class="burger-btn d-lg-none" id="burger-btn" aria-label="Меню">
+        <!-- removed id="burger-btn"; cart.js targets .burger-btn class -->
+        <button class="burger-btn d-lg-none" aria-label="Меню">
           <span></span><span></span><span></span>
         </button>
         <button class="cart-toggle">
@@ -104,16 +105,17 @@
       </div>
     </div>
 
+    <!-- cart-overlay now wired by cart.js; onclick removed to avoid double-fire -->
     <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
         <h3>Вашата количка</h3>
+        <!-- cart-close wired by cart.js -->
         <button class="cart-close">✕</button>
       </div>
       <ul id="cart-items"></ul>
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <!-- Bootstrap: d-flex gap-2 -->
         <div class="d-flex gap-2">
           <a
             href="order.html"
@@ -130,6 +132,7 @@
         </div>
       </div>
     </div>
+
     <section class="hero">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -204,6 +207,7 @@
       </div>
     </footer>
 
+    <!-- Charity toast -->
     <div
       id="charityToast"
       style="
@@ -284,6 +288,7 @@
       </button>
     </div>
 
+    <!-- Discount corner -->
     <div
       id="discountCorner"
       style="
@@ -354,7 +359,6 @@
       >
         10% <span style="color: #d63484">ОТСТЪПКА</span>
       </p>
-
       <p
         style="
           font-size: 0.78rem;
@@ -439,6 +443,7 @@
         t.style.transform = "translateX(120%)";
         t.style.opacity = "0";
       }
+
       setTimeout(() => {
         const d = document.getElementById("discountCorner");
         d.style.transform = "translateY(0)";

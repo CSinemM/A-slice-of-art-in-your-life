@@ -40,27 +40,20 @@
         <a href="contact.html">Контакти</a>
       </nav>
       <div class="d-flex align-items-center gap-2 flex-shrink-0">
-        <button
-          class="burger-btn d-lg-none"
-          onclick="openNav()"
-          aria-label="Меню"
-        >
+        <button class="burger-btn d-lg-none" aria-label="Меню">
           <span></span><span></span><span></span>
         </button>
-        <button class="cart-toggle" onclick="toggleCart()">
+        <button class="cart-toggle">
           <i class="bi bi-bag-heart"></i>
           <span class="cart-count" id="cart-count">0</span>
         </button>
       </div>
     </header>
+
     <div class="nav-overlay" id="nav-overlay">
       <div class="nav-overlay-header">
         <span class="nav-overlay-brand">Asliceofartinyourlife</span>
-        <button
-          class="nav-close-btn"
-          onclick="closeNav()"
-          aria-label="Затвори"
-        ></button>
+        <button class="nav-close-btn" aria-label="Затвори"></button>
       </div>
       <nav class="nav-links">
         <a class="nav-link" href="index.html"
@@ -108,16 +101,16 @@
         </div>
       </div>
     </div>
-    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
       <div class="cart-header">
         <h3>Вашата количка</h3>
-        <button class="cart-close" onclick="toggleCart()">✕</button>
+        <button class="cart-close">✕</button>
       </div>
       <ul id="cart-items"></ul>
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
-        <!-- Bootstrap: d-flex gap-2 -->
         <div class="d-flex gap-2">
           <a
             href="order.html"
@@ -134,6 +127,7 @@
         </div>
       </div>
     </div>
+
     <section class="page-title position-relative overflow-hidden px-4 px-md-5">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -142,6 +136,7 @@
         <p>ограничен тираж</p>
       </div>
     </section>
+
     <section class="py-5 px-4 px-md-5">
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
@@ -151,7 +146,7 @@
                 src="images/painting2.jpeg"
                 alt="Принт №01"
                 data-title="Girl with a pearl earring"
-                data-desc="<p><em>21×30 cm · €50.</em></p><br>Принт от оригиналната творба."
+                data-desc="&lt;p&gt;&lt;em&gt;21×30 cm · €50.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Принт от оригиналната творба."
                 data-price="50"
               />
             </div>
@@ -172,7 +167,7 @@
                 src="images/painting13.png"
                 alt="Принт №02"
                 data-title="Divine"
-                data-desc="<p><em>21×30 cm · €35.</em></p><br>Принт от оригиналната модерна поп-арт композиция."
+                data-desc="&lt;p&gt;&lt;em&gt;21×30 cm · €35.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Принт от оригиналната модерна поп-арт композиция."
                 data-price="35"
               />
             </div>
@@ -193,7 +188,7 @@
                 src="images/painting5.jpeg"
                 alt="Принт №03"
                 data-title="Pastel Veil of Love"
-                data-desc="<p><em>50 cm · €50.</em></p><br>Нежна композиция в пастелни тонове."
+                data-desc="&lt;p&gt;&lt;em&gt;50 cm · €50.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Нежна композиция в пастелни тонове."
                 data-price="50"
               />
             </div>
@@ -214,7 +209,7 @@
                 src="images/painting9.png"
                 alt="Принт №04"
                 data-title="Vroom"
-                data-desc="<p><em>50×70 cm · €170.</em></p><br>Стилизирана попарт композиция с Betty Boop и Formula One."
+                data-desc="&lt;p&gt;&lt;em&gt;50×70 cm · €170.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Стилизирана попарт композиция с Betty Boop и Formula One."
                 data-price="170"
               />
             </div>
@@ -235,7 +230,7 @@
                 src="images/painting10.png"
                 alt="Принт №05"
                 data-title="Between Petal and Fruit"
-                data-desc="<p><em>50×70 cm · €150.</em></p><br>Стилизирана ваза със зелени клонки и портокали."
+                data-desc="&lt;p&gt;&lt;em&gt;50×70 cm · €150.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Стилизирана ваза със зелени клонки и портокали."
                 data-price="150"
               />
             </div>
@@ -256,7 +251,7 @@
                 src="images/painting11.png"
                 alt="Принт №06"
                 data-title="Love"
-                data-desc="<p><em>50×70 cm · €35.</em></p><br>Ярък и емоционален колаж от символи и стилове."
+                data-desc="&lt;p&gt;&lt;em&gt;50×70 cm · €35.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Ярък и емоционален колаж от символи и стилове."
                 data-price="35"
               />
             </div>
@@ -277,7 +272,7 @@
                 src="images/painting15.png"
                 alt="Принт №07"
                 data-title="Candy"
-                data-desc="<p><em>50×60 cm · €50.</em></p><br>Динамичен и провокативен колаж с черна пантера и спортна кола."
+                data-desc="&lt;p&gt;&lt;em&gt;50×60 cm · €50.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Динамичен и провокативен колаж с черна пантера и спортна кола."
                 data-price="50"
               />
             </div>
@@ -298,7 +293,7 @@
                 src="images/painting14.png"
                 alt="Принт №08"
                 data-title="The Little Swan's Lullaby"
-                data-desc="<p><em>10×10 cm · €50.</em></p><br>Нежна и спокойна композиция, изобразяваща лебед."
+                data-desc="&lt;p&gt;&lt;em&gt;10×10 cm · €50.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Нежна и спокойна композиция, изобразяваща лебед."
                 data-price="50"
               />
             </div>
@@ -319,7 +314,7 @@
                 src="images/painting16.png"
                 alt="Принт №09"
                 data-title="Orchids"
-                data-desc="<p><em>30×40 cm · €50.</em></p><br>Деликатна цветна композиция с орхидеи."
+                data-desc="&lt;p&gt;&lt;em&gt;30×40 cm · €50.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Деликатна цветна композиция с орхидеи."
                 data-price="50"
               />
             </div>
@@ -340,7 +335,7 @@
                 src="images/painting17.png"
                 alt="Принт №10"
                 data-title="Yin and Yang"
-                data-desc="<p><em>50×70 cm · €120.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;50×70 cm · €120.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="120"
               />
             </div>
@@ -361,7 +356,7 @@
                 src="images/painting18.png"
                 alt="Принт №11"
                 data-title="Butterflies in Bloom"
-                data-desc="<p><em>50×70 cm · €40.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;50×70 cm · €40.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="40"
               />
             </div>
@@ -382,7 +377,7 @@
                 src="images/painting19.png"
                 alt="Принт №12"
                 data-title="In the Margins of Time"
-                data-desc="<p><em>30×40 cm · €50.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;30×40 cm · €50.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="50"
               />
             </div>
@@ -403,7 +398,7 @@
                 src="images/painting20.png"
                 alt="Принт №13"
                 data-title="I am my own muse"
-                data-desc="<p><em>40×40 cm · €140.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;40×40 cm · €140.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="140"
               />
             </div>
@@ -424,7 +419,7 @@
                 src="images/painting21.png"
                 alt="Принт №14"
                 data-title="Consumer Culture"
-                data-desc="<p><em>50×70 cm · €100.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;50×70 cm · €100.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="100"
               />
             </div>
@@ -445,7 +440,7 @@
                 src="images/painting22.png"
                 alt="Принт №15"
                 data-title="Break the Habit"
-                data-desc="<p><em>50×70 cm · €200.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;50×70 cm · €200.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="200"
               />
             </div>
@@ -466,7 +461,7 @@
                 src="images/painting24.png"
                 alt="Meanwhile"
                 data-title="Meanwhile"
-                data-desc="<p><em>30×30 cm · €100.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;30×30 cm · €100.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="100"
               />
             </div>
@@ -487,7 +482,7 @@
                 src="images/david.jpeg"
                 alt="David"
                 data-title="David"
-                data-desc="<p><em>50×70 cm · €150.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;50×70 cm · €150.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="150"
               />
             </div>
@@ -508,7 +503,7 @@
                 src="images/painting6.png"
                 alt="Special"
                 data-title="Special"
-                data-desc="<p><em>30×40 cm · €50.</em></p><br>Авторски принт в ограничен тираж."
+                data-desc="&lt;p&gt;&lt;em&gt;30×40 cm · €50.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Авторски принт в ограничен тираж."
                 data-price="50"
               />
             </div>
@@ -525,10 +520,10 @@
     </section>
 
     <div class="lightbox" id="lightbox">
-      <div class="lb-overlay" onclick="closeLightbox()"></div>
+      <div class="lb-overlay"></div>
       <div class="lb-content">
         <div class="lb-img">
-          <button class="lb-close" onclick="closeLightbox()">✕</button>
+          <button class="lb-close">✕</button>
           <img id="lb-image" alt="" />
         </div>
         <div class="lb-info">
@@ -538,6 +533,7 @@
         </div>
       </div>
     </div>
+
     <footer
       class="d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap gap-3 px-4 px-md-5 py-5"
     >

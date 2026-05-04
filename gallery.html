@@ -29,14 +29,15 @@
     <a href="contact.html">Контакти</a>
   </nav>
   <div class="d-flex align-items-center gap-2 flex-shrink-0">
-    <button class="burger-btn d-lg-none" onclick="openNav()" aria-label="Меню"><span></span><span></span><span></span></button>
-    <button class="cart-toggle" onclick="toggleCart()"><i class="bi bi-bag-heart"></i><span class="cart-count" id="cart-count">0</span></button>
+    <button class="burger-btn d-lg-none" aria-label="Меню"><span></span><span></span><span></span></button>
+    <button class="cart-toggle"><i class="bi bi-bag-heart"></i><span class="cart-count" id="cart-count">0</span></button>
   </div>
 </header>
+
 <div class="nav-overlay" id="nav-overlay">
   <div class="nav-overlay-header">
     <span class="nav-overlay-brand">Asliceofartinyourlife</span>
-    <button class="nav-close-btn" onclick="closeNav()" aria-label="Затвори"></button>
+    <button class="nav-close-btn" aria-label="Затвори"></button>
   </div>
   <nav class="nav-links">
     <a class="nav-link" href="index.html">Начало <span class="nav-link-arrow">→</span></a>
@@ -57,9 +58,9 @@
   </div>
 </div>
 
-<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<div class="cart-overlay" id="cart-overlay"></div>
 <div class="cart-sidebar" id="cart-sidebar">
-  <div class="cart-header"><h3>Вашата количка</h3><button class="cart-close" onclick="toggleCart()">✕</button></div>
+  <div class="cart-header"><h3>Вашата количка</h3><button class="cart-close">✕</button></div>
   <ul id="cart-items"></ul>
   <div class="cart-footer">
     <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
@@ -75,7 +76,6 @@
     <p>оригинални творби</p>
   </div>
 </section>
-
 
 <section class="py-5 px-4 px-md-5">
   <div class="row g-4">
@@ -152,14 +152,14 @@
 
     <div class="col-12 col-md-6 col-lg-4"><div class="print-card h-100"><div class="print-thumb"><img src="images/david.jpeg" data-title="Limited – 50x70 cm" data-desc="&lt;p&gt;&lt;em&gt;Акрил върху платно · €500.&lt;/em&gt;&lt;/p&gt;&lt;br&gt;Картината е монохромна и изобразява мъжки профил, изграден с експресивни, насечени мазки." data-price="500" alt="Limited" /></div><div class="d-flex justify-content-between align-items-center"><div><h3>Limited</h3><p>50×70 cm</p></div><span class="print-price">€500</span></div></div></div>
 
-  </div><
+  </div>
 </section>
 
 <div class="lightbox" id="lightbox">
-  <div class="lb-overlay" onclick="closeLightbox()"></div>
+  <div class="lb-overlay"></div>
   <div class="lb-content">
     <div class="lb-img">
-      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-close">✕</button>
       <img id="lb-image" alt="" />
     </div>
     <div class="lb-info">
