@@ -67,20 +67,71 @@
 
 **Използвани технологии:**
 
-- HTML5
-- CSS3
-- Bootstrap 5.3
-- JavaScript / jQuery
-- GitHub Pages
+- HTML5 (семантични тагове)
+- CSS3 (custom properties, animations)
+- Bootstrap 5.3.3
+- JavaScript (Vanilla)
+- jQuery
+- Bootstrap Icons
+- Formspree (за форми)
+  -GitHub Pages (хостинг)
 
 **Интерактивни елементи:**
 
-- Shopping cart система
-- Image lightbox
-- Mobile navigation
-- Newsletter popup
-- Discount corner popup
-- Form validation
+- Shopping cart система с localStorage персистентност
+- Image lightbox с динамично съдържание
+- Mobile navigation overlay
+- Newsletter popup с email валидация
+- Discount corner popup с форма
+- Form validation на всички контактни форми
+- Charity toast notification
+- Responsive burger menu
+
+**Bootstrap & Custom CSS:**
+Къде е използван Bootstrap 5.3:
+Структура и Grid система:
+
+- Container, row, col система за отзивчива подредба
+- .d-flex, .justify-content-between, .align-items-center за flexbox оформление
+- .gap-{размер} за разстояние между елементи
+- .px-{размер}, .py-{размер}, .mb-{размер} за отстъпи и полета
+- .col-12, .col-md-6, .col-lg-4 за адаптивни колони
+- .d-none, .d-lg-flex, .d-lg-none за показване/скриване на елементи
+- .text-center за центриране на текст
+- .flex-fill, .flex-wrap, .flex-column, .flex-md-row
+- .overflow-hidden за скриване на излишно съдържание
+
+Къде е използван Custom CSS:
+
+- CSS променливи (:root variables) за цветове и шрифтове
+- @font-face за зареждане на шрифта Freeride
+- Импортиране на Google шрифтове (DM Sans)
+- Fixed glass header с backdrop-filter
+- Десктоп навигация със стилизирани връзки
+- Cart toggle button с custom стилове
+- Burger menu button
+- Mobile fullscreen overlay navigation
+- Cart sidebar с плъзгащ ефект
+- .box buttons с animated corner-border hover ефект
+- Custom carousel/lightbox система
+- Blob animations за hero секции
+- Toast нотификации
+- Popup/modal системи
+- Hero section с animated blobs
+- Artwork cards със специални hover ефекти
+- Print cards с border transitions
+- About strip с radial gradient overlay
+- Карти с клиентски отзиви
+- Стилизиране на формуляри за поръчки
+- @keyframes за плаващи анимации на blob-овете
+- Плавни преходи и анимации
+- Сенки на кутии за дълбочина
+- Градиенти за декоративни blob-ове
+- Media queries за mobile/tablet/desktop
+- Custom breakpoints за специфични нужди
+- Корекции на оформлението специално за мобилни устройства
+
+Bootstrap се използва основно за структурата и подредбата на елементите, докато персонализираният CSS създава цялостната визуална идентичност, анимациите и уникалните интерактивни елементи на бранда.
 
 ## 5. Използване на изкуствен интелект
 
@@ -96,4 +147,37 @@
 
 ## 6. Линк към проекта:
 
+Github Repository:
 https://github.com/CSinemM/A-slice-of-art-in-your-life
+
+Live Website:
+https://csinemm.github.io/A-slice-of-art-in-your-life/
+
+## 7. Файлова структура:
+
+A-slice-of-art-in-your-life/
+│
+├── index.html
+├── about.html
+├── contact.html
+├── custom.html
+├── gallery.html
+├── order.html
+├── prints.html
+├── style.html
+│
+├── css/
+│ ├── reset.css
+│ └── style.css
+│
+├── js/
+│ └── cart.js
+│
+├── images/
+│ ├── Logo.png
+│ ├── about.jpeg
+│ ├── custom\__.jpeg
+│ ├── painting_.png/jpeg
+│ └── david.jpeg
+│
+└── README.md
