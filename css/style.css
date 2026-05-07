@@ -1101,4 +1101,89 @@ footer p { font-size: .8rem; color: rgba(245, 240, 232, .5); }
   .review-card {
     margin-bottom: 20px;
   }
+}.about-photo {
+  width: 100%;
+  max-width: 600px;      
+  border-radius: 1px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;  
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+ 
+.about-social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+ 
+.about-social-links .box {
+  padding: 10px 20px;
+  text-decoration: none;
+}
+ 
+.about-values {
+  background: var(--bg-alt, #fdf8f5);
+}
+ 
+.about-value-card {
+  padding: 32px 24px;
+}
+ 
+.about-value-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+ 
+.about-value-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+ 
+.about-value-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+ 
+.about-cta-heading {
+  font-family: 'Freeride', 'Georgia', serif;
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+ 
+.about-cta-sub {
+  margin-bottom: 32px;
+  color: var(--text-muted);
+}
+ 
+.about-cta-btn {
+  padding: 12px 28px;
+  text-decoration: none;
+}
+ 
+@media (max-width: 768px) {
+  .about-photo {
+    max-width: 100%;
+    aspect-ratio: 4 / 3; 
+  }
+
+  .about-social-links {
+    flex-direction: column;
+  }
+ 
+  .about-social-links .box {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.artist-hamster {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  display: block;
 }

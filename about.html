@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Персонализирана картина – Asliceofartinyourlife</title>
+    <title>За мен – Asliceofartinyourlife</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link
       rel="stylesheet"
@@ -84,7 +84,6 @@
       <div class="nav-footer">
         <div class="nav-footer-label">Последвай ме</div>
         <div class="d-flex gap-2">
-          <!-- fixed: was missing opening <a -->
           <a
             class="nav-social-btn"
             href="https://www.instagram.com/asliceofartinyourlife/"
@@ -113,7 +112,6 @@
       <div class="cart-footer">
         <p class="cart-total">Общо: €<span id="cart-total">0</span></p>
         <div class="d-flex gap-2">
-          <!-- fixed: was missing opening <a -->
           <a
             href="order.html"
             class="box box-pink flex-fill text-center"
@@ -134,187 +132,104 @@
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="page-title-inner">
-        <h2>Персонализирана картина</h2>
-        <p>направена специално за вас</p>
+        <h2>За мен</h2>
+        <p>художникът зад всяка картина</p>
       </div>
     </section>
 
     <section class="order-section py-5 px-4 px-md-5">
-      <div class="row g-5 align-items-start">
-        <div class="col-12 col-md-6 order-info">
-          <h3>Как работи процесът?</h3>
-          <p>
-            Създаването на персонализирана картина е лесно и вълнуващо! Следвай
-            тези прости стъпки:
-          </p>
-          <ol>
-            <li>Избери стил и размер на платното</li>
-            <li>Изпрати ми своята снимка или идея</li>
-            <li>Получи първоначален скициран дизайн за одобрение</li>
-            <li>Направи промени, ако е необходимо</li>
-            <li>Аз създавам финалната картина за теб</li>
-            <li>Получаваш своето уникално произведение на изкуството!</li>
-          </ol>
-          <p style="margin-top: 24px; font-size: 0.9rem; color: var(--text)">
-            Времето за изработка е между 1-2 седмици, в зависимост от
-            сложността. Всяка картина е ръчно рисувана с акрилни бои върху
-            качествено платно.
-          </p>
-          <div style="margin-top: 32px">
-            <p style="font-weight: 700; margin-bottom: 12px">Цени:</p>
-            <ul style="list-style: none; padding: 0">
-              <li style="margin-bottom: 8px">
-                📐 <strong>20x30 см</strong> – €35
-              </li>
-              <li style="margin-bottom: 8px">
-                📐 <strong>30x40 см</strong> – €55
-              </li>
-              <li style="margin-bottom: 8px">
-                📐 <strong>40x50 см</strong> – €75
-              </li>
-              <li style="margin-bottom: 8px">
-                📐 <strong>50x70 см</strong> – €95
-              </li>
-            </ul>
-          </div>
+      <div class="row g-5 align-items-center">
+        <!-- Photo -->
+        <div class="col-12 col-md-5 text-center">
+          <img src="images/about.jpeg" alt="Художникът" class="about-photo" />
         </div>
 
-        <div class="col-12 col-md-6">
-          <form id="custom-form">
-            <input type="text" name="name" placeholder="Вашето име" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Вашият имейл"
-              required
-            />
-            <input type="tel" name="phone" placeholder="Телефон" />
-            <select name="size" required>
-              <option value="">Избери размер</option>
-              <option value="20x30">20x30 см – €35</option>
-              <option value="30x40">30x40 см – €55</option>
-              <option value="40x50">40x50 см – €75</option>
-              <option value="50x70">50x70 см – €95</option>
-            </select>
-            <select name="style">
-              <option value="">Избери стил</option>
-              <option value="pop-art">Поп арт</option>
-              <option value="abstract">Абстрактен</option>
-              <option value="realistic">Реалистичен</option>
-              <option value="minimalist">Минималистичен</option>
-              <option value="surreal">Сюрреалистичен</option>
-            </select>
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Разкажи ми повече за своята идея - какво искаш да видиш на картината, какви цветове предпочиташ, каква е целта на картината и т.н."
-              required
-            ></textarea>
-            <div class="mb-3">
-              <label for="reference">
-                Прикачи референтни снимки
-                <small
-                  style="
-                    display: block;
-                    margin-top: 4px;
-                    color: var(--text-muted);
-                  "
-                >
-                  (По избор - можеш да изпратиш снимки и по имейл)
-                </small>
-              </label>
-              <input
-                type="file"
-                id="reference"
-                name="reference"
-                multiple
-                accept="image/*"
-                style="padding: 8px"
-              />
-            </div>
-            <button type="submit" class="btn-submit">Изпрати заявка</button>
-          </form>
+        <div class="col-12 col-md-7 order-info">
+          <h3>Здравей, аз съм художникът зад Asliceofartinyourlife!</h3>
+          <p>
+            Изкуството е моят начин да споделям красотата на света около мен.
+            Вдъхновена от цветовете, емоциите и историите на хората, аз създавам
+            картини, които носят радост и уникалност в твоя дом.
+          </p>
+          <p>
+            Специализирам в акрилни картини върху платно, като всяко
+            произведение е изцяло ръчно рисувано с внимание към детайла и любов
+            към занаята. Предпочитам да работя в стилове като поп арт,
+            абстрактен и сюрреалистичен — но винаги съм отворена за нови
+            предизвикателства.
+          </p>
+          <p>
+            Вярвам, че всяко произведение на изкуството трябва да разказва
+            история — твоята история. Затова персонализираните поръчки са
+            особено близо до сърцето ми: те ми дават шанс да превърна твоята
+            идея в нещо истински уникално.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="customer-reviews py-5 px-4 px-md-5">
+    <section class="about-values py-5 px-4 px-md-5">
       <div class="section-header mb-5">
-        <h2>Какво мислят клиентите?</h2>
+        <h2>Няколко неща за мен</h2>
       </div>
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-image-container">
-              <img
-                src="images/custom_phone_cases.jpeg"
-                alt="Персонализирани кейсове за телфон с избрани картини"
-                class="review-image"
-              />
-            </div>
-            <div class="review-content">
-              <div class="review-stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="review-text">
-                "Абсолютно съм влюбена в този кeйс! Дизайнът е точно както си го
-                представях, а качеството надминава очакванията ми. Благодаря за
-                страхотната работа!"
-              </p>
-              <p class="review-author">— Мария, София</p>
-            </div>
+      <div class="row g-4 text-center">
+        <div class="col-12 col-md-4">
+          <div class="about-value-card review-card">
+            <img
+              src="images/second_hamster.png"
+              alt="Artist hamster"
+              class="artist-hamster"
+            />
+            <h4 class="about-value-title">Акрилни бои</h4>
+            <p class="about-value-text">
+              Работя изключително с висококачествени акрилни бои върху
+              професионални платна за дълготрайни и живи цветове.
+            </p>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-image-container">
-              <img
-                src="images/divine_phone_case.jpg"
-                alt="Персонализирани кейсове за телфон с избрани картини"
-                class="review-image"
-              />
-            </div>
-            <div class="review-content">
-              <div class="review-stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="review-text">
-                "Поръчах тези кейсове като подарък и получателят беше в екстаз!
-                Уникалният дизайн и внимателното изпълнение наистина правят
-                впечатление. Препоръчвам!"
-              </p>
-              <p class="review-author">— Георги, Пловдив</p>
-            </div>
+        <div class="col-12 col-md-4">
+          <div class="about-value-card review-card">
+            <img
+              src="images/second_hamster.png"
+              alt="Artist hamster"
+              class="artist-hamster"
+            />
+            <h4 class="about-value-title">Персонален подход</h4>
+            <p class="about-value-text">
+              Всяка поръчка получава пълното ми внимание. Комуникираме заедно
+              докато резултатът не те радва напълно.
+            </p>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-image-container">
-              <img
-                src="images/custom_painting.jpeg"
-                alt="Персонализирана картина"
-                class="review-image"
-              />
-            </div>
-            <div class="review-content">
-              <div class="review-stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="review-text">
-                "Комуникацията беше перфектна през целия процес. Получих точно
-                това, което исках - красива, авторска картина с изключително
-                качество. Определено ще поръчам отново!"
-              </p>
-              <p class="review-author">— Елена, Варна</p>
-            </div>
+        <div class="col-12 col-md-4">
+          <div class="about-value-card review-card">
+            <img
+              src="images/second_hamster.png"
+              alt="Artist hamster"
+              class="artist-hamster"
+            />
+            <h4 class="about-value-title">Доставка из цяла България</h4>
+            <p class="about-value-text">
+              Изпращам картините внимателно опаковани до всяка точка на
+              страната, така че да пристигнат в перфектно състояние.
+            </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="about-cta py-5 px-4 px-md-5 text-center">
+      <h2 class="about-cta-heading">Готов/а за твоята уникална картина?</h2>
+      <p class="about-cta-sub">
+        Разгледай галерията или направи персонализирана поръчка директно.
+      </p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="gallery.html" class="box box-pink about-cta-btn">
+          Разгледай галерията
+        </a>
+        <a href="custom.html" class="box box-pink about-cta-btn">
+          Поръчай персонализирана картина
+        </a>
       </div>
     </section>
 
